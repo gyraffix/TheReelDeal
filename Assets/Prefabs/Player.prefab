@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceThreshold: 0.15
-  isGrounded: 0
+  isGrounded: 1
 --- !u!1 &4488202838389874500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd961b30e7eb75e41a8e0e59af1f297f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: 0
+  inventory: 1
+  album: 0
+  previousPage: 0
+  nextPage: 0
   OnInventoryButton:
     m_PersistentCalls:
       m_Calls:

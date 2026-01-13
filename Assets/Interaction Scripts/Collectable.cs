@@ -6,6 +6,8 @@ using Yarn.Unity;
 public class Collectable : PlayerActivatable 
 {
     ProximityTrigger[] connectedTriggers;
+    
+
 
     void Awake() {
         connectedTriggers = GetComponentsInChildren<ProximityTrigger>();        
