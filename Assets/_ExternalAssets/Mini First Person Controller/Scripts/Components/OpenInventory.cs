@@ -60,6 +60,7 @@ public class OpenInventory : MonoBehaviour
             Album.instance.PreviousPage();
         }
     }
+
     public void OnNextPage(InputValue value)
     {
         NextPageInput(value.isPressed);

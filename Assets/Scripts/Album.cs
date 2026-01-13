@@ -9,8 +9,11 @@ public class Album : MonoBehaviour
     private bool isOpen = false;
     private Animator anim;
     private int currentPage = 0;
-    [SerializeField] private List<GameObject> pages;
+    private int currentPageToAddFish = 0;
+    [SerializeField] private List<Page> pages;
     [SerializeField] private List<GameObject> fishes;
+
+
 
     private void Start()
     {
@@ -31,7 +34,6 @@ public class Album : MonoBehaviour
         else
         {
             anim.SetTrigger("Open");
-            UpdateFishes();
         }
         isOpen = !isOpen;
 
@@ -57,17 +59,19 @@ public class Album : MonoBehaviour
 
     private void UpdatePages()
     {
-        foreach (GameObject page in pages)
+        foreach (Page page in pages)
         {
-            page.SetActive(false);
+            page.gameObject.SetActive(false);
         }
-        pages[currentPage].SetActive(true);
+        pages[currentPage].gameObject.SetActive(true);
 
     }
 
-    private void UpdateFishes()
+    public void NewFish(FishItem fish)
     {
+        if (pages[currentPageToAddFish].isFull) currentPageToAddFish++;
 
+        pages[currentPageToAddFish].NewFish(fish);
     }
 
 }
