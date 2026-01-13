@@ -1,62 +1,110 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class FishingMinigame : MonoBehaviour
 {
     [Header("References")]
-    private Slider slider;
+    private RectTransform minigameRectTransform;
+    public RectTransform targetRectTransform;
+    public RectTransform meterRectTransform;
+    // public Slider progressSlider;
 
     [Header("General settings")]
-    private int min = 0;
-    private int max = 100;
+    public float progressIncrease = 2;
+    public float progressDecrease = 1;
+    private float minY;
+    private float maxY;
+    private float fishingProgress;
 
-    [Header("Player settings")]
-    [Range(-1, 1)] private float playerMultiplier;
-    public float gravityMultiplier;
-    private float playerLocation = 0;
-    public float gravity = 1;
+    [Header("Meter settings")]
+    public KeyCode jumpInput = KeyCode.Space;
+    public float gravity = 0.01f;
+    public float speed = 10;
+    private float meterLocation = 0;
+    private float gravityMultiplier;
 
     [Header("Target settings")]
+    public int targetHeight = 5;
     public float targetSpeed = 2;
     private bool targetGoingUp = true;
-    public float targetRange = 5;
-    private float targetLocation = 5;
-
-
+    private float targetLocation;
 
     void Start()
     {
-        slider = GetComponent<Slider>();
+        minigameRectTransform = GetComponent<RectTransform>();
+
+        minY = -minigameRectTransform.sizeDelta.y / 2;
+        maxY = minigameRectTransform.sizeDelta.y / 2;
+
+        targetLocation = minY + targetHeight / 2;
+
+        // progressSlider.minValue = 0;
+        // progressSlider.maxValue = 100;
+        // progressSlider.value = progressSlider.minValue;
+
+        targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
     }
 
     void Update()
     {
         UpdateTarget();
+        UpdatePlayer();
+
+        if (Input.GetKey(jumpInput))
+        {
+            gravityMultiplier = 1;
+        }
+
+        // if (meterLocation >= targetLocation - targetHeight || meterLocation <= targetLocation + targetHeight)
+        // {
+        //     fishingProgress += progressIncrease;
+        // }
+        // else
+        // {
+        //     fishingProgress -= progressDecrease;
+        // }
+        // fishingProgress = Math.Clamp(fishingProgress, 0, 100);
+
+        // UpdateProgress();
     }
     private void UpdateTarget()
     {
-        if (targetLocation == min + targetRange)
+        if (targetLocation == minY + targetHeight / 2)
         {
             targetGoingUp = true;
         }
-        else if (targetLocation == max - targetRange)
+        else if (targetLocation == maxY - targetHeight / 2)
         {
             targetGoingUp = false;
         }
 
         targetLocation = targetGoingUp ? targetLocation + Time.deltaTime * targetSpeed : targetLocation - Time.deltaTime * targetSpeed;
 
-        Math.Clamp(targetLocation, min + targetRange, max - targetRange);
+        targetLocation = Math.Clamp(targetLocation, minY + targetHeight / 2, maxY - targetHeight / 2);
+
+        targetRectTransform.localPosition = new Vector2(0, targetLocation);
     }
     private void UpdatePlayer()
     {
-        playerMultiplier = gravity > -1 ? gravity - Time.deltaTime * gravityMultiplier : gravity;
-        Math.Clamp(gravity, min, max);
+        gravityMultiplier = gravityMultiplier > -1 ? gravityMultiplier - Time.deltaTime * gravity : gravityMultiplier;
+        gravityMultiplier = Math.Clamp(gravityMultiplier, -1, 1);
 
-        playerLocation -= Time.deltaTime * playerMultiplier;
+        meterLocation += Time.deltaTime * speed * gravityMultiplier;
 
-        Math.Clamp(playerLocation, min, max);
+        meterLocation = Math.Clamp(meterLocation, minY + meterRectTransform.sizeDelta.y / 2, maxY - meterRectTransform.sizeDelta.y / 2);
+
+        meterRectTransform.localPosition = new Vector2(0, meterLocation);
+    }
+
+    // private void UpdateProgress()
+    // {
+    //     if (!progressSlider)
+    //         return;
+    //     progressSlider.value = fishingProgress;
+    // }
+
+    public float GetFishingProgress()
+    {
+        return fishingProgress;
     }
 }
