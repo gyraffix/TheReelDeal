@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f56c22b6d0c2450d931c5bbed770755, type: 3}
-  m_Name: item
+  m_Name: TestItem
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 38e53e18c149a48d2bcfd21924d26c47, type: 3}
+  name: 
+  dificultyLevel: 1

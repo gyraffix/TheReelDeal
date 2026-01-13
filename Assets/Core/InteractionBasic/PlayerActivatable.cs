@@ -8,6 +8,7 @@ public abstract class PlayerActivatable : MonoBehaviour
 {
     public bool canRepeat = false;
     public bool shouldActivateOnCollision = false;
+    public bool shouldActivateOnTriggerEnter = false;
 
     protected float DebounceInterval = 1f;
     protected bool isDebouncing = false;
@@ -16,7 +17,19 @@ public abstract class PlayerActivatable : MonoBehaviour
 
     [HideInInspector]
     public bool canBeActivated = true;
- 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (shouldActivateOnTriggerEnter)
+        {
+            if (!isDebouncing)
+            {
+                Activate();
+            }
+
+        }
+    }
+
     public virtual void OnColliding()
     {
         if (shouldActivateOnCollision) {

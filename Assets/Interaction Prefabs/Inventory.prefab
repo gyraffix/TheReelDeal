@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 1786724964272601933}
   - component: {fileID: 8223424972255087731}
   - component: {fileID: 4428948020518469579}
-  - component: {fileID: 6832227124703764393}
+  - component: {fileID: 3818212454808934033}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -208,7 +208,7 @@ MonoBehaviour:
     m_Bits: 4294967295
 --- !u!95 &4428948020518469579
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -222,12 +222,13 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6832227124703764393
+--- !u!114 &3818212454808934033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,10 +237,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8506304381781564400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69e42660fda5430da8539330ca14b15, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fb2bbd3d5f9049d1bbca89cb468bb7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfSlots: 5
+  inventory: {fileID: 0}
   inventoryItemPrefab: {fileID: 117399945701536439, guid: 79b86fce0b6384708865d4e94396a699,
     type: 3}
   inventoryItemContainer: {fileID: 6171065927392831707}

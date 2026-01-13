@@ -4,4 +4,9 @@ using UnityEngine;
 public class InventoryItemDefinition : ScriptableObject
 {
     public Sprite icon;
+
+    public string name = string.Empty;
+
+    [Range(1f, 20f)]
+    public int dificultyLevel;
 }
