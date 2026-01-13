@@ -13,9 +13,7 @@ public class OpenInventory : MonoBehaviour
     public bool nextPage;
 
     public UnityEvent OnInventoryButton;
-    public UnityEvent OnAlbumButton;
-    public UnityEvent OnPreviousPageButton;
-    public UnityEvent OnNextPageButton;
+
 
 
     public void OnInventory(InputValue value)
@@ -45,10 +43,7 @@ public class OpenInventory : MonoBehaviour
         album = newAlbumState;
         if (newAlbumState)
         {
-            if (OnAlbumButton != null)
-            {
-                OnAlbumButton.Invoke();
-            }
+            Album.instance.OnAlbumButtonInteraction();
         }
     }
 
@@ -62,10 +57,7 @@ public class OpenInventory : MonoBehaviour
         previousPage = newPreviousPageState;
         if (newPreviousPageState)
         {
-            if (OnPreviousPageButton != null)
-            {
-                OnPreviousPageButton.Invoke();
-            }
+            Album.instance.PreviousPage();
         }
     }
     public void OnNextPage(InputValue value)
@@ -78,10 +70,7 @@ public class OpenInventory : MonoBehaviour
         previousPage = newNextPageState;
         if (newNextPageState)
         {
-            if (OnNextPageButton != null)
-            {
-                OnNextPageButton.Invoke();
-            }
+            Album.instance.NextPage();
         }
     }
 
