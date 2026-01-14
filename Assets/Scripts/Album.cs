@@ -35,6 +35,8 @@ public class Album : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             FirstPersonMovement.instance.active = true;
             FirstPersonLook.instance.active = true;
+            Jump.instance.active = true;
+            Crouch.instance.active = true;
         }
         else
         {
@@ -42,6 +44,8 @@ public class Album : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             FirstPersonLook.instance.active = false;
             FirstPersonMovement.instance.active = false;
+            Crouch.instance.active = false;
+            Jump.instance.active = false;
         }
         isOpen = !isOpen;
 
