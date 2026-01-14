@@ -333,6 +333,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Page
       objectReference: {fileID: 0}
+    - target: {fileID: 1636945414247955437, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879758778734261945, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251577886506554989, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2371357948404427036, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656854331907407900, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4386560679859645723, guid: ae9ee9a554f9f3845ae10991fd5b2330,
         type: 3}
       propertyPath: m_Pivot.x
@@ -432,6 +457,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4892764566807919368, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4930097288711546307, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385414502808424648, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579619174414670603, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8777976832542571721, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9009880756801490448, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124163662085080025, guid: ae9ee9a554f9f3845ae10991fd5b2330,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

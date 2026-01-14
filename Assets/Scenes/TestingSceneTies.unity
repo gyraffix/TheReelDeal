@@ -1372,7 +1372,7 @@ MonoBehaviour:
   shouldActivateOnCollision: 0
   shouldActivateOnTriggerEnter: 1
   canBeActivated: 1
-  fishItem: {fileID: 11400000, guid: 8eb723c3d2748d444a3efebe725265c9, type: 2}
+  fishItem: {fileID: 11400000, guid: f337579db6f772d4c953ae7c81b9f144, type: 2}
 --- !u!65 &1481625096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1851,6 +1851,6 @@ SceneRoots:
   - {fileID: 1481625099}
   - {fileID: 636177951}
   - {fileID: 1016476911}
-  - {fileID: 1941097502}
   - {fileID: 625768066}
   - {fileID: 2052480851}
+  - {fileID: 1941097502}
