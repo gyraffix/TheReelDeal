@@ -17,6 +17,8 @@ public class ImageBobbing : MonoBehaviour
         offset = Random.Range(minOffsetRange, maxOffsetRange);
     }
 
+    
+
     void Update()
     {
         //if (Time.time > offset) 

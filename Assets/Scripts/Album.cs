@@ -30,10 +30,12 @@ public class Album : MonoBehaviour
         if (isOpen)
         {
             anim.SetTrigger("Close");
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
             anim.SetTrigger("Open");
+            Cursor.lockState = CursorLockMode.None;
         }
         isOpen = !isOpen;
 

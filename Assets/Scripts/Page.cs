@@ -20,7 +20,7 @@ public class Page : MonoBehaviour
         
 
         name.text = fish.name;
-        //desc.text = fish.desc;
+        desc.text = fish.desc;
         image.sprite = fish.fishPhoto;
         
 
