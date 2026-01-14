@@ -12,13 +12,15 @@ public class Album : MonoBehaviour
     private int currentPageToAddFish = 0;
     [SerializeField] private List<Page> pages;
     [SerializeField] private List<GameObject> fishes;
-
+    
+    private List<string> addedFish;
 
 
     private void Start()
     {
         anim = GetComponent<Animator>();
 
+        addedFish = new List<string>();
         instance = this;
     }
 
@@ -31,11 +33,15 @@ public class Album : MonoBehaviour
         {
             anim.SetTrigger("Close");
             Cursor.lockState = CursorLockMode.Locked;
+            FirstPersonMovement.instance.active = true;
+            FirstPersonLook.instance.active = true;
         }
         else
         {
             anim.SetTrigger("Open");
             Cursor.lockState = CursorLockMode.None;
+            FirstPersonLook.instance.active = false;
+            FirstPersonMovement.instance.active = false;
         }
         isOpen = !isOpen;
 
@@ -71,9 +77,14 @@ public class Album : MonoBehaviour
 
     public void NewFish(FishItem fish)
     {
-        if (pages[currentPageToAddFish].isFull) currentPageToAddFish++;
+        if (!addedFish.Contains(fish.name))
+        {  
+            if (pages[currentPageToAddFish].isFull) currentPageToAddFish++;
 
-        pages[currentPageToAddFish].NewFish(fish);
+            pages[currentPageToAddFish].NewFish(fish);
+
+            addedFish.Add(fish.name);
+        }
     }
 
 }
