@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestFish
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 38e53e18c149a48d2bcfd21924d26c47, type: 3}
-  fishName: TestFish
-  difficulity: 1
+  name: GoldFish
+  desc: Made of gold

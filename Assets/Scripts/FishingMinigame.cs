@@ -34,6 +34,8 @@ public class FishingMinigame : PlayerActivatable
     private bool targetGoingUp = true;
     private float targetLocation;
 
+    private bool active = false;
+
     void Awake()
     {
         BackgroundRectTransform = minigameCanvas.transform.Find("Background").GetComponent<RectTransform>();
@@ -48,16 +50,16 @@ public class FishingMinigame : PlayerActivatable
 
         progressSlider.minValue = 0;
         progressSlider.maxValue = 100;
-        progressSlider.value = 0;
+
 
         BackgroundRectTransform.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (!BackgroundRectTransform)
+        if (!active)
             return;
-
+        Debug.Log(fishingProgress);
         if (fishingProgress >= 100)
             FishingSuccessful();
 
@@ -87,6 +89,7 @@ public class FishingMinigame : PlayerActivatable
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
+        progressSlider.value = 0;
         BackgroundRectTransform.gameObject.SetActive(true);
 
         progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
@@ -99,6 +102,8 @@ public class FishingMinigame : PlayerActivatable
         targetLocation = minY + targetHeight / 2;
 
         targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
+        Debug.Log(fishingProgress);
+        active = true;
     }
 
     private void UpdateTargetLocation()
@@ -144,7 +149,10 @@ public class FishingMinigame : PlayerActivatable
 
     private void FishingSuccessful()
     {
-        Album.instance.NewFish(possibleFishes[UnityEngine.Random.RandomRange(0, possibleFishes.Length - 1)]);
+        FishItem currentFish = possibleFishes[UnityEngine.Random.Range(0, possibleFishes.Length - 1)];
+
+        Album.instance.NewFish(currentFish);
+        Debug.Log(currentFish.name);
 
         FirstPersonLook.instance.active = true;
         FirstPersonMovement.instance.active = true;
@@ -152,6 +160,7 @@ public class FishingMinigame : PlayerActivatable
         Crouch.instance.active = true;
 
         BackgroundRectTransform.gameObject.SetActive(false);
+        active = false;
     }
 
     public float GetFishingProgress()
