@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3769047887341166684}
   - component: {fileID: 8340944548673744871}
   - component: {fileID: 2035910637106859012}
+  - component: {fileID: 7771264448404640958}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -90,9 +91,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sineWaveAmplitude: 16
   sineWaveSpeed: 1
-  minOffsetRange: 0
-  maxOffsetRange: 3
-  offset: 0
+--- !u!114 &7771264448404640958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78147354326013871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2035910637106859012}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2035910637106859012}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &309417043519648113
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +148,7 @@ GameObject:
   - component: {fileID: 6917006064854957545}
   - component: {fileID: 5907711056300949201}
   - component: {fileID: 4573435840870210413}
+  - component: {fileID: 3056696144250322972}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -183,9 +227,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sineWaveAmplitude: 16
   sineWaveSpeed: 1
-  minOffsetRange: 0
-  maxOffsetRange: 3
-  offset: 0
+--- !u!114 &3056696144250322972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309417043519648113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4573435840870210413}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4573435840870210413}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &539560224987790231
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +828,7 @@ GameObject:
   - component: {fileID: 9169104289741728042}
   - component: {fileID: 8791621024336394748}
   - component: {fileID: 4936214601661139369}
+  - component: {fileID: 294888054496382039}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -820,9 +907,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sineWaveAmplitude: 16
   sineWaveSpeed: 1
-  minOffsetRange: 0
-  maxOffsetRange: 3
-  offset: 0
+--- !u!114 &294888054496382039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3127587426268020623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4936214601661139369}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4936214601661139369}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3795837803105102423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1486,7 @@ GameObject:
   - component: {fileID: 3808426894849136370}
   - component: {fileID: 8958770139777988827}
   - component: {fileID: 9205669607524002283}
+  - component: {fileID: 3145677697670046429}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -1435,9 +1565,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sineWaveAmplitude: 16
   sineWaveSpeed: 1
-  minOffsetRange: 0
-  maxOffsetRange: 3
-  offset: 0
+--- !u!114 &3145677697670046429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9017717816487380152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9205669607524002283}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9205669607524002283}
+          m_TargetAssemblyTypeName: ImageBobbing, Assembly-CSharp
+          m_MethodName: ToggleHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &9097740546280512290
 GameObject:
   m_ObjectHideFlags: 0
