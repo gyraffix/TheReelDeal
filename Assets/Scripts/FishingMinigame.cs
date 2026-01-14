@@ -1,73 +1,100 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class FishingMinigame : MonoBehaviour
+public class FishingMinigame : PlayerActivatable
 {
     [Header("References")]
-    private RectTransform minigameRectTransform;
-    public RectTransform targetRectTransform;
-    public RectTransform meterRectTransform;
-    // public Slider progressSlider;
+    public RectTransform minigameRectTransform;
+    private RectTransform targetRectTransform;
+    private RectTransform meterRectTransform;
+    private Slider progressSlider;
 
-    [Header("General settings")]
-    public float progressIncrease = 2;
-    public float progressDecrease = 1;
+    [Header("Minigame settings")]
+    public KeyCode jumpInput = KeyCode.Space;
+    public int currentDifficultyIndex;
+    public Difficulty[] Difficulties;
+    public FishItem[] possibleFishes;
+    private float progressIncrease = 50;
+    private float progressDecrease = 10;
     private float minY;
     private float maxY;
     private float fishingProgress;
 
     [Header("Meter settings")]
-    public KeyCode jumpInput = KeyCode.Space;
-    public float gravity = 0.01f;
-    public float speed = 10;
+    private float directionChangeSpeed = 20;
+    private float meterSpeed = 150;
     private float meterLocation = 0;
-    private float gravityMultiplier;
+    private float direction = -1;
 
     [Header("Target settings")]
-    public int targetHeight = 5;
-    public float targetSpeed = 2;
+    private int targetHeight = 20;
+    private float targetSpeed = 100;
     private bool targetGoingUp = true;
     private float targetLocation;
 
+    void Awake()
+    {
+        targetRectTransform = minigameRectTransform.transform.Find("Target").GetComponent<RectTransform>();
+        meterRectTransform = minigameRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
+        progressSlider = minigameRectTransform.transform.Find("Progress").GetComponent<Slider>();
+    }
     void Start()
     {
-        minigameRectTransform = GetComponent<RectTransform>();
-
         minY = -minigameRectTransform.sizeDelta.y / 2;
         maxY = minigameRectTransform.sizeDelta.y / 2;
 
-        targetLocation = minY + targetHeight / 2;
+        progressSlider.minValue = 0;
+        progressSlider.maxValue = 100;
+        progressSlider.value = 0;
 
-        // progressSlider.minValue = 0;
-        // progressSlider.maxValue = 100;
-        // progressSlider.value = progressSlider.minValue;
-
-        targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
+        minigameRectTransform.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        UpdateTarget();
-        UpdatePlayer();
+        if (!minigameRectTransform)
+            return;
+
+        if (fishingProgress >= 100)
+            FishingSuccessful();
 
         if (Input.GetKey(jumpInput))
         {
-            gravityMultiplier = 1;
+            if (direction < 1)
+                direction += Time.deltaTime * directionChangeSpeed;
+        }
+        else
+        {
+            if (direction > -1)
+                direction -= Time.deltaTime * directionChangeSpeed;
         }
 
-        // if (meterLocation >= targetLocation - targetHeight || meterLocation <= targetLocation + targetHeight)
-        // {
-        //     fishingProgress += progressIncrease;
-        // }
-        // else
-        // {
-        //     fishingProgress -= progressDecrease;
-        // }
-        // fishingProgress = Math.Clamp(fishingProgress, 0, 100);
+        UpdateTargetLocation();
+        UpdatePlayerLocation();
 
-        // UpdateProgress();
+        fishingProgress = Math.Clamp(fishingProgress, 0, 100);
+
+        UpdateProgress();
     }
-    private void UpdateTarget()
+
+    protected override void OnActivate()
+    {
+        minigameRectTransform.gameObject.SetActive(true);
+
+        progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
+        progressDecrease = Difficulties[currentDifficultyIndex].progressDecrease;
+        directionChangeSpeed = Difficulties[currentDifficultyIndex].directionChangeSpeed;
+        meterSpeed = Difficulties[currentDifficultyIndex].meterSpeed;
+        targetHeight = Difficulties[currentDifficultyIndex].targetHeight;
+        targetSpeed = Difficulties[currentDifficultyIndex].targetSpeed;
+
+        targetLocation = minY + targetHeight / 2;
+
+        targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
+    }
+
+    private void UpdateTargetLocation()
     {
         if (targetLocation == minY + targetHeight / 2)
         {
@@ -84,27 +111,54 @@ public class FishingMinigame : MonoBehaviour
 
         targetRectTransform.localPosition = new Vector2(0, targetLocation);
     }
-    private void UpdatePlayer()
-    {
-        gravityMultiplier = gravityMultiplier > -1 ? gravityMultiplier - Time.deltaTime * gravity : gravityMultiplier;
-        gravityMultiplier = Math.Clamp(gravityMultiplier, -1, 1);
 
-        meterLocation += Time.deltaTime * speed * gravityMultiplier;
+    private void UpdatePlayerLocation()
+    {
+        meterLocation += Time.deltaTime * meterSpeed * Math.Clamp(direction, -1, 1);
 
         meterLocation = Math.Clamp(meterLocation, minY + meterRectTransform.sizeDelta.y / 2, maxY - meterRectTransform.sizeDelta.y / 2);
 
         meterRectTransform.localPosition = new Vector2(0, meterLocation);
     }
 
-    // private void UpdateProgress()
-    // {
-    //     if (!progressSlider)
-    //         return;
-    //     progressSlider.value = fishingProgress;
-    // }
+    private void UpdateProgress()
+    {
+        if (meterLocation <= targetLocation - targetHeight / 2 || meterLocation >= targetLocation + targetHeight / 2)
+        {
+            fishingProgress -= progressDecrease * Time.deltaTime;
+        }
+        else
+        {
+            fishingProgress += progressIncrease * Time.deltaTime;
+        }
+
+        progressSlider.value = fishingProgress;
+    }
+
+    private void FishingSuccessful()
+    {
+        Album.instance.NewFish(possibleFishes[UnityEngine.Random.RandomRange(0, possibleFishes.Length - 1)]);
+        minigameRectTransform.gameObject.SetActive(false);
+    }
 
     public float GetFishingProgress()
     {
         return fishingProgress;
     }
+}
+
+[Serializable]
+public class Difficulty
+{
+    [Header("General settings")]
+    public float progressIncrease = 50;
+    public float progressDecrease = 10;
+
+    [Header("Meter settings")]
+    public float directionChangeSpeed = 10;
+    public float meterSpeed = 150;
+
+    [Header("Target settings")]
+    public int targetHeight = 20;
+    public float targetSpeed = 100;
 }
