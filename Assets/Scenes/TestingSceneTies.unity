@@ -772,6 +772,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AlbumUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5947822149218568671, guid: e205be581416d7a45b792261f7625119,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7042184979708796354, guid: e205be581416d7a45b792261f7625119,
         type: 3}
       propertyPath: m_Pivot.x
@@ -872,11 +877,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7780471106344072270, guid: e205be581416d7a45b792261f7625119,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8247791543353455397, guid: e205be581416d7a45b792261f7625119, type: 3}
     - {fileID: 7495712461768613111, guid: e205be581416d7a45b792261f7625119, type: 3}
     - {fileID: 1855143366629473507, guid: e205be581416d7a45b792261f7625119, type: 3}
+    - {fileID: 5947822149218568671, guid: e205be581416d7a45b792261f7625119, type: 3}
+    - {fileID: 7780471106344072270, guid: e205be581416d7a45b792261f7625119, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5239060558680440182, guid: e205be581416d7a45b792261f7625119,
         type: 3}
