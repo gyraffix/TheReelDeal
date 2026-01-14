@@ -82,6 +82,11 @@ public class FishingMinigame : PlayerActivatable
 
     protected override void OnActivate()
     {
+        FirstPersonLook.instance.active = false;
+        FirstPersonMovement.instance.active = false;
+        Jump.instance.active = false;
+        Crouch.instance.active = false;
+
         BackgroundRectTransform.gameObject.SetActive(true);
 
         progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
@@ -140,6 +145,12 @@ public class FishingMinigame : PlayerActivatable
     private void FishingSuccessful()
     {
         Album.instance.NewFish(possibleFishes[UnityEngine.Random.RandomRange(0, possibleFishes.Length - 1)]);
+
+        FirstPersonLook.instance.active = true;
+        FirstPersonMovement.instance.active = true;
+        Jump.instance.active = true;
+        Crouch.instance.active = true;
+
         BackgroundRectTransform.gameObject.SetActive(false);
     }
 
