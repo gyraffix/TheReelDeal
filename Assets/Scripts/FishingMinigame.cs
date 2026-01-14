@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class FishingMinigame : PlayerActivatable
 {
     [Header("References")]
-    public RectTransform minigameRectTransform;
+    public Canvas minigameCanvas;
+    private RectTransform BackgroundRectTransform;
     private RectTransform targetRectTransform;
     private RectTransform meterRectTransform;
     private Slider progressSlider;
@@ -35,25 +36,26 @@ public class FishingMinigame : PlayerActivatable
 
     void Awake()
     {
-        targetRectTransform = minigameRectTransform.transform.Find("Target").GetComponent<RectTransform>();
-        meterRectTransform = minigameRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
-        progressSlider = minigameRectTransform.transform.Find("Progress").GetComponent<Slider>();
+        BackgroundRectTransform = minigameCanvas.transform.Find("Background").GetComponent<RectTransform>();
+        targetRectTransform = BackgroundRectTransform.transform.Find("Target").GetComponent<RectTransform>();
+        meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
+        progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
     }
     void Start()
     {
-        minY = -minigameRectTransform.sizeDelta.y / 2;
-        maxY = minigameRectTransform.sizeDelta.y / 2;
+        minY = -BackgroundRectTransform.sizeDelta.y / 2;
+        maxY = BackgroundRectTransform.sizeDelta.y / 2;
 
         progressSlider.minValue = 0;
         progressSlider.maxValue = 100;
         progressSlider.value = 0;
 
-        minigameRectTransform.gameObject.SetActive(false);
+        BackgroundRectTransform.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (!minigameRectTransform)
+        if (!BackgroundRectTransform)
             return;
 
         if (fishingProgress >= 100)
@@ -80,7 +82,7 @@ public class FishingMinigame : PlayerActivatable
 
     protected override void OnActivate()
     {
-        minigameRectTransform.gameObject.SetActive(true);
+        BackgroundRectTransform.gameObject.SetActive(true);
 
         progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
         progressDecrease = Difficulties[currentDifficultyIndex].progressDecrease;
@@ -138,7 +140,7 @@ public class FishingMinigame : PlayerActivatable
     private void FishingSuccessful()
     {
         Album.instance.NewFish(possibleFishes[UnityEngine.Random.RandomRange(0, possibleFishes.Length - 1)]);
-        minigameRectTransform.gameObject.SetActive(false);
+        BackgroundRectTransform.gameObject.SetActive(false);
     }
 
     public float GetFishingProgress()
