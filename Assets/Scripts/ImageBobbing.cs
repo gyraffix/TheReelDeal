@@ -8,23 +8,42 @@ public class ImageBobbing : MonoBehaviour
     [SerializeField] private float sineWaveAmplitude = 16;
     [SerializeField] private float sineWaveSpeed = 1;
 
+    private bool isHovering = false;
+
+    private Animator anim;
+
     //[SerializeField] private float minOffsetRange = 0;
     //[Range(0, 3)]
     //[SerializeField] private float maxOffsetRange = 3;
 
-    
-    private bool hovering = false;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     public void ToggleHover()
     {
-        hovering = !hovering;
+        isHovering = !isHovering;
+        
+        if (isHovering)
+        {
+            anim.SetTrigger("ImageBig");
+            anim.SetTrigger("Bobbing");
+        }
+        else
+        {
+            anim.SetTrigger("ImageSmall");
+            anim.SetTrigger("NoBobbing");
+        }
+
     }
 
     void Update()
     {
-        if (hovering)
+        if (isHovering)
         {
-            //if (Time.time > offset) 
-                Bobbing();
+            //Bobbing();
         }
     }
 
