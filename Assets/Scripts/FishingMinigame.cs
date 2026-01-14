@@ -10,6 +10,7 @@ public class FishingMinigame : PlayerActivatable
     private RectTransform targetRectTransform;
     private RectTransform meterRectTransform;
     private Slider progressSlider;
+    private GameObject FishCaughtText;
 
     [Header("Minigame settings")]
     public KeyCode jumpInput = KeyCode.Space;
@@ -42,6 +43,7 @@ public class FishingMinigame : PlayerActivatable
         targetRectTransform = BackgroundRectTransform.transform.Find("Target").GetComponent<RectTransform>();
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
+        FishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
     }
     void Start()
     {
@@ -89,8 +91,9 @@ public class FishingMinigame : PlayerActivatable
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
-        progressSlider.value = 0;
+        fishingProgress = 0;
         BackgroundRectTransform.gameObject.SetActive(true);
+
 
         progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
         progressDecrease = Difficulties[currentDifficultyIndex].progressDecrease;
@@ -158,6 +161,8 @@ public class FishingMinigame : PlayerActivatable
         FirstPersonMovement.instance.active = true;
         Jump.instance.active = true;
         Crouch.instance.active = true;
+
+        FishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
 
         BackgroundRectTransform.gameObject.SetActive(false);
         active = false;
