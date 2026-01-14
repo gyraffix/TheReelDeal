@@ -5,6 +5,6 @@ public class FishItem : ScriptableObject
 {
     public Sprite fishPhoto;
     
-    public string fishName = string.Empty; 
-    public string fishDescription = string.Empty;
+    public string name = string.Empty; 
+    public string desc = string.Empty;
 }
