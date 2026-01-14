@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AddInventoryItem : PlayerActivatable
 {
+    [Space]
     public Inventory inventory;
     public InventoryItemDefinition item;
 
