@@ -43,7 +43,6 @@ public class FishingMinigame : PlayerActivatable
     [SerializeField] private float fishHeight;
     [SerializeField] private float fishEndZ = 4f;
     [SerializeField] private float fishStartZ = 7f;
-    [SerializeField] private float fishStartX = 0;
     [SerializeField] private float sineWaveAmplitude = 16;
     [SerializeField] private float sineWaveSpeed = 1;
     private GameObject fishObject;
@@ -173,10 +172,11 @@ public class FishingMinigame : PlayerActivatable
         {
             fishingProgress += progressIncrease * Time.deltaTime;
         }
-        fishObject.transform.position = new Vector3(
-            fishStartX + ((sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed)),
+        fishObject.transform.localPosition = new Vector3(
+            ((sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed)),
             fishHeight,
             fishStartZ - ((fishStartZ - fishEndZ) * fishingProgress / 100));
+
         progressSlider.value = fishingProgress;
     }
 
@@ -217,13 +217,14 @@ public class FishingMinigame : PlayerActivatable
 
     private void OnDrawGizmos()
     {
+        Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.color = Color.yellow;
 
-        Gizmos.DrawLine(new Vector3(fishStartX, fishHeight, fishStartZ), 
-            new Vector3(fishStartX, fishHeight, fishEndZ));
+        Gizmos.DrawLine(new Vector3(0, fishHeight, fishStartZ),
+            new Vector3(0, fishHeight, fishEndZ));
 
-        Gizmos.DrawLine(new Vector3(fishStartX -sineWaveAmplitude, fishHeight, fishEndZ+(fishStartZ - fishEndZ) / 2), 
-            new Vector3(fishStartX + sineWaveAmplitude, fishHeight, fishEndZ + (fishStartZ - fishEndZ) / 2));
+        Gizmos.DrawLine(new Vector3(-sineWaveAmplitude, fishHeight, fishEndZ+(fishStartZ - fishEndZ) / 2),
+            new Vector3(+sineWaveAmplitude, fishHeight, fishEndZ + (fishStartZ - fishEndZ) / 2));
     }
 }
 
