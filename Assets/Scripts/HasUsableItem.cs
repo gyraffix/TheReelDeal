@@ -13,9 +13,11 @@ public class HasUsableItem : MonoBehaviour
         {
             Inventory.instance.HasItem(bait.name);
             int difficultyLevel = bait.dificultyLevel;
+             
 
             if (Inventory.instance.HasItem(bait.name) == true)
             {
+                Inventory.instance.RemoveInventoryItem(bait.name);
                 return true;
             }
         }

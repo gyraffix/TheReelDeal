@@ -1738,6 +1738,23 @@ PrefabInstance:
       propertyPath: minigameCanvas
       value: 
       objectReference: {fileID: 2134658058}
+    - target: {fileID: 8614577542690536734, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: bait.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8614577542690536734, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'bait.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4eae872848333e74f84fb9fd537da1e6,
+        type: 2}
+    - target: {fileID: 8614577542690536734, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'bait.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e4fff7175cada542ba5a7eca138d28c,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
