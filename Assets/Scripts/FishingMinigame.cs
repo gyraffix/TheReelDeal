@@ -223,8 +223,14 @@ public class FishingMinigame : PlayerActivatable
         Gizmos.DrawLine(new Vector3(0, fishHeight, fishStartZ),
             new Vector3(0, fishHeight, fishEndZ));
 
-        Gizmos.DrawLine(new Vector3(-sineWaveAmplitude, fishHeight, fishEndZ+(fishStartZ - fishEndZ) / 2),
-            new Vector3(+sineWaveAmplitude, fishHeight, fishEndZ + (fishStartZ - fishEndZ) / 2));
+        Gizmos.DrawLine(new Vector3(-sineWaveAmplitude, fishHeight, fishStartZ),
+            new Vector3(+sineWaveAmplitude, fishHeight, fishStartZ));
+
+        Gizmos.DrawLine(new Vector3(-sineWaveAmplitude, fishHeight, fishStartZ),
+            new Vector3(0, fishHeight, fishEndZ));
+
+        Gizmos.DrawLine(new Vector3(sineWaveAmplitude, fishHeight, fishStartZ),
+            new Vector3(0, fishHeight, fishEndZ));
     }
 }
 
