@@ -62,9 +62,6 @@ public class FishingMinigame : PlayerActivatable
         minY = -BackgroundRectTransform.sizeDelta.y / 2;
         maxY = BackgroundRectTransform.sizeDelta.y / 2;
 
-        currentMinY = minY;
-        currentMaxY = maxY;
-
         progressSlider.minValue = 0;
         progressSlider.maxValue = 100;
 
@@ -106,12 +103,13 @@ public class FishingMinigame : PlayerActivatable
             currentDifficultyIndex = 0;
         Debug.Log(currentDifficultyIndex);
 
-            FirstPersonLook.instance.active = false;
+        FirstPersonLook.instance.active = false;
         FirstPersonMovement.instance.active = false;
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
-        fishingProgress = 0;
+        ResetMinigame();
+
         BackgroundRectTransform.gameObject.SetActive(true);
         fishObject.SetActive(true);
 
@@ -121,8 +119,6 @@ public class FishingMinigame : PlayerActivatable
         meterSpeed = Difficulties[currentDifficultyIndex].meterSpeed;
         targetHeight = Difficulties[currentDifficultyIndex].targetHeight;
         targetSpeed = Difficulties[currentDifficultyIndex].targetSpeed;
-
-        targetLocation = currentMinY + targetHeight / 2;
 
         targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
 
@@ -200,6 +196,17 @@ public class FishingMinigame : PlayerActivatable
         BackgroundRectTransform.gameObject.SetActive(false);
         fishObject.SetActive(false);
         active = false;
+    }
+
+    private void ResetMinigame()
+    {
+        fishingProgress = 0;
+
+        currentMinY = minY;
+        currentMaxY = maxY;
+
+        meterLocation = currentMinY + meterRectTransform.sizeDelta.y / 2;
+        targetLocation = currentMinY + targetHeight / 2;
     }
 
     public float GetFishingProgress()
