@@ -19,9 +19,12 @@ public class FishingMinigame : PlayerActivatable
     public FishItem[] possibleFishes;
     private float progressIncrease = 50;
     private float progressDecrease = 10;
+    private float currentMinY;
     private float minY;
+    private float currentMaxY;
     private float maxY;
     private float fishingProgress;
+    private bool active = false;
 
     [Header("Meter settings")]
     private float directionChangeSpeed = 20;
@@ -30,12 +33,11 @@ public class FishingMinigame : PlayerActivatable
     private float direction = -1;
 
     [Header("Target settings")]
+    public float minimumTravelDistance = 30;
     private int targetHeight = 20;
     private float targetSpeed = 100;
     private bool targetGoingUp = true;
     private float targetLocation;
-
-    private bool active = false;
 
     void Awake()
     {
@@ -50,9 +52,11 @@ public class FishingMinigame : PlayerActivatable
         minY = -BackgroundRectTransform.sizeDelta.y / 2;
         maxY = BackgroundRectTransform.sizeDelta.y / 2;
 
+        currentMinY = minY;
+        currentMaxY = maxY;
+
         progressSlider.minValue = 0;
         progressSlider.maxValue = 100;
-
 
         BackgroundRectTransform.gameObject.SetActive(false);
     }
@@ -61,7 +65,6 @@ public class FishingMinigame : PlayerActivatable
     {
         if (!active)
             return;
-        Debug.Log(fishingProgress);
         if (fishingProgress >= 100)
             FishingSuccessful();
 
@@ -102,27 +105,35 @@ public class FishingMinigame : PlayerActivatable
         targetHeight = Difficulties[currentDifficultyIndex].targetHeight;
         targetSpeed = Difficulties[currentDifficultyIndex].targetSpeed;
 
-        targetLocation = minY + targetHeight / 2;
+        targetLocation = currentMinY + targetHeight / 2;
 
         targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
-        Debug.Log(fishingProgress);
+
         active = true;
     }
 
     private void UpdateTargetLocation()
     {
-        if (targetLocation == minY + targetHeight / 2)
+        if (targetLocation <= currentMinY + targetHeight / 2)
         {
             targetGoingUp = true;
+            if (Difficulties[currentDifficultyIndex].randomizeMovement)
+            {
+                currentMaxY = UnityEngine.Random.Range(targetLocation + minimumTravelDistance, maxY);
+            }
         }
-        else if (targetLocation == maxY - targetHeight / 2)
+        else if (targetLocation >= currentMaxY - targetHeight / 2)
         {
             targetGoingUp = false;
+            if (Difficulties[currentDifficultyIndex].randomizeMovement)
+            {
+                currentMinY = UnityEngine.Random.Range(minY, targetLocation - minimumTravelDistance);
+            }
         }
 
         targetLocation = targetGoingUp ? targetLocation + Time.deltaTime * targetSpeed : targetLocation - Time.deltaTime * targetSpeed;
 
-        targetLocation = Math.Clamp(targetLocation, minY + targetHeight / 2, maxY - targetHeight / 2);
+        targetLocation = Math.Clamp(targetLocation, currentMinY + targetHeight / 2, currentMaxY - targetHeight / 2);
 
         targetRectTransform.localPosition = new Vector2(0, targetLocation);
     }
@@ -178,6 +189,7 @@ public class FishingMinigame : PlayerActivatable
 public class Difficulty
 {
     [Header("General settings")]
+    public bool randomizeMovement;
     public float progressIncrease = 50;
     public float progressDecrease = 10;
 
