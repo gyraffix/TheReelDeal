@@ -43,6 +43,9 @@ public class FishingMinigame : PlayerActivatable
     [SerializeField] private float fishHeight;
     [SerializeField] private float fishEndZ = 4f;
     [SerializeField] private float fishStartZ = 7f;
+    [SerializeField] private float fishStartX = 0;
+    [SerializeField] private float sineWaveAmplitude = 16;
+    [SerializeField] private float sineWaveSpeed = 1;
     private GameObject fishObject;
     private float fishingProgress;
 
@@ -171,12 +174,10 @@ public class FishingMinigame : PlayerActivatable
             fishingProgress += progressIncrease * Time.deltaTime;
         }
         fishObject.transform.position = new Vector3(
-            fishObject.transform.position.x,
+            fishStartX + ((sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed)),
             fishHeight,
             fishStartZ - ((fishStartZ - fishEndZ) * fishingProgress / 100));
         progressSlider.value = fishingProgress;
-
-
     }
 
     private void FishingSuccessful()
@@ -218,7 +219,11 @@ public class FishingMinigame : PlayerActivatable
     {
         Gizmos.color = Color.yellow;
 
-        Gizmos.DrawLine(new Vector3(transform.position.x, fishHeight, fishStartZ), new Vector3(transform.position.x, fishHeight, fishEndZ));
+        Gizmos.DrawLine(new Vector3(fishStartX, fishHeight, fishStartZ), 
+            new Vector3(fishStartX, fishHeight, fishEndZ));
+
+        Gizmos.DrawLine(new Vector3(fishStartX -sineWaveAmplitude, fishHeight, fishEndZ+(fishStartZ - fishEndZ) / 2), 
+            new Vector3(fishStartX + sineWaveAmplitude, fishHeight, fishEndZ + (fishStartZ - fishEndZ) / 2));
     }
 }
 
