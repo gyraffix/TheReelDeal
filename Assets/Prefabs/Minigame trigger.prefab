@@ -122,22 +122,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dbe262b232a4baab37f9803e6dcceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRepeat: 0
+  canRepeat: 1
   shouldActivateOnCollision: 0
   shouldActivateOnTriggerEnter: 0
   canBeActivated: 1
-  minigameRectTransform: {fileID: 0}
+  minigameCanvas: {fileID: 0}
   jumpInput: 32
   currentDifficultyIndex: 0
   Difficulties:
-  - progressIncrease: 50
-    progressDecrease: 10
+  - randomizeMovement: 0
+    progressIncrease: 23
+    progressDecrease: 3
     directionChangeSpeed: 10
-    meterSpeed: 150
-    targetHeight: 20
-    targetSpeed: 100
+    meterSpeed: 100
+    targetHeight: 40
+    targetSpeed: 70
+  - randomizeMovement: 1
+    progressIncrease: 23
+    progressDecrease: 5
+    directionChangeSpeed: 10
+    meterSpeed: 100
+    targetHeight: 40
+    targetSpeed: 60
+  - randomizeMovement: 1
+    progressIncrease: 30
+    progressDecrease: 10
+    directionChangeSpeed: 30
+    meterSpeed: 100
+    targetHeight: 34
+    targetSpeed: 70
   possibleFishes:
   - {fileID: 11400000, guid: 8eb723c3d2748d444a3efebe725265c9, type: 2}
+  minimumTravelDistance: 30
 --- !u!1001 &3516959380586802240
 PrefabInstance:
   m_ObjectHideFlags: 0
