@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9178543648919571678}
   - component: {fileID: 7625025103271644719}
   - component: {fileID: 5876610051885301095}
+  - component: {fileID: 8614577542690536734}
   m_Layer: 0
   m_Name: Minigame trigger
   m_TagString: Untagged
@@ -158,6 +159,19 @@ MonoBehaviour:
   fishHeight: -0.66
   fishEndZ: 2.4
   fishStartZ: 7
+--- !u!114 &8614577542690536734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296091689474465446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e0fa5f4dfb2604aad5e00fbf890307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bait: []
 --- !u!1 &8177147109981692895
 GameObject:
   m_ObjectHideFlags: 0

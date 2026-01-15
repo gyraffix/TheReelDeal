@@ -11,6 +11,7 @@ public class FishingMinigame : PlayerActivatable
     private RectTransform meterRectTransform;
     private Slider progressSlider;
     private GameObject FishCaughtText;
+    private HasUsableItem hasUsableItem;
 
     [Header("Minigame settings")]
     [SerializeField] private KeyCode jumpInput = KeyCode.Space;
@@ -53,6 +54,8 @@ public class FishingMinigame : PlayerActivatable
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
         FishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
         fishObject = transform.Find("Fish").gameObject;
+
+        hasUsableItem = gameObject.GetComponent<HasUsableItem>();
     }
     void Start()
     {
@@ -97,7 +100,13 @@ public class FishingMinigame : PlayerActivatable
 
     protected override void OnActivate()
     {
-        FirstPersonLook.instance.active = false;
+        if (hasUsableItem.CheckForItem())
+            currentDifficultyIndex = 2;
+        else
+            currentDifficultyIndex = 0;
+        Debug.Log(currentDifficultyIndex);
+
+            FirstPersonLook.instance.active = false;
         FirstPersonMovement.instance.active = false;
         Jump.instance.active = false;
         Crouch.instance.active = false;
