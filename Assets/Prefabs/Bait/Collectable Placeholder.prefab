@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3006176177409246608}
   - component: {fileID: 3729428976275290034}
   - component: {fileID: 7499760723356077299}
+  - component: {fileID: -6971055583522085530}
   m_Layer: 0
   m_Name: Collectable Placeholder
   m_TagString: Untagged
@@ -69,6 +70,37 @@ MonoBehaviour:
   shouldActivateOnCollision: 0
   shouldActivateOnTriggerEnter: 0
   canBeActivated: 1
+--- !u!114 &-6971055583522085530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2278769606704157269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1485253289
+      Data2: 1303506910
+      Data3: -678285682
+      Data4: -391555203
+    Path: event:/PickUp
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4751983017144127884
 GameObject:
   m_ObjectHideFlags: 0
