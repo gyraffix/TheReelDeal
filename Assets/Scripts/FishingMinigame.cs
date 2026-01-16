@@ -56,7 +56,6 @@ public class FishingMinigame : PlayerActivatable
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
         FishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
         fishObject = transform.Find("Fish").gameObject;
-
         hasUsableItem = gameObject.GetComponent<HasUsableItem>();
     }
     void Start()
@@ -103,7 +102,6 @@ public class FishingMinigame : PlayerActivatable
             currentDifficultyIndex = 2;
         else
             currentDifficultyIndex = 0;
-        Debug.Log(currentDifficultyIndex);
 
         FirstPersonLook.instance.active = false;
         FirstPersonMovement.instance.active = false;
