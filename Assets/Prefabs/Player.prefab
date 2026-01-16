@@ -1066,6 +1066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfSlots: 5
+  items: []
 --- !u!114 &6826351077643983843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1269,6 +1270,7 @@ GameObject:
   - component: {fileID: 9101801897775918689}
   - component: {fileID: 9121620504573000091}
   - component: {fileID: 2854258952374698211}
+  - component: {fileID: 4545000800169804811}
   m_Layer: 0
   m_Name: First Person Camera
   m_TagString: MainCamera
@@ -1434,6 +1436,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &4545000800169804811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8644040794037423187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &8717837353621357830
 GameObject:
   m_ObjectHideFlags: 0

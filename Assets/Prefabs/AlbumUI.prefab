@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5239060558680440182}
   - component: {fileID: 3362935380325397811}
   - component: {fileID: 5023408921389313409}
+  - component: {fileID: 1607646921911568304}
+  - component: {fileID: 4954550429935695881}
+  - component: {fileID: 3554461488780219842}
   m_Layer: 0
   m_Name: Album
   m_TagString: Untagged
@@ -73,10 +76,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea250900225869946bc49c1cb7c42b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FMODPageTurn: {fileID: 1607646921911568304}
+  FMODOpenBook: {fileID: 4954550429935695881}
+  FMODCloseBook: {fileID: 3554461488780219842}
   pages:
   - {fileID: 2223494839728696568}
   - {fileID: 2857623309497586025}
   fishes: []
+  interactionCooldown: 0.5
+--- !u!114 &1607646921911568304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429672831455688632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -929753976
+      Data2: 1279259129
+      Data3: -583820902
+      Data4: 1858275484
+    Path: event:/UISounds/PageTurn
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &4954550429935695881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429672831455688632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 960316246
+      Data2: 1225545329
+      Data3: 1523767963
+      Data4: -817652544
+    Path: event:/UISounds/OpenAlbum
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3554461488780219842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429672831455688632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -306444431
+      Data2: 1079654406
+      Data3: -1009423992
+      Data4: -781107553
+    Path: event:/UISounds/CloseAlbum
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5452983169269576417
 GameObject:
   m_ObjectHideFlags: 0
