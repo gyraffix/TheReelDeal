@@ -9,7 +9,7 @@ public class Album : MonoBehaviour
     private bool isOpen = false;
     private Animator anim;
     private int currentPage = 0;
-    private int currentPageToAddFish = 0;
+
     [SerializeField] private List<Page> pages;
     [SerializeField] private List<GameObject> fishes;
     
@@ -83,11 +83,13 @@ public class Album : MonoBehaviour
     {
         if (!addedFish.Contains(fish.name))
         {  
-            if (pages[currentPageToAddFish].isFull) currentPageToAddFish++;
-
-            pages[currentPageToAddFish].NewFish(fish);
-
-            addedFish.Add(fish.name);
+            foreach (Page p in pages)
+            {
+                if (p.NewFish(fish))
+                {
+                    break;
+                }
+            }
         }
     }
 

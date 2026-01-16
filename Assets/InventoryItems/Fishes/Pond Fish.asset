@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Pond Fish
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
-  name: PencilFish
-  desc: made of lead
+  name: Pond Fish
+  desc: desc of pond fish
+  hint: Found in the Pond

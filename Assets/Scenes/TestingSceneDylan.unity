@@ -460,7 +460,7 @@ MonoBehaviour:
   shouldActivateOnCollision: 0
   shouldActivateOnTriggerEnter: 1
   canBeActivated: 1
-  fishItem: {fileID: 11400000, guid: 8eb723c3d2748d444a3efebe725265c9, type: 2}
+  fishItem: {fileID: 11400000, guid: 5f8d777857e765f44aaaa055a73aba7a, type: 2}
 --- !u!65 &240458601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.08
+      value: -5.7836027
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1460,11 +1460,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.9
+      value: -1.165797
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.99073005
+      value: 0.9999814
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1472,7 +1472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.13584548
+      value: -0.006102448
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1484,7 +1484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -375.615
+      value: -720.699
       objectReference: {fileID: 0}
     - target: {fileID: 9967688893870530, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1503,7 +1503,7 @@ PrefabInstance:
     - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: fishStartZ
-      value: 10.7
+      value: 17.3
       objectReference: {fileID: 0}
     - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
@@ -1514,6 +1514,46 @@ PrefabInstance:
         type: 3}
       propertyPath: sineWaveAmplitude
       value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.34100008
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909652314513580682, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8614577542690536734, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
@@ -1740,7 +1780,7 @@ MonoBehaviour:
   shouldActivateOnCollision: 0
   shouldActivateOnTriggerEnter: 1
   canBeActivated: 1
-  fishItem: {fileID: 11400000, guid: 1a315dd8b16f31f49995c7370d26dc9f, type: 2}
+  fishItem: {fileID: 11400000, guid: a79bf4644e95c3949a80b5cd012c45a1, type: 2}
 --- !u!65 &1917930558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2153,6 +2193,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2076037286}
     m_Modifications:
+    - target: {fileID: 2223494839728696568, guid: e205be581416d7a45b792261f7625119,
+        type: 3}
+      propertyPath: 'PlaceholderFish.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f8d777857e765f44aaaa055a73aba7a,
+        type: 2}
+    - target: {fileID: 2857623309497586025, guid: e205be581416d7a45b792261f7625119,
+        type: 3}
+      propertyPath: 'PlaceholderFish.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a79bf4644e95c3949a80b5cd012c45a1,
+        type: 2}
     - target: {fileID: 5452983169269576417, guid: e205be581416d7a45b792261f7625119,
         type: 3}
       propertyPath: m_Name
