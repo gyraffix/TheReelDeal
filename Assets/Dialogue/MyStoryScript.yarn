@@ -1,7 +1,4 @@
 ﻿title: Start
 ---
-<<FindEventEmitter DialogueAudio>>
-<<StartDialogueSound>>
-Hello World
-<<EndDialogueSound>>
+test
 ===
