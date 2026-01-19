@@ -104,7 +104,6 @@ public class FishingMinigame : PlayerActivatable
         switch (minigameState)
         {
             case MinigameState.Throwing:
-                Debug.Log("Throwing");
                 if (Input.GetKey(minigameInput))
                 {
                     startedThrowing = true;
@@ -120,19 +119,15 @@ public class FishingMinigame : PlayerActivatable
                 break;
 
             case MinigameState.Reeling:
-                // Debug.Log("Reeling");
                 if ((player.transform.position - bobberInstance.transform.position).magnitude > minimumDistanceToPlayer)
                 {
-                    Debug.Log((player.transform.position - bobberInstance.transform.position).magnitude);
                     if (Input.GetKey(minigameInput))
                     {
-                        Debug.Log("move");
                         bobberInstance.AddForce((player.transform.position - bobberInstance.transform.position).normalized * reelingSpeed, ForceMode.Force);
                     }
                 }
                 else if (checkBobberDistance)
                 {
-                    Debug.Log("delete");
                     Destroy(bobberInstance.gameObject);
                     bobberInstance = null;
                     checkBobberDistance = false;
@@ -141,7 +136,6 @@ public class FishingMinigame : PlayerActivatable
                 break;
 
             case MinigameState.Playing:
-                Debug.Log("Playing");
                 if (Input.GetKey(minigameInput))
                 {
                     if (direction < 1)
@@ -313,7 +307,6 @@ public class FishingMinigame : PlayerActivatable
         FishItem currentFish = possibleFishes[UnityEngine.Random.Range(0, possibleFishes.Length - 1)];
 
         Album.instance.NewFish(currentFish);
-        Debug.Log(currentFish.name);
 
         FirstPersonLook.instance.active = true;
         FirstPersonMovement.instance.active = true;
