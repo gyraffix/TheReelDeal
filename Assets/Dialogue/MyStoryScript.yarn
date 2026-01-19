@@ -1,4 +1,83 @@
-﻿title: Start
+﻿//--------------------------------
+//          Start 
+//--------------------------------
+title: Start
 ---
-test
+Narrator: This is doodlefish bay, your little slice of heaven. You spend your days drawing silly fishes amongst food and other doodles.
+Narrator: Your doodle album is alive with so many ideas and colors.
+Narrator: One night a storm hit your island all of a sudden. You placed your book under a tree where it would be safe from the rain!
+Narrator: As you looked from the window, a bolt came from the sky hitting the book. It's pages flung alive spinning and sending out colords
+Narrator: It's your doodles! They are alive and jumping into the nearby water bodies!
+Narrator: The storm has calmed down. It's time to go collect those silly goobers and bring them back safely to their book.
+<<declare $itemsFound = 0>>
+<<declare $quest = "Catch your first doodle fish">>
 ===
+
+//--------------------------------
+//          ItemFound
+//--------------------------------
+title: ShowItemsFound
+
+---
+You found a {$itemsFound} !
+=== 
+
+//--------------------------------
+//          First Fish Caught
+//--------------------------------
+title: FirstFish
+---
+<<if $quest == "Catch your first doodle fish">>
+    Narrator: As you catch your first fish, he magically flies into the book stucking to it almost like a sticker.
+    Narrator: It moves around the book happy to be back home!
+    You: Time to finish this album and bring all of you back home.
+    You: When I drew some of my doodles, I made them be picky eaters or obsessed with some items. I should keep an eye out for "bait".
+    <<set $quest to "Finish the album">>   
+<<endif>>
+===
+
+//--------------------------------
+//          Album Finished
+//--------------------------------
+title: AlbumFinished
+---
+<<if $quest == "Finish the album">>
+    You: I did it! All of my Doodle fish are back safe and sound in my drawing album!
+    Narrator: As you enjoy the view of your book you notice the water still splashing. These silly doodles created replicas of themselfs
+    Narrator: That goofy pencil fish and Eraser clam were busy.
+    Narrator: They seem to be adapted to the water and they enjoy playing fishing with you "of course always with no hooks"
+    Narrator: Time to go out, have fun and enjoy your life in Doodlefish Bay!
+    <<set $quest to "Enjoy Doodlefish Bay">>   
+<<endif>>
+===
+
+//--------------------------------
+//          Strawberry Found
+//--------------------------------
+title: StrawberryFound
+---
+    You: I just found a Strawberry! I remember one of my doodles was a berry farmer...
+    You: Let me try and see if I can catch him at the River with this bait. He love to talk about berries
+===
+
+//--------------------------------
+//          Chocolate Bird Found
+//--------------------------------
+title: ChocolateBirdFound
+---
+    You: I just found a Chocolate Bird! CMGaTo loves these...
+    You: That little rascal is for sure over at the pond. Let me go and give him a little treat so he will show up!
+===
+
+//--------------------------------
+//          Chocolate Bird Found
+//--------------------------------
+title: GlassShardFound
+---
+    You: I just found a Glass Shard! CMGaTo loves these...
+    You: That little rascal is for sure over at the pond. Let me go and give him a little treat so he will show up!
+===
+
+
+
+
