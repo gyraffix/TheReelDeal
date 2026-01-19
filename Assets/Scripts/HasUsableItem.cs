@@ -17,7 +17,7 @@ public class HasUsableItem : MonoBehaviour
 
             if (Inventory.instance.HasItem(bait.name) == true)
             {
-                Inventory.instance.RemoveInventoryItem(bait.name);
+                Inventory.instance.RemoveItem(bait.name);
                 return true;
             }
         }
