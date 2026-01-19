@@ -1,18 +1,27 @@
+using FMODUnity;
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Album : MonoBehaviour
 {
     public static Album instance;
-    
+
     private bool isOpen = false;
     private Animator anim;
     private int currentPage = 0;
-    private int currentPageToAddFish = 0;
+
+    [SerializeField] private StudioEventEmitter FMODPageTurn;
+    [SerializeField] private StudioEventEmitter FMODOpenAlbum;
+    [SerializeField] private StudioEventEmitter FMODCloseAlbum;
+
     [SerializeField] private List<Page> pages;
     [SerializeField] private List<GameObject> fishes;
-    
+    [SerializeField] private float interactionCooldown;
+    private bool canInteract = true;
+
     private List<string> addedFish;
 
 
@@ -24,14 +33,15 @@ public class Album : MonoBehaviour
         instance = this;
     }
 
-    
-
-
     public void OnAlbumButtonInteraction()
     {
+        if (!canInteract)
+            return;
+
         if (isOpen)
         {
             anim.SetTrigger("Close");
+            FMODCloseAlbum.Play();
             Cursor.lockState = CursorLockMode.Locked;
             FirstPersonMovement.instance.active = true;
             FirstPersonLook.instance.active = true;
@@ -41,6 +51,7 @@ public class Album : MonoBehaviour
         else
         {
             anim.SetTrigger("Open");
+            FMODOpenAlbum.Play();
             Cursor.lockState = CursorLockMode.None;
             FirstPersonLook.instance.active = false;
             FirstPersonMovement.instance.active = false;
@@ -49,24 +60,35 @@ public class Album : MonoBehaviour
         }
         isOpen = !isOpen;
 
+        StartCoroutine(InteractionDelay());
     }
 
     public void PreviousPage()
     {
+        if (!canInteract)
+            return;
+
         if (isOpen && currentPage != 0)
         {
             currentPage--;
+            FMODPageTurn.Play();
         }
         UpdatePages();
+        StartCoroutine(InteractionDelay());
     }
 
     public void NextPage()
     {
-        if (isOpen && currentPage != pages.Count-1)
+        if (!canInteract)
+            return;
+
+        if (isOpen && currentPage != pages.Count - 1)
         {
             currentPage++;
+            FMODPageTurn.Play();
         }
         UpdatePages();
+        StartCoroutine(InteractionDelay());
     }
 
     private void UpdatePages()
@@ -79,15 +101,24 @@ public class Album : MonoBehaviour
 
     }
 
+    private IEnumerator InteractionDelay()
+    {
+        canInteract = false;
+        yield return new WaitForSeconds(interactionCooldown);
+        canInteract = true;
+    }
+
     public void NewFish(FishItem fish)
     {
         if (!addedFish.Contains(fish.name))
-        {  
-            if (pages[currentPageToAddFish].isFull) currentPageToAddFish++;
-
-            pages[currentPageToAddFish].NewFish(fish);
-
-            addedFish.Add(fish.name);
+        {
+            foreach (Page p in pages)
+            {
+                if (p.NewFish(fish))
+                {
+                    break;
+                }
+            }
         }
     }
 

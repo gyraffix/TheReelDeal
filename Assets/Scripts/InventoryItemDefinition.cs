@@ -8,5 +8,5 @@ public class InventoryItemDefinition : ScriptableObject
     public string name = string.Empty;
 
     [Range(1f, 20f)]
-    public int dificultyLevel;
+    private int dificultyLevel;
 }

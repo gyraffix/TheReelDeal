@@ -8,26 +8,41 @@ public class Page : MonoBehaviour
     public bool isFull = false;
     public GameObject[] spots;
 
+    [SerializeField] private FishItem[] PlaceholderFish = new FishItem[4];
 
 
-    public void NewFish(FishItem fish)
+    private void Start()
     {
-        
-        TMP_Text name = spots[usedSpots].transform.GetChild(0).GetComponent<TMP_Text>();
-        TMP_Text desc = spots[usedSpots].transform.GetChild(1).GetComponent<TMP_Text>();
-        Image image = spots[usedSpots].transform.GetChild(2).GetComponent<Image>();
-        
-        
+        for (int i = 0; i < PlaceholderFish.Length; i++) 
+        {
+            if (PlaceholderFish[i] != null)
+            {
+                TMP_Text name = spots[i].transform.GetChild(0).GetComponent<TMP_Text>();
+                TMP_Text desc = spots[i].transform.GetChild(1).GetComponent<TMP_Text>();
 
-        name.text = fish.name;
-        desc.text = fish.desc;
-        image.sprite = fish.fishPhoto;
-        
+                name.text = PlaceholderFish[i].name;
+                desc.text = PlaceholderFish[i].hint;
+                Debug.Log(name.text);
+            }
+        }
+    }
 
-        Debug.Log(spots[usedSpots].transform.GetChild(0).name);
+    public bool NewFish(FishItem fish)
+    {
+        foreach (GameObject spot in spots)
+        {
+            TMP_Text name = spot.transform.GetChild(0).GetComponent<TMP_Text>();
+            if (name.text.Equals(fish.name))
+            {
+                TMP_Text desc = spot.transform.GetChild(1).GetComponent<TMP_Text>();
+                Image image = spot.transform.GetChild(2).GetComponent<Image>();
 
-
-        usedSpots++;
-        if (usedSpots == 4) isFull = true;
+                desc.text = fish.desc;
+                image.sprite = fish.fishPhoto;
+                return true;
+            }
+            Debug.Log(name.text + " / " + fish.name);
+        }
+        return false;
     }
 }

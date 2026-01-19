@@ -5,25 +5,25 @@ using UnityEngine.UI;
 public class FishingMinigame : PlayerActivatable
 {
     [Header("References")]
-    public Canvas minigameCanvas;
+    [SerializeField] private Canvas minigameCanvas;
     private RectTransform BackgroundRectTransform;
     private RectTransform targetRectTransform;
     private RectTransform meterRectTransform;
     private Slider progressSlider;
     private GameObject FishCaughtText;
+    private HasUsableItem hasUsableItem;
 
     [Header("Minigame settings")]
-    public KeyCode jumpInput = KeyCode.Space;
-    public int currentDifficultyIndex;
-    public Difficulty[] Difficulties;
-    public FishItem[] possibleFishes;
+    [SerializeField] private KeyCode jumpInput = KeyCode.Space;
+    [SerializeField] private int currentDifficultyIndex;
+    [SerializeField] private Difficulty[] Difficulties;
+    [SerializeField] private FishItem[] possibleFishes;
     private float progressIncrease = 50;
     private float progressDecrease = 10;
     private float currentMinY;
     private float minY;
     private float currentMaxY;
     private float maxY;
-    private float fishingProgress;
     private bool active = false;
 
     [Header("Meter settings")]
@@ -33,11 +33,20 @@ public class FishingMinigame : PlayerActivatable
     private float direction = -1;
 
     [Header("Target settings")]
-    public float minimumTravelDistance = 30;
+    [SerializeField] private float minimumTravelDistance = 30;
     private int targetHeight = 20;
     private float targetSpeed = 100;
     private bool targetGoingUp = true;
     private float targetLocation;
+
+    [Header("Progress Settings")]
+    [SerializeField] private float fishHeight;
+    [SerializeField] private float fishEndZ = 4f;
+    [SerializeField] private float fishStartZ = 7f;
+    [SerializeField] private float sineWaveAmplitude = 16;
+    [SerializeField] private float sineWaveSpeed = 1;
+    private GameObject fishObject;
+    private float fishingProgress;
 
     void Awake()
     {
@@ -46,19 +55,19 @@ public class FishingMinigame : PlayerActivatable
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
         FishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
+        fishObject = transform.Find("Fish").gameObject;
+        hasUsableItem = gameObject.GetComponent<HasUsableItem>();
     }
     void Start()
     {
         minY = -BackgroundRectTransform.sizeDelta.y / 2;
         maxY = BackgroundRectTransform.sizeDelta.y / 2;
 
-        currentMinY = minY;
-        currentMaxY = maxY;
-
         progressSlider.minValue = 0;
         progressSlider.maxValue = 100;
 
         BackgroundRectTransform.gameObject.SetActive(false);
+        fishObject.SetActive(false);
     }
 
     void Update()
@@ -89,14 +98,20 @@ public class FishingMinigame : PlayerActivatable
 
     protected override void OnActivate()
     {
+        if (hasUsableItem.CheckForItem())
+            currentDifficultyIndex = 2;
+        else
+            currentDifficultyIndex = 0;
+
         FirstPersonLook.instance.active = false;
         FirstPersonMovement.instance.active = false;
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
-        fishingProgress = 0;
-        BackgroundRectTransform.gameObject.SetActive(true);
+        ResetMinigame();
 
+        BackgroundRectTransform.gameObject.SetActive(true);
+        fishObject.SetActive(true);
 
         progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
         progressDecrease = Difficulties[currentDifficultyIndex].progressDecrease;
@@ -104,8 +119,6 @@ public class FishingMinigame : PlayerActivatable
         meterSpeed = Difficulties[currentDifficultyIndex].meterSpeed;
         targetHeight = Difficulties[currentDifficultyIndex].targetHeight;
         targetSpeed = Difficulties[currentDifficultyIndex].targetSpeed;
-
-        targetLocation = currentMinY + targetHeight / 2;
 
         targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
 
@@ -157,6 +170,10 @@ public class FishingMinigame : PlayerActivatable
         {
             fishingProgress += progressIncrease * Time.deltaTime;
         }
+        fishObject.transform.localPosition = new Vector3(
+            ((sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed)),
+            fishHeight,
+            fishStartZ - ((fishStartZ - fishEndZ) * fishingProgress / 100));
 
         progressSlider.value = fishingProgress;
     }
@@ -176,12 +193,42 @@ public class FishingMinigame : PlayerActivatable
         FishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
 
         BackgroundRectTransform.gameObject.SetActive(false);
+        fishObject.SetActive(false);
         active = false;
+    }
+
+    private void ResetMinigame()
+    {
+        fishingProgress = 0;
+
+        currentMinY = minY;
+        currentMaxY = maxY;
+
+        meterLocation = currentMinY + meterRectTransform.sizeDelta.y / 2;
+        targetLocation = currentMinY + targetHeight / 2;
     }
 
     public float GetFishingProgress()
     {
         return fishingProgress;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.color = Color.yellow;
+
+        Gizmos.DrawLine(new Vector3(0, fishHeight, fishStartZ),
+            new Vector3(0, fishHeight, fishEndZ));
+
+        Gizmos.DrawLine(new Vector3(-sineWaveAmplitude, fishHeight, fishStartZ),
+            new Vector3(+sineWaveAmplitude, fishHeight, fishStartZ));
+
+        Gizmos.DrawLine(new Vector3(-sineWaveAmplitude, fishHeight, fishStartZ),
+            new Vector3(0, fishHeight, fishEndZ));
+
+        Gizmos.DrawLine(new Vector3(sineWaveAmplitude, fishHeight, fishStartZ),
+            new Vector3(0, fishHeight, fishEndZ));
     }
 }
 
