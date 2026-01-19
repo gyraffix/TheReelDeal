@@ -6,14 +6,21 @@ using TMPro;
 public class InventoryView : MonoBehaviour
 {
     public Inventory inventory;
+
+    [Space]
     public GameObject inventoryItemPrefab;
     public GameObject itemNameSpot;
+
+    [Space]
     public Transform inventoryItemContainer;
     public Transform inventoryNameContainer;
+
+    [Space]
     public string openStateName = "InventoryShowAnimation";
     public string closeStateName = "InventoryHideAnimation";
 
     private List<GameObject> inventoryItemSlots = new List<GameObject>();
+    private List<GameObject> inventoryItemCounts = new List<GameObject>();
     private List<GameObject> inventoryItemNames = new List<GameObject>();
     private Animator animator;
     private bool isVisible = false;
@@ -46,7 +53,26 @@ public class InventoryView : MonoBehaviour
         newName.transform.SetParent(inventoryNameContainer, false);
         
         inventoryItemSlots.Add(newSlot.transform.GetChild(0).gameObject);
+        inventoryItemCounts.Add(newSlot.transform.GetChild(1).gameObject);
         inventoryItemNames.Add(newName);
+    }
+
+    public void AddInventoryItemCount(int i)
+    {
+        TMP_Text count = inventoryItemCounts[i].GetComponentInChildren<TMP_Text>();
+        
+        count.text = "" + (inventoryItemCounts[i].GetComponent<Counter>().itemCount += 1);        
+    }
+    public void RemoveInventoryItemCount(string id, int i)
+    {
+        TMP_Text count = inventoryItemCounts[i].GetComponentInChildren<TMP_Text>();
+
+        if (inventoryItemCounts[i].GetComponent<Counter>().itemCount > 1)
+            count.text = "" + (inventoryItemCounts[i].GetComponent<Counter>().itemCount -= 1);        
+        else
+            inventory.RemoveInventoryItem(id);
+        
+        
     }
 
     void UpdateInventoryView()
@@ -55,17 +81,20 @@ public class InventoryView : MonoBehaviour
         {
             Image image = inventoryItemSlots[i].GetComponent<Image>();
             TMP_Text name = inventoryItemNames[i].GetComponent<TMP_Text>();
+            TMP_Text count = inventoryItemCounts[i].GetComponentInChildren<TMP_Text>();
+
 
             InventoryItemDefinition item = (i < inventory.GetItemCount()) ? inventory.GetItem(i) : null;
+
             if (item != null)
             {
-
 
                 image.enabled = true;
                 image.sprite = item.icon;
                 inventoryItemSlots[i].name = item.name;
                 name.enabled = true;
                 name.text = item.name;
+                
             }
             else
             {
@@ -74,6 +103,7 @@ public class InventoryView : MonoBehaviour
                 inventoryItemSlots[i].name = "";
                 name.enabled = false;
                 name.text = null;
+                count.text = "";
             }
         }
     }

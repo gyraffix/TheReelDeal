@@ -1196,6 +1196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfSlots: 5
   items: []
+  inventoryView: {fileID: 0}
 --- !u!114 &6826351077643983843
 MonoBehaviour:
   m_ObjectHideFlags: 0

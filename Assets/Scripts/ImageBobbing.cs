@@ -28,11 +28,11 @@ public class ImageBobbing : MonoBehaviour
         
         if (isHovering)
         {
-            anim.SetTrigger("ImageBig");
+            anim.SetBool("ImageBig", true);           
         }
         else
-        {
-            anim.SetTrigger("ImageSmall");
+        {            
+            anim.SetBool("ImageBig", false);
         }
 
     }
