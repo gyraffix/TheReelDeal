@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 2541761605491669791}
   - component: {fileID: 4050192911234842298}
   m_Layer: 5
-  m_Name: BaitCollectedText
+  m_Name: BaitCollected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

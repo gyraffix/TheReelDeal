@@ -32,6 +32,11 @@ public class Inventory : MonoBehaviour
 
     public void AddInventoryItem(InventoryItemDefinition item)
     {
+        //if (HasItem(item.name))
+        //{
+
+        //}
+
         RemoveInventoryItem(item.name);
         for (int i = 0; i < items.Count; i++)
         {

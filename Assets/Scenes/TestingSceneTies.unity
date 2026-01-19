@@ -2148,11 +2148,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaitCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 9083033930334270609, guid: e0c6ad1acf383c344adefd445eb10cf4,
-        type: 3}
-      propertyPath: m_Name
-      value: BaitCollected
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
