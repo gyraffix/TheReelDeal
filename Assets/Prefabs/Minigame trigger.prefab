@@ -36,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 5479655513370282773}
   - {fileID: 6909652314513580682}
+  - {fileID: 5997192186057842248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2300337378223771357
@@ -129,7 +130,11 @@ MonoBehaviour:
   shouldActivateOnTriggerEnter: 0
   canBeActivated: 1
   minigameCanvas: {fileID: 0}
-  jumpInput: 32
+  bobberStartingPoint: {fileID: 5997192186057842248}
+  bobberPrefab: {fileID: 3077397679609011471, guid: 440788c8ac7574f3abbc6235e4457f92,
+    type: 3}
+  bobberInstance: {fileID: 0}
+  minigameInput: 32
   currentDifficultyIndex: 0
   Difficulties:
   - randomizeMovement: 0
@@ -158,7 +163,15 @@ MonoBehaviour:
   minimumTravelDistance: 30
   fishHeight: -0.66
   fishEndZ: 2.4
-  fishStartZ: 7
+  fishStartZ: 10
+  sineWaveAmplitude: 2
+  sineWaveSpeed: 1
+  minThrowingStrength: 5
+  maxThrowingStrength: 20
+  strenghtIncreaseSpeed: 15
+  reelingSpeed: 5
+  maxReelingSpeed: 5
+  minimumDistanceToPlayer: 2.5
 --- !u!114 &8614577542690536734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +185,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bait: []
+--- !u!1 &6601380741341553438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5997192186057842248}
+  m_Layer: 0
+  m_Name: BobberStartingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5997192186057842248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6601380741341553438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9967688893870530}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8177147109981692895
 GameObject:
   m_ObjectHideFlags: 0
