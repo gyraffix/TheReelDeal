@@ -86,6 +86,8 @@ title: GlassShardFound
 title: Swordfish
 ---
     Swordfish: Ooh nay, thee has't best'd me in a duel. Thee shalt visage the ire of mine own blade at which hour we has't a rematch
+    Swordfish: bye
+    <<playAnimation>>
 ===
 
 //--------------------------------

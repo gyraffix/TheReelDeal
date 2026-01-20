@@ -4,6 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class FishingMinigame : PlayerActivatable
 {
@@ -17,10 +18,11 @@ public class FishingMinigame : PlayerActivatable
     private RectTransform meterRectTransform;
     private Slider progressSlider;
     private Slider throwingSlider;
-    private GameObject FishCaughtText;
-    private GameObject CaughtFishSprite;
+    private GameObject fishCaughtText;
+    private static GameObject caughtFishSprite;
     private Transform player;
     private HasUsableItem hasUsableItem;
+    private DialogueRunner dialogueRunner;
 
     [Header("Minigame Settings")]
     [SerializeField] private KeyCode minigameInput = KeyCode.Space;
@@ -77,11 +79,12 @@ public class FishingMinigame : PlayerActivatable
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
         throwingSlider = minigameCanvas.transform.Find("ThrowingStrength").GetComponent<Slider>();
-        FishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
-        CaughtFishSprite = minigameCanvas.transform.Find("CaughtFish").gameObject;
+        fishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
+        caughtFishSprite = minigameCanvas.transform.Find("CaughtFish").gameObject;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         fishObject = transform.Find("Fish").gameObject;
         hasUsableItem = gameObject.GetComponent<HasUsableItem>();
+        dialogueRunner = FindFirstObjectByType<DialogueRunner>();
     }
     void Start()
     {
@@ -325,19 +328,48 @@ public class FishingMinigame : PlayerActivatable
 
         Album.instance.NewFish(currentFish);
 
-        CaughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
+        caughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
 
         Jump.instance.active = true;
         Crouch.instance.active = true;
 
-        FishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
-        CaughtFishSprite.GetComponent<Animator>().SetTrigger("FishCaught");
+        fishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
+        caughtFishSprite.GetComponent<Animator>().SetTrigger("FishCaught");
+        
 
 
         BackgroundRectTransform.gameObject.SetActive(false);
         fishObject.SetActive(false);
 
+        RunDialogue(currentFish);
+
+        
+
         active = false;
+    }
+
+    [YarnCommand("playAnimation")]
+    public static void PlayAnimation()
+    {
+        caughtFishSprite.GetComponent<Animator>().SetTrigger("exit");
+    }
+
+    private void RunDialogue(FishItem fish)
+    {
+        if (dialogueRunner != null)
+        {
+            if (dialogueRunner.IsDialogueRunning)
+            {
+                dialogueRunner.Stop();
+            }
+            Debug.Log(fish.name);   
+
+            dialogueRunner.StartDialogue(fish.name);
+        }
+        else
+        {
+            Debug.LogWarning("DialogueRunner component not assigned!");
+        }
     }
 
     private void ResetMinigame()

@@ -22,7 +22,6 @@ public class Page : MonoBehaviour
 
                 name.text = PlaceholderFish[i].name;
                 desc.text = PlaceholderFish[i].hint;
-                Debug.Log(name.text);
             }
         }
     }
@@ -41,7 +40,7 @@ public class Page : MonoBehaviour
                 image.sprite = fish.fishPhoto;
                 return true;
             }
-            Debug.Log(name.text + " / " + fish.name);
+
         }
         return false;
     }

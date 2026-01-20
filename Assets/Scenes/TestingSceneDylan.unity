@@ -514,6 +514,23 @@ PrefabInstance:
       propertyPath: minigameCanvas
       value: 
       objectReference: {fileID: 474664607}
+    - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: possibleFishes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: f337579db6f772d4c953ae7c81b9f144,
+        type: 2}
+    - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a315dd8b16f31f49995c7370d26dc9f,
+        type: 2}
     - target: {fileID: 9178543648919571678, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: m_Enabled
@@ -655,6 +672,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MinigameBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933035121098221282, guid: 89409557119c741eba15cce9ea513572,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6659400492402271562, guid: 89409557119c741eba15cce9ea513572,
         type: 3}
