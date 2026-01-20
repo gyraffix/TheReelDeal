@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Sun Fish
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 38e53e18c149a48d2bcfd21924d26c47, type: 3}
-  name: Sun Fish
+  name: Sunfish
   desc: Dont look directly into it. It wont blind you, he is just camera shy!
   hint: Found In Sea Water

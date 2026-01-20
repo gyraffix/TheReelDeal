@@ -28,6 +28,7 @@ public class Page : MonoBehaviour
                 name.text = "";
                 desc.text = "";
             }
+            Debug.Log(name.text);
             image.color = Color.clear;
         }
     }

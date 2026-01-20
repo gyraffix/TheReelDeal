@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cookie Cutter Shark
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
-  name: Cookie Cutter Shark
+  name: CookieCutterShark
   desc: ' His cut is meaner than his bite and his outside is harder than his inside'
   hint: Found In Sea Water

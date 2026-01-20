@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Moon Fish
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
-  name: Moon fish
+  name: Moonfish
   desc: Moon fish looks like the full moon, elegant and pretty as they should be!
   hint: Found In Sea Water
