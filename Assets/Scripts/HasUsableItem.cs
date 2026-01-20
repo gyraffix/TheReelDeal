@@ -12,12 +12,12 @@ public class HasUsableItem : MonoBehaviour
         foreach (var bait in bait)
         {
             Inventory.instance.HasItem(bait.name);
-            int difficultyLevel = bait.dificultyLevel;
+            //int difficultyLevel = bait.dificultyLevel;
              
 
             if (Inventory.instance.HasItem(bait.name) == true)
             {
-                Inventory.instance.RemoveInventoryItem(bait.name);
+                Inventory.instance.RemoveItem(bait.name);
                 return true;
             }
         }

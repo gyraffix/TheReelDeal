@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,15 +8,20 @@ public class FishingMinigame : PlayerActivatable
 {
     [Header("References")]
     [SerializeField] private Canvas minigameCanvas;
+    [SerializeField] private Transform bobberStartingPoint;
+    [SerializeField] private GameObject bobberPrefab;
+    [HideInInspector] public Rigidbody bobberInstance;
     private RectTransform BackgroundRectTransform;
     private RectTransform targetRectTransform;
     private RectTransform meterRectTransform;
     private Slider progressSlider;
+    private Slider throwingSlider;
     private GameObject FishCaughtText;
+    private Transform player;
     private HasUsableItem hasUsableItem;
 
-    [Header("Minigame settings")]
-    [SerializeField] private KeyCode jumpInput = KeyCode.Space;
+    [Header("Minigame Settings")]
+    [SerializeField] private KeyCode minigameInput = KeyCode.Space;
     [SerializeField] private int currentDifficultyIndex;
     [SerializeField] private Difficulty[] Difficulties;
     [SerializeField] private FishItem[] possibleFishes;
@@ -25,14 +32,15 @@ public class FishingMinigame : PlayerActivatable
     private float currentMaxY;
     private float maxY;
     private bool active = false;
+    private MinigameState minigameState;
 
-    [Header("Meter settings")]
+    [Header("Meter Settings")]
     private float directionChangeSpeed = 20;
     private float meterSpeed = 150;
     private float meterLocation = 0;
     private float direction = -1;
 
-    [Header("Target settings")]
+    [Header("Target Settings")]
     [SerializeField] private float minimumTravelDistance = 30;
     private int targetHeight = 20;
     private float targetSpeed = 100;
@@ -48,13 +56,26 @@ public class FishingMinigame : PlayerActivatable
     private GameObject fishObject;
     private float fishingProgress;
 
+    [Header("Bobber Settings")]
+    [SerializeField] private float minThrowingStrength = 100;
+    [SerializeField] private float maxThrowingStrength = 50;
+    [SerializeField] private float strenghtIncreaseSpeed = 10;
+    private bool strenghtIncreasing;
+    private bool startedThrowing = false;
+    [SerializeField] private float reelingSpeed;
+    [SerializeField] private float maxReelingSpeed;
+    [SerializeField] private float minimumDistanceToPlayer;
+    private bool checkBobberDistance;
+
     void Awake()
     {
-        BackgroundRectTransform = minigameCanvas.transform.Find("Background").GetComponent<RectTransform>();
+        BackgroundRectTransform = minigameCanvas.transform.Find("MinigameBackground").GetComponent<RectTransform>();
         targetRectTransform = BackgroundRectTransform.transform.Find("Target").GetComponent<RectTransform>();
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
+        throwingSlider = minigameCanvas.transform.Find("ThrowigStrenght").GetComponent<Slider>();
         FishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         fishObject = transform.Find("Fish").gameObject;
         hasUsableItem = gameObject.GetComponent<HasUsableItem>();
     }
@@ -65,6 +86,9 @@ public class FishingMinigame : PlayerActivatable
 
         progressSlider.minValue = 0;
         progressSlider.maxValue = 100;
+
+        throwingSlider.minValue = minThrowingStrength;
+        throwingSlider.maxValue = maxThrowingStrength;
 
         BackgroundRectTransform.gameObject.SetActive(false);
         fishObject.SetActive(false);
@@ -77,23 +101,60 @@ public class FishingMinigame : PlayerActivatable
         if (fishingProgress >= 100)
             FishingSuccessful();
 
-        if (Input.GetKey(jumpInput))
+        switch (minigameState)
         {
-            if (direction < 1)
-                direction += Time.deltaTime * directionChangeSpeed;
+            case MinigameState.Throwing:
+                if (Input.GetKey(minigameInput))
+                {
+                    startedThrowing = true;
+                    UpdateStrenght();
+                }
+                else if (startedThrowing == true)
+                {
+                    startedThrowing = false;
+                    ThrowBobber();
+
+                    StartCoroutine(LateBobberDistance());
+                }
+                break;
+
+            case MinigameState.Reeling:
+                if ((player.transform.position - bobberInstance.transform.position).magnitude > minimumDistanceToPlayer)
+                {
+                    if (Input.GetKey(minigameInput))
+                    {
+                        bobberInstance.AddForce((player.transform.position - bobberInstance.transform.position).normalized * reelingSpeed, ForceMode.Force);
+                    }
+                }
+                else if (checkBobberDistance)
+                {
+                    Destroy(bobberInstance.gameObject);
+                    bobberInstance = null;
+                    checkBobberDistance = false;
+                    SetMinigameState(MinigameState.Throwing);
+                }
+                break;
+
+            case MinigameState.Playing:
+                if (Input.GetKey(minigameInput))
+                {
+                    if (direction < 1)
+                        direction += Time.deltaTime * directionChangeSpeed;
+                }
+                else
+                {
+                    if (direction > -1)
+                        direction -= Time.deltaTime * directionChangeSpeed;
+                }
+
+                UpdateTargetLocation();
+                UpdateMeterLocation();
+
+                fishingProgress = Math.Clamp(fishingProgress, 0, 100);
+
+                UpdateProgress();
+                break;
         }
-        else
-        {
-            if (direction > -1)
-                direction -= Time.deltaTime * directionChangeSpeed;
-        }
-
-        UpdateTargetLocation();
-        UpdatePlayerLocation();
-
-        fishingProgress = Math.Clamp(fishingProgress, 0, 100);
-
-        UpdateProgress();
     }
 
     protected override void OnActivate()
@@ -103,14 +164,13 @@ public class FishingMinigame : PlayerActivatable
         else
             currentDifficultyIndex = 0;
 
-        FirstPersonLook.instance.active = false;
+        // FirstPersonLook.instance.active = false;
         FirstPersonMovement.instance.active = false;
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
         ResetMinigame();
 
-        BackgroundRectTransform.gameObject.SetActive(true);
         fishObject.SetActive(true);
 
         progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
@@ -151,7 +211,7 @@ public class FishingMinigame : PlayerActivatable
         targetRectTransform.localPosition = new Vector2(0, targetLocation);
     }
 
-    private void UpdatePlayerLocation()
+    private void UpdateMeterLocation()
     {
         meterLocation += Time.deltaTime * meterSpeed * Math.Clamp(direction, -1, 1);
 
@@ -171,11 +231,75 @@ public class FishingMinigame : PlayerActivatable
             fishingProgress += progressIncrease * Time.deltaTime;
         }
         fishObject.transform.localPosition = new Vector3(
-            ((sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed)),
+            (sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed),
             fishHeight,
             fishStartZ - ((fishStartZ - fishEndZ) * fishingProgress / 100));
 
         progressSlider.value = fishingProgress;
+    }
+
+    private void UpdateStrenght()
+    {
+        float newThrowingStrenght = throwingSlider.value;
+
+        if (newThrowingStrenght <= minThrowingStrength)
+        {
+            strenghtIncreasing = true;
+        }
+        else if (newThrowingStrenght >= maxThrowingStrength)
+        {
+            strenghtIncreasing = false;
+        }
+
+        newThrowingStrenght = strenghtIncreasing ? newThrowingStrenght + Time.deltaTime * strenghtIncreaseSpeed : newThrowingStrenght - Time.deltaTime * strenghtIncreaseSpeed;
+
+        throwingSlider.value = newThrowingStrenght;
+    }
+
+    private void ThrowBobber()
+    {
+        bobberInstance = Instantiate(bobberPrefab.gameObject, bobberStartingPoint.position, bobberStartingPoint.rotation).GetComponent<Rigidbody>();
+        bobberInstance.AddForce(
+            Quaternion.Euler(
+                player.Find("First Person Camera").transform.rotation.eulerAngles.x,
+                player.rotation.eulerAngles.y,
+                0) *
+            new Vector3(0, 0, throwingSlider.value),
+            ForceMode.VelocityChange);
+        bobberInstance.GetComponent<BobberScript>().fishingMinigame = this;
+        bobberInstance.GetComponent<BobberScript>().maxSpeed = maxReelingSpeed;
+        throwingSlider.value = 0;
+        SetMinigameState(MinigameState.Reeling);
+    }
+
+    public void SetMinigameState(MinigameState newMinigameState)
+    {
+        switch (newMinigameState)
+        {
+            case MinigameState.Throwing:
+                BackgroundRectTransform.gameObject.SetActive(false);
+                throwingSlider.gameObject.SetActive(true);
+                minigameState = MinigameState.Throwing;
+                break;
+
+            case MinigameState.Reeling:
+                BackgroundRectTransform.gameObject.SetActive(false);
+                throwingSlider.gameObject.SetActive(false);
+                minigameState = MinigameState.Reeling;
+                break;
+
+            case MinigameState.Playing:
+                BackgroundRectTransform.gameObject.SetActive(true);
+                throwingSlider.gameObject.SetActive(false);
+                minigameState = MinigameState.Playing;
+                break;
+
+            default:
+                BackgroundRectTransform.gameObject.SetActive(false);
+                throwingSlider.gameObject.SetActive(true);
+                minigameState = MinigameState.Throwing;
+                break;
+        }
     }
 
     private void FishingSuccessful()
@@ -183,7 +307,6 @@ public class FishingMinigame : PlayerActivatable
         FishItem currentFish = possibleFishes[UnityEngine.Random.Range(0, possibleFishes.Length - 1)];
 
         Album.instance.NewFish(currentFish);
-        Debug.Log(currentFish.name);
 
         FirstPersonLook.instance.active = true;
         FirstPersonMovement.instance.active = true;
@@ -206,11 +329,15 @@ public class FishingMinigame : PlayerActivatable
 
         meterLocation = currentMinY + meterRectTransform.sizeDelta.y / 2;
         targetLocation = currentMinY + targetHeight / 2;
+
+        throwingSlider.value = 0;
+        SetMinigameState(MinigameState.Throwing);
     }
 
-    public float GetFishingProgress()
+    private IEnumerator LateBobberDistance()
     {
-        return fishingProgress;
+        yield return new WaitForSeconds(1);
+        checkBobberDistance = true;
     }
 
     private void OnDrawGizmos()
@@ -229,6 +356,13 @@ public class FishingMinigame : PlayerActivatable
 
         Gizmos.DrawLine(new Vector3(sineWaveAmplitude, fishHeight, fishStartZ),
             new Vector3(0, fishHeight, fishEndZ));
+    }
+
+    public enum MinigameState
+    {
+        Throwing,
+        Reeling,
+        Playing
     }
 }
 

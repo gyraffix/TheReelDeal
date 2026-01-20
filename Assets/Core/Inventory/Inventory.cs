@@ -10,7 +10,12 @@ public class Inventory : MonoBehaviour
     public delegate void InventoryChanged();
     public event InventoryChanged OnInventoryChanged;
 
+    public InventoryView inventoryView;
     public static Inventory instance;
+
+    private int chocolateBirdItemCount;
+    private int rainbowGlassItemCount;
+    private int sweetStrawberryItemCount;
 
     void Awake()
     {
@@ -32,13 +37,27 @@ public class Inventory : MonoBehaviour
 
     public void AddInventoryItem(InventoryItemDefinition item)
     {
-        RemoveInventoryItem(item.name);
+
+        //RemoveInventoryItem(item.name);
+
         for (int i = 0; i < items.Count; i++)
         {
             if (items[i] == null)
             {
                 items[i] = item;
                 OnInventoryChanged?.Invoke();
+                break;
+            }
+        }
+    }
+
+    public void AddInventoyItemCount(InventoryItemDefinition item)
+    {
+        for (int i = 0;i < items.Count;i++)
+        {
+            if (items[i].name == item.name)
+            {
+                inventoryView.AddInventoryItemCount(i);
                 break;
             }
         }
@@ -81,13 +100,28 @@ public class Inventory : MonoBehaviour
         InventoryItemDefinition item = InventoryItemDefinitions.GetInventoryItemByName(id);
         if (item != null)
         {
-            AddInventoryItem(item);
+            if (HasItem(item.name))
+            {
+                AddInventoyItemCount(item);
+            }
+            else
+            {
+                AddInventoryItem(item);
+            }
         }
     }
 
     public void RemoveItem(string id)
     {
-        RemoveInventoryItem(id);
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (items[i] != null && items[i].name == id)
+            {
+                inventoryView.RemoveInventoryItemCount(id, i);
+            }
+            else
+                Debug.Log("No index");
+        }
     }
 
     [YarnFunction("has_item")]
