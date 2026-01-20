@@ -1,4 +1,4 @@
-﻿//--------------------------------
+//--------------------------------
 //          Start 
 //--------------------------------
 title: Start
@@ -85,9 +85,9 @@ title: GlassShardFound
 //--------------------------------
 title: Swordfish
 ---
-    Swordfish: Ooh nay, thee has't best'd me in a duel. Thee shalt visage the ire of mine own blade at which hour we has't a rematch
-    Swordfish: bye
-    <<playAnimation>>
+    Swordfish: Ooh nay, thee has't best'd me in a duel. Thee shalt visage the ire of mine own blade at which hour we has't a rematch.
+    Swordfish: I shall anon rest and waiteth in the album until our fat'd rematch
+    <<<playAnimation>>
 ===
 
 //--------------------------------
@@ -96,6 +96,8 @@ title: Swordfish
 title: Moonfish
 ---
     Moonfish: Sometimes im a little bit full and sometimes I feel all brand new... that a cycle.
+    Moonfish: Sometimes I even am waxing and waning but that's neither here nor there.
+    <<<playAnimation>>
 ===
 
 //--------------------------------
@@ -104,6 +106,8 @@ title: Moonfish
 title: Starfish
 ---
     Starfish: I'm a true star, now I just dont know if i'm a shooting star or a movie star.
+    Starfish: My next step is to go SUPERNOVA. Whatever that means.
+    <<<playAnimation>>
 ===
 
 //--------------------------------
@@ -112,6 +116,8 @@ title: Starfish
 title: Sunfish
 ---
     Sunfish: oh hi.. erm.... nice to meet you...... I...'m too nervous, sorry..
+    Sunfish: ....... can i... erm.. g.go in the.... album?
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -120,6 +126,8 @@ title: Sunfish
 title: CookieCutterShark
 ---
     Cookie Cutter Shark:  I BE WANT FOOD!  FLESH THING? NAH, ME NEED COOKIE GOO!!!!!!
+    Cookie Cutter Shark:  ME HEAD TO YOUR PICTURE BOX THINGY FOR COOKIE GOO, YES?
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -127,7 +135,9 @@ title: CookieCutterShark
 //--------------------------------
 title: GlassFish
 ---
-    Glass Fish:  I am so gratefull for this glass shard. I can now shine in all colours and radiate troughout the sea!
+    Glass Fish: I am so gratefull for this glass shard. I can now shine in all colours and radiate troughout the sea!
+    Glass Fish: This shall be a lightshow like never before,  don't you agree friend?
+    <<playAnimation>>
 ===
 
 
@@ -138,6 +148,8 @@ title: GlassFish
 title: PenFish
 ---
     Pen Fish: Want to see my new OC? I spent 49 hours just drawing the face because I can't draw a perfect circle....
+    Pen Fish: I just have to be carefull to not draw to much or i'll get shorter!
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -145,7 +157,9 @@ title: PenFish
 //--------------------------------
 title: EraserClam
 ---
-    Pen Fish: Listen up, you little twerp! Mess with me and my blue rubber will grind you into dust!
+    Eraser Clam: Listen up, you little twerp! Mess with me and my blue rubber will grind you into dust!
+    Eraser Clam: I may seem tough, AND I AM, but so what if I got a soft interior? You breathe a word of this to anyone, and you're GONE.
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -153,7 +167,8 @@ title: EraserClam
 //--------------------------------
 title: MagnetJellyfish
 ---
-    Magnet Jellyfish: 
+    Magnet Jellyfish: PLACEHOLDER
+    Magnet Jellyfish: PLACEHOLDER
 ===
 
 //--------------------------------
@@ -162,6 +177,8 @@ title: MagnetJellyfish
 title: SteamboatBunny
 ---
     Steamboat Bunny: H-hi t-there UwU we're getting on the stwamboat trip to the aalbum, w-won't you c-come w-with us? <・`ω´・>
+    Steamboat Bunny: Eeven if no wan joins the twip i will chu-wu chu-wu awon to my des-tinashion <・`ω´・>
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -170,6 +187,8 @@ title: SteamboatBunny
 title: PantsMackrel
 ---
     Pants Mackrel: What do you think of my new apple bottom jeans? What? Why do I have legs? Why do you have legs?
+    Pants Mackrel: I'll just take a stroll around the album, show everyone how nice and silky my pants are "I also have nice shoes"!
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -177,6 +196,58 @@ title: PantsMackrel
 //--------------------------------
 title: StrawFish
 ---
-    Steamboat Bunny: 
+    Straw Fish: Thank you so much for bringing me a strawberry. It's just as pretty as the ones in my farm but less wet.
+    Straw Fish: Here have some cranberries. Don't spend it all in one place! What do you mean cranberries aren't a currency?
+    <<playAnimation>>
 ===
+
+//--------------------------------
+//          Sanic Fish
+//--------------------------------
+title: SonicFish
+---
+    Sonic Fish: HALLO IT ME SANIC HEGEHOG, CUMON STEP IT UP! BUY MY NEW GAME SANIC SEE DEE!!!!
+    Sonic Fish: HAV U SEEN KNACLES HEGEHOG AND MY HI SIEDKIK TALES MIEL PRAWLAR?
+    <<playAnimation>>
+===
+
+//--------------------------------
+//          Doge Fish
+//--------------------------------
+title: DogeFish
+---
+    Doge Fish: SO WOW!    VERY FISHY!    so bork!    MUCH MEME!    PET PLZ!
+    Doge Fish: MUCH CMGT!    so project!    TREAT PLZ!    VERY ALBUM!
+    <<playAnimation>>
+===
+
+//--------------------------------
+//          Bongo Cat Fish
+//--------------------------------
+title: BongoCatFish
+---
+    Bongo Cat Fish: *Bong bong bong bong bong*  hi  *bong bong bong bong*
+    Bongo Cat Fish: *Bong* Want to hear a bongo solo? *Bong*
+    <<playAnimation>>
+===   
+
+//--------------------------------
+//      Average Gamer Shrimp
+//--------------------------------
+title: AverageGamerShrimp
+---
+    Average Gamer Shrimp: Hello kitten. Let me take care of you after I win this League Of Heroes game. I have a aquatic dew to share with you kitten.
+    Average Gamer Shrimp: I'm a fishcord mod *Tips Fedora* I always respect M'lady's
+    <<playAnimation>>
+===   
+
+//--------------------------------
+//      CMGaTO Fish
+//--------------------------------
+title: CMGaToFish
+---
+    CMGaTo Fish: Thank you for yummy chocolate bird ..MEOW.. but now I have to go work on my frontiers project or I'll have to do the redo  NOOOOOOOOOOO.
+    CMGaTo Fish: I better not use AI or the teachers will make sashimi out of me!
+    <<playAnimation>>
+===   
 
