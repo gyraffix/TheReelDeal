@@ -13,10 +13,6 @@ public class Inventory : MonoBehaviour
     public InventoryView inventoryView;
     public static Inventory instance;
 
-    private int chocolateBirdItemCount;
-    private int rainbowGlassItemCount;
-    private int sweetStrawberryItemCount;
-
     void Awake()
     {
         instance = this; 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5548253721032367794
+--- !u!1 &8565089040870030845
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,125 +8,115 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2432239572284346936}
-  - component: {fileID: 1493929005515581096}
+  - component: {fileID: 5784835009346057062}
+  - component: {fileID: 3812751087640188508}
   m_Layer: 0
-  m_Name: Chocolate Bird Bait
+  m_Name: Bait Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2432239572284346936
+--- !u!4 &5784835009346057062
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5548253721032367794}
+  m_GameObject: {fileID: 8565089040870030845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.85, y: 0.53, z: -0.19}
+  m_LocalPosition: {x: -1.8691181, y: 0.56000006, z: -0.72035897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5627126703729044208}
+  - {fileID: 8479794892614939886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1493929005515581096
+--- !u!114 &3812751087640188508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5548253721032367794}
+  m_GameObject: {fileID: 8565089040870030845}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cea53092f18f69247831feacddea86e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baitToRespwn: {fileID: 11400000, guid: 7a710678b376047478e9d4d2776cf765, type: 2}
---- !u!1001 &8901853494796227991
+  baitToRespwn: {fileID: 11400000, guid: 7e4fff7175cada542ba5a7eca138d28c, type: 2}
+--- !u!1001 &6635594217584619902
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2432239572284346936}
+    m_TransformParent: {fileID: 5784835009346057062}
     m_Modifications:
-    - target: {fileID: 268501661447809186, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 2278769606704157269, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_Name
-      value: Chocolate Bird Bait
+      value: Collectable Placeholder
       objectReference: {fileID: 0}
-    - target: {fileID: 3451920955567492421, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
-        type: 3}
-      propertyPath: canRepeat
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+    - target: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372957588344337924, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
-        type: 3}
-      propertyPath: canRepeat
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 092c48c0b52ae7841a068bd4b7fa1d5f, type: 3}
---- !u!4 &5627126703729044208 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: fa3e6cc920376294b88a557ad16b1330, type: 3}
+--- !u!4 &8479794892614939886 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3863575535527690087, guid: 092c48c0b52ae7841a068bd4b7fa1d5f,
+  m_CorrespondingSourceObject: {fileID: 3006176177409246608, guid: fa3e6cc920376294b88a557ad16b1330,
     type: 3}
-  m_PrefabInstance: {fileID: 8901853494796227991}
+  m_PrefabInstance: {fileID: 6635594217584619902}
   m_PrefabAsset: {fileID: 0}

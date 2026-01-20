@@ -14,10 +14,10 @@ public class Collectable : PlayerActivatable
     }
     override protected void OnActivate()
     {        
-        foreach (var connectedTrigger in connectedTriggers) {
-            Destroy(connectedTrigger.gameObject);
-        }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //foreach (var connectedTrigger in connectedTriggers) {
+        //    Destroy(connectedTrigger.gameObject);
+        //}
     }
 
 }

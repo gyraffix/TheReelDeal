@@ -19,6 +19,7 @@ public class AddInventoryItem : PlayerActivatable
 
     private void Awake()
     {
+        
         baitCollectedText = baitCanvas.transform.Find("BaitCollected").gameObject;
     }
 
