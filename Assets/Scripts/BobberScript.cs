@@ -3,19 +3,32 @@ using UnityEngine;
 public class BobberScript : MonoBehaviour
 {
     [HideInInspector] public FishingMinigame fishingMinigame;
-    [SerializeField] private string fishTag = "Fish";
-    [SerializeField] private float collisionSlowdown = 0.1f;
     public float maxSpeed;
     void OnCollisionEnter(Collision collision)
     {
         GetComponent<Rigidbody>().maxLinearVelocity = maxSpeed;
+    }
 
-        if (collision.gameObject.tag == fishTag)
+    void OnTriggerStay(Collider other)
+    {
+        switch (other.gameObject.tag)
         {
-            Destroy(gameObject);
-            fishingMinigame.bobberInstance = null;
-            fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
-            FirstPersonLook.instance.active = false;
+            case "Fish":
+                Destroy(gameObject);
+                fishingMinigame.bobberInstance = null;
+                fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
+                FirstPersonLook.instance.active = false;
+                break;
+            case "Minigame":
+                if (fishingMinigame.checkBobberDistance)
+                {
+                    Destroy(fishingMinigame.bobberInstance.gameObject);
+                    fishingMinigame.bobberInstance = null;
+                    fishingMinigame.checkBobberDistance = false;
+                    fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Throwing);
+                }
+                break;
         }
+
     }
 }

@@ -68,7 +68,7 @@ public class FishingMinigame : PlayerActivatable
     [SerializeField] private float reelingSpeed;
     [SerializeField] private float maxReelingSpeed;
     [SerializeField] private float minimumDistanceToPlayer;
-    private bool checkBobberDistance;
+    [HideInInspector] public bool checkBobberDistance;
 
     void Awake()
     {
@@ -107,8 +107,6 @@ public class FishingMinigame : PlayerActivatable
 
         if (Input.GetKeyDown(exitMinigameInput))
         {
-            FirstPersonLook.instance.active = true;
-            FirstPersonMovement.instance.active = true;
             Jump.instance.active = true;
             Crouch.instance.active = true;
             active = false;
@@ -134,19 +132,12 @@ public class FishingMinigame : PlayerActivatable
                 break;
 
             case MinigameState.Reeling:
-                if ((player.transform.position - bobberInstance.transform.position).magnitude > minimumDistanceToPlayer)
+                if (bobberInstance != null)
                 {
                     if (Input.GetKey(minigameInput))
                     {
                         bobberInstance.AddForce((player.transform.position - bobberInstance.transform.position).normalized * reelingSpeed, ForceMode.Force);
                     }
-                }
-                else if (checkBobberDistance)
-                {
-                    Destroy(bobberInstance.gameObject);
-                    bobberInstance = null;
-                    checkBobberDistance = false;
-                    SetMinigameState(MinigameState.Throwing);
                 }
                 break;
 
@@ -172,6 +163,17 @@ public class FishingMinigame : PlayerActivatable
         }
     }
 
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            Jump.instance.active = true;
+            Crouch.instance.active = true;
+            active = false;
+            ResetMinigame();
+        }
+    }
+
     protected override void OnActivate()
     {
         if (hasUsableItem.CheckForItem())
@@ -179,8 +181,7 @@ public class FishingMinigame : PlayerActivatable
         else
             currentDifficultyIndex = 0;
 
-        // FirstPersonLook.instance.active = false;
-        FirstPersonMovement.instance.active = false;
+
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
@@ -326,19 +327,15 @@ public class FishingMinigame : PlayerActivatable
 
         CaughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
 
-        FirstPersonLook.instance.active = true;
-        FirstPersonMovement.instance.active = true;
         Jump.instance.active = true;
         Crouch.instance.active = true;
 
         FishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
         CaughtFishSprite.GetComponent<Animator>().SetTrigger("FishCaught");
-        
+
 
         BackgroundRectTransform.gameObject.SetActive(false);
         fishObject.SetActive(false);
-
-        
 
         active = false;
     }
