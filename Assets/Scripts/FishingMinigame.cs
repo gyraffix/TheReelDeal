@@ -181,7 +181,10 @@ public class FishingMinigame : PlayerActivatable
     protected override void OnActivate()
     {
         if (hasUsableItem.CheckForItem())
+        {
+            Debug.Log("2");
             currentDifficultyIndex = 2;
+        }            
         else
             currentDifficultyIndex = 0;
 

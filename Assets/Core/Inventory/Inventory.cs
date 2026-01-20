@@ -115,6 +115,7 @@ public class Inventory : MonoBehaviour
             {
                 inventoryView.RemoveInventoryItemCount(id, i);
             }
+
         }
     }
 

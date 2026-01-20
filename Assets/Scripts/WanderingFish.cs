@@ -28,6 +28,11 @@ public class WanderingFish : MonoBehaviour
         if (timer > wanderTimer)
         {
             Vector3 newTarget = RandomSpherePos(transform.position, radius, -1);
+            float distance = (transform.position - newTarget).magnitude;
+            if (distance<0.01)
+            {
+                Debug.LogWarning("Problem with sampling navmesh position / lookat...?");
+            }
             agent.SetDestination(newTarget);
             agent.gameObject.transform.LookAt(newTarget);
             timer = 0;

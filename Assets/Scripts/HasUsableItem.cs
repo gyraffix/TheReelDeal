@@ -11,15 +11,15 @@ public class HasUsableItem : MonoBehaviour
     {
         foreach (var bait in bait)
         {
-            Inventory.instance.HasItem(bait.name);
-            //int difficultyLevel = bait.dificultyLevel;
-             
-
-            if (Inventory.instance.HasItem(bait.name) == true)
+            if (bait != null && Inventory.instance.HasItem(bait.name))
             {
                 Inventory.instance.RemoveItem(bait.name);
                 return true;
             }
+            else if (bait == null)
+                Debug.Log("not working");
+            else if (!Inventory.instance.HasItem(bait.name))
+                Debug.Log("Dont have it");
         }
         return false;
     }
