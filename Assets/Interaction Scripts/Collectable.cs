@@ -5,7 +5,7 @@ using Yarn.Unity;
 
 public class Collectable : PlayerActivatable 
 {
-    ProximityTrigger[] connectedTriggers;
+    public ProximityTrigger[] connectedTriggers;
     
 
 
@@ -15,9 +15,10 @@ public class Collectable : PlayerActivatable
     override protected void OnActivate()
     {        
         gameObject.SetActive(false);
-        //foreach (var connectedTrigger in connectedTriggers) {
-        //    Destroy(connectedTrigger.gameObject);
-        //}
+        foreach (var connectedTrigger in connectedTriggers)
+        {
+            connectedTrigger.gameObject.SetActive(false);
+        }
     }
 
 }

@@ -8,6 +8,7 @@ public class ProximityTriggerActivator : MonoBehaviour
     public float castRadius = 3f;
     private StarterAssetsInputsAdditionalInputs _input;
     private ProximityTrigger _currentClosestTrigger;
+    //private GameObject parent;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class ProximityTriggerActivator : MonoBehaviour
                 }
             }
         }
+            
         if (closestTrigger != _currentClosestTrigger) {
             if (_currentClosestTrigger != null) {
                 _currentClosestTrigger.SetVisibilityMode(false);

@@ -115,8 +115,6 @@ public class Inventory : MonoBehaviour
             {
                 inventoryView.RemoveInventoryItemCount(id, i);
             }
-            else
-                Debug.Log("No index");
         }
     }
 
