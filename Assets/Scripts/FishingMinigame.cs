@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class FishingMinigame : PlayerActivatable
@@ -23,6 +24,7 @@ public class FishingMinigame : PlayerActivatable
 
     [Header("Minigame Settings")]
     [SerializeField] private KeyCode minigameInput = KeyCode.Space;
+    [SerializeField] private KeyCode exitMinigameInput = KeyCode.Escape;
     [SerializeField] private int currentDifficultyIndex;
     [SerializeField] private Difficulty[] Difficulties;
     [SerializeField] private FishItem[] possibleFishes;
@@ -60,8 +62,8 @@ public class FishingMinigame : PlayerActivatable
     [Header("Bobber Settings")]
     [SerializeField] private float minThrowingStrength = 100;
     [SerializeField] private float maxThrowingStrength = 50;
-    [SerializeField] private float strenghtIncreaseSpeed = 10;
-    private bool strenghtIncreasing;
+    [SerializeField] private float strengthIncreaseSpeed = 10;
+    private bool strengthIncreasing;
     private bool startedThrowing = false;
     [SerializeField] private float reelingSpeed;
     [SerializeField] private float maxReelingSpeed;
@@ -103,13 +105,24 @@ public class FishingMinigame : PlayerActivatable
         if (fishingProgress >= 100)
             FishingSuccessful();
 
+        if (Input.GetKeyDown(exitMinigameInput))
+        {
+            FirstPersonLook.instance.active = true;
+            FirstPersonMovement.instance.active = true;
+            Jump.instance.active = true;
+            Crouch.instance.active = true;
+            active = false;
+            ResetMinigame();
+            return;
+        }
+
         switch (minigameState)
         {
             case MinigameState.Throwing:
                 if (Input.GetKey(minigameInput))
                 {
                     startedThrowing = true;
-                    UpdateStrenght();
+                    UpdateStrength();
                 }
                 else if (startedThrowing == true)
                 {
@@ -172,6 +185,7 @@ public class FishingMinigame : PlayerActivatable
         Crouch.instance.active = false;
 
         ResetMinigame();
+        SetMinigameState(MinigameState.Throwing);
 
         fishObject.SetActive(true);
 
@@ -240,22 +254,22 @@ public class FishingMinigame : PlayerActivatable
         progressSlider.value = fishingProgress;
     }
 
-    private void UpdateStrenght()
+    private void UpdateStrength()
     {
-        float newThrowingStrenght = throwingSlider.value;
+        float newThrowingStrength = throwingSlider.value;
 
-        if (newThrowingStrenght <= minThrowingStrength)
+        if (newThrowingStrength <= minThrowingStrength)
         {
-            strenghtIncreasing = true;
+            strengthIncreasing = true;
         }
-        else if (newThrowingStrenght >= maxThrowingStrength)
+        else if (newThrowingStrength >= maxThrowingStrength)
         {
-            strenghtIncreasing = false;
+            strengthIncreasing = false;
         }
 
-        newThrowingStrenght = strenghtIncreasing ? newThrowingStrenght + Time.deltaTime * strenghtIncreaseSpeed : newThrowingStrenght - Time.deltaTime * strenghtIncreaseSpeed;
+        newThrowingStrength = strengthIncreasing ? newThrowingStrength + Time.deltaTime * strengthIncreaseSpeed : newThrowingStrength - Time.deltaTime * strengthIncreaseSpeed;
 
-        throwingSlider.value = newThrowingStrenght;
+        throwingSlider.value = newThrowingStrength;
     }
 
     private void ThrowBobber()
@@ -340,7 +354,13 @@ public class FishingMinigame : PlayerActivatable
         targetLocation = currentMinY + targetHeight / 2;
 
         throwingSlider.value = 0;
-        SetMinigameState(MinigameState.Throwing);
+        if (bobberInstance != null)
+        {
+            Destroy(bobberInstance.gameObject);
+            bobberInstance = null;
+        }
+        BackgroundRectTransform.gameObject.SetActive(false);
+        throwingSlider.gameObject.SetActive(false);
     }
 
     private IEnumerator LateBobberDistance()
