@@ -87,7 +87,7 @@ title: Swordfish
 ---
     Swordfish: Ooh nay, thee has't best'd me in a duel. Thee shalt visage the ire of mine own blade at which hour we has't a rematch.
     Swordfish: I shall anon rest and waiteth in the album until our fat'd rematch
-    <<<playAnimation>>
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -97,7 +97,7 @@ title: Moonfish
 ---
     Moonfish: Sometimes im a little bit full and sometimes I feel all brand new... that a cycle.
     Moonfish: Sometimes I even am waxing and waning but that's neither here nor there.
-    <<<playAnimation>>
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -107,7 +107,7 @@ title: Starfish
 ---
     Starfish: I'm a true star, now I just dont know if i'm a shooting star or a movie star.
     Starfish: My next step is to go SUPERNOVA. Whatever that means.
-    <<<playAnimation>>
+    <<playAnimation>>
 ===
 
 //--------------------------------
