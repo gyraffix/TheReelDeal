@@ -16,6 +16,7 @@ public class BobberScript : MonoBehaviour
             case "Fish":
                 Destroy(gameObject);
                 fishingMinigame.bobberInstance = null;
+                fishingMinigame.fishLocation = other.transform.position;
                 fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
                 break;
             case "Minigame":

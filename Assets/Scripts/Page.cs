@@ -15,14 +15,20 @@ public class Page : MonoBehaviour
     {
         for (int i = 0; i < PlaceholderFish.Length; i++) 
         {
+            TMP_Text name = spots[i].transform.GetChild(0).GetComponent<TMP_Text>();
+            TMP_Text desc = spots[i].transform.GetChild(1).GetComponent<TMP_Text>();
+            Image image = spots[i].transform.GetChild(2).GetComponent<Image>();
             if (PlaceholderFish[i] != null)
             {
-                TMP_Text name = spots[i].transform.GetChild(0).GetComponent<TMP_Text>();
-                TMP_Text desc = spots[i].transform.GetChild(1).GetComponent<TMP_Text>();
-
                 name.text = PlaceholderFish[i].name;
                 desc.text = PlaceholderFish[i].hint;
             }
+            else
+            {
+                name.text = null;
+                desc.text = null;
+            }
+            image.color = Color.clear;
         }
     }
 
@@ -35,9 +41,10 @@ public class Page : MonoBehaviour
             {
                 TMP_Text desc = spot.transform.GetChild(1).GetComponent<TMP_Text>();
                 Image image = spot.transform.GetChild(2).GetComponent<Image>();
-
+                
                 desc.text = fish.desc;
                 image.sprite = fish.fishPhoto;
+                image.color = Color.white;
                 return true;
             }
 

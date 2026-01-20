@@ -53,11 +53,12 @@ public class FishingMinigame : PlayerActivatable
     private float targetLocation;
 
     [Header("Progress Settings")]
+    [HideInInspector] public Vector3 fishLocation;
     [SerializeField] private float fishHeight;
-    [SerializeField] private float fishEndZ = 4f;
+    [SerializeField] private Vector3 fishEndPos;
     [SerializeField] private float fishStartZ = 7f;
     [SerializeField] private float sineWaveAmplitude = 16;
-    [SerializeField] private float sineWaveSpeed = 1;
+    [SerializeField] private float sineWaveSpeed = 1;  
     private GameObject fishObject;
     private float fishingProgress;
 
@@ -191,7 +192,7 @@ public class FishingMinigame : PlayerActivatable
         ResetMinigame();
         SetMinigameState(MinigameState.Throwing);
 
-        fishObject.SetActive(true);
+
 
         progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
         progressDecrease = Difficulties[currentDifficultyIndex].progressDecrease;
@@ -250,10 +251,10 @@ public class FishingMinigame : PlayerActivatable
         {
             fishingProgress += progressIncrease * Time.deltaTime;
         }
-        fishObject.transform.localPosition = new Vector3(
-            (sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed),
-            fishHeight,
-            fishStartZ - ((fishStartZ - fishEndZ) * fishingProgress / 100));
+        //fishObject.transform.localPosition = new Vector3(
+        //    (sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed),
+        //    fishHeight,
+         //   fishStartZ - ((fishStartZ - fishEndZ) * fishingProgress / 100));
 
         progressSlider.value = fishingProgress;
     }
@@ -300,6 +301,7 @@ public class FishingMinigame : PlayerActivatable
             case MinigameState.Throwing:
                 BackgroundRectTransform.gameObject.SetActive(false);
                 throwingSlider.gameObject.SetActive(true);
+                
                 minigameState = MinigameState.Throwing;
                 break;
 
@@ -310,8 +312,13 @@ public class FishingMinigame : PlayerActivatable
                 break;
 
             case MinigameState.Playing:
+                FirstPersonMovement.instance.active = false;
                 BackgroundRectTransform.gameObject.SetActive(true);
                 throwingSlider.gameObject.SetActive(false);
+                fishObject.SetActive(true);
+                fishObject.transform.position = new Vector3(fishLocation.x, fishHeight, fishLocation.z);
+                fishStartZ = (fishLocation - transform.position).z;
+                fishEndPos = new Vector3 (player.position.x - transform.position.x, fishHeight, player.position.z - transform.position.z);
                 minigameState = MinigameState.Playing;
                 break;
 
@@ -355,6 +362,7 @@ public class FishingMinigame : PlayerActivatable
     public static void PlayAnimation()
     {
         caughtFishSprite.GetComponent<Animator>().SetTrigger("exit");
+        FirstPersonMovement.instance.active = true;
     }
 
     private void RunDialogue(FishItem fish)
@@ -400,7 +408,7 @@ public class FishingMinigame : PlayerActivatable
         yield return new WaitForSeconds(1);
         checkBobberDistance = true;
     }
-
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.matrix = transform.localToWorldMatrix;
@@ -418,7 +426,7 @@ public class FishingMinigame : PlayerActivatable
         Gizmos.DrawLine(new Vector3(sineWaveAmplitude, fishHeight, fishStartZ),
             new Vector3(0, fishHeight, fishEndZ));
     }
-
+    */
     public enum MinigameState
     {
         Throwing,
