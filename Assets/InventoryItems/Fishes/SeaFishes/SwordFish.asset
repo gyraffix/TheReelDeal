@@ -15,3 +15,4 @@ MonoBehaviour:
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
   name: Swordfish
   desc: A fish ready for a fight. Careful, his sword is pointy!
+  hint: Found In Sea Water

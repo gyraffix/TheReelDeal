@@ -15,3 +15,4 @@ MonoBehaviour:
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
   name: Star Fish
   desc: What if you wanted to be a shooting star? This fish achieved it!
+  hint: Found In Sea Water

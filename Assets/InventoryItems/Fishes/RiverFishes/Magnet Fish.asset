@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Magnet Fish
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
-  name: Magnet fish
-  desc: Try as he might the magnetism only lets him swimp up north
+  name: Magnet Fish
+  desc: PLACEHOLDER
+  hint: Found In the River

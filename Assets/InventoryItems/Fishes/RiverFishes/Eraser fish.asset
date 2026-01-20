@@ -15,4 +15,4 @@ MonoBehaviour:
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
   name: EraserClam
   desc: 'He takes care of other fish his own way. '
-  hint: 
+  hint: Found In the River
