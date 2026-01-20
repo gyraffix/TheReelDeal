@@ -290,6 +290,7 @@ public class FishingMinigame : PlayerActivatable
         bobberInstance.GetComponent<BobberScript>().maxSpeed = maxReelingSpeed;
         throwingSlider.value = 0;
         SetMinigameState(MinigameState.Reeling);
+        checkBobberDistance = false;
     }
 
     public void SetMinigameState(MinigameState newMinigameState)
@@ -326,24 +327,26 @@ public class FishingMinigame : PlayerActivatable
     {
         FishItem currentFish = possibleFishes[UnityEngine.Random.Range(0, possibleFishes.Length - 1)];
 
-        Album.instance.NewFish(currentFish);
-
         caughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
 
         Jump.instance.active = true;
         Crouch.instance.active = true;
 
         fishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
-        caughtFishSprite.GetComponent<Animator>().SetTrigger("FishCaught");
+        
         
 
 
         BackgroundRectTransform.gameObject.SetActive(false);
         fishObject.SetActive(false);
 
-        RunDialogue(currentFish);
+        if (!Album.instance.addedFish.Contains(currentFish.name))
+        {
+            caughtFishSprite.GetComponent<Animator>().SetTrigger("FishCaught");
+            RunDialogue(currentFish);
+        }
 
-        
+        Album.instance.NewFish(currentFish);
 
         active = false;
     }

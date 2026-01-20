@@ -22,7 +22,8 @@ public class Album : MonoBehaviour
     [SerializeField] private float interactionCooldown;
     private bool canInteract = true;
 
-    private List<string> addedFish;
+    [HideInInspector]
+    public List<string> addedFish;
 
 
     private void Start()
@@ -116,6 +117,8 @@ public class Album : MonoBehaviour
             {
                 if (p.NewFish(fish))
                 {
+                    addedFish.Add(fish.name);
+                    Debug.Log("added " + fish.name + " to the added fish List");
                     break;
                 }
             }

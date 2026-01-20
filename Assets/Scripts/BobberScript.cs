@@ -17,7 +17,6 @@ public class BobberScript : MonoBehaviour
                 Destroy(gameObject);
                 fishingMinigame.bobberInstance = null;
                 fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
-                FirstPersonLook.instance.active = false;
                 break;
             case "Minigame":
                 if (fishingMinigame.checkBobberDistance)
