@@ -1574,6 +1574,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1476188709}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &986759376 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8309902628685535410, guid: 52571f68872914e24837210513edea1d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476188709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1020318914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 576041948743656869, guid: 3a4303ac21d4742df9ee4e118e3a6bba,
@@ -1642,6 +1654,7 @@ GameObject:
   - component: {fileID: 1052310854}
   - component: {fileID: 1052310853}
   - component: {fileID: 1052310852}
+  - component: {fileID: 1052310858}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -1774,6 +1787,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1052310858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052310851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb87ae987c60e9d4f8346202d271648d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endLineWhenVoiceoverComplete: 1
+  dialogueRunner: {fileID: 986759376}
+  fadeOutTimeOnLineFinish: 0.05
+  waitTimeBeforeLineStart: 0
+  waitTimeAfterLineComplete: 0
+  audioSource: {fileID: 0}
 --- !u!223 &1169980083 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 4479364906216904665, guid: 89409557119c741eba15cce9ea513572,
@@ -1866,6 +1897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958262985454349548, guid: 52571f68872914e24837210513edea1d,
+        type: 3}
+      propertyPath: treu
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2958262986520364887, guid: 52571f68872914e24837210513edea1d,
         type: 3}
