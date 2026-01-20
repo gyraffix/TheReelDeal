@@ -17,6 +17,7 @@ public class FishingMinigame : PlayerActivatable
     private Slider progressSlider;
     private Slider throwingSlider;
     private GameObject FishCaughtText;
+    private GameObject CaughtFishSprite;
     private Transform player;
     private HasUsableItem hasUsableItem;
 
@@ -73,8 +74,9 @@ public class FishingMinigame : PlayerActivatable
         targetRectTransform = BackgroundRectTransform.transform.Find("Target").GetComponent<RectTransform>();
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
-        throwingSlider = minigameCanvas.transform.Find("ThrowigStrenght").GetComponent<Slider>();
+        throwingSlider = minigameCanvas.transform.Find("ThrowingStrength").GetComponent<Slider>();
         FishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
+        CaughtFishSprite = minigameCanvas.transform.Find("CaughtFish").gameObject;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         fishObject = transform.Find("Fish").gameObject;
         hasUsableItem = gameObject.GetComponent<HasUsableItem>();
@@ -308,15 +310,22 @@ public class FishingMinigame : PlayerActivatable
 
         Album.instance.NewFish(currentFish);
 
+        CaughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
+
         FirstPersonLook.instance.active = true;
         FirstPersonMovement.instance.active = true;
         Jump.instance.active = true;
         Crouch.instance.active = true;
 
         FishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
+        CaughtFishSprite.GetComponent<Animator>().SetTrigger("FishCaught");
+        
 
         BackgroundRectTransform.gameObject.SetActive(false);
         fishObject.SetActive(false);
+
+        
+
         active = false;
     }
 

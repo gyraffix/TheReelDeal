@@ -29,8 +29,9 @@ public class WanderingFish : MonoBehaviour
         {
             Vector3 newTarget = RandomSpherePos(transform.position, radius, -1);
             agent.SetDestination(newTarget);
-            timer = 0;
             agent.gameObject.transform.LookAt(newTarget);
+            timer = 0;
+            
         }
     }
 
