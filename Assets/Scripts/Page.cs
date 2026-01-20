@@ -1,3 +1,4 @@
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,8 +10,7 @@ public class Page : MonoBehaviour
     public GameObject[] spots;
 
     [SerializeField] private FishItem[] PlaceholderFish = new FishItem[4];
-
-
+    
     private void Start()
     {
         for (int i = 0; i < PlaceholderFish.Length; i++) 
