@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bongo Catfish
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
-  name: Bongo Catfish
+  name: BongoCatFish
   desc: '* Loud Bongo Sfx * Meow! * Loud Bongo Sfx *'
   hint: Found In the pond

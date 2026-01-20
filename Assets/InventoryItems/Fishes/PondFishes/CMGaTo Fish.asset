@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CMGaTo Fish
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
-  name: CMGaTo Fish
+  name: CMGaToFish
   desc: This silly cat really wanted to be a fish to avoid his last semester project.
     He loves his chocolate birds.
   hint: Found In the pond

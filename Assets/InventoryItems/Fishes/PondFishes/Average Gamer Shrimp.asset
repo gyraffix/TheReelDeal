@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Average Gamer Shrimp
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 21300000, guid: 0653fcfde202e458591a5c35de54781f, type: 3}
-  name: Average Gamer Shrimp
+  name: AverageGamerShrimp
   desc: His posture displays what years of peak gaming looks like.
   hint: Found In the pond

@@ -13,7 +13,7 @@ public class Page : MonoBehaviour
     
     private void Start()
     {
-        for (int i = 0; i < PlaceholderFish.Length; i++) 
+        for (int i = 0; i < 4; i++) 
         {
             TMP_Text name = spots[i].transform.GetChild(0).GetComponent<TMP_Text>();
             TMP_Text desc = spots[i].transform.GetChild(1).GetComponent<TMP_Text>();
@@ -34,14 +34,17 @@ public class Page : MonoBehaviour
 
     public bool NewFish(FishItem fish)
     {
+        
         foreach (GameObject spot in spots)
         {
+
             TMP_Text name = spot.transform.GetChild(0).GetComponent<TMP_Text>();
+            Debug.Log(name.text + " / " + fish.name);
             if (name.text.Equals(fish.name))
             {
                 TMP_Text desc = spot.transform.GetChild(1).GetComponent<TMP_Text>();
                 Image image = spot.transform.GetChild(2).GetComponent<Image>();
-                
+                Debug.Log("Added " + fish.name + " to album");
                 desc.text = fish.desc;
                 image.sprite = fish.fishPhoto;
                 image.color = Color.white;
