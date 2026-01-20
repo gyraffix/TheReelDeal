@@ -25,8 +25,8 @@ public class Page : MonoBehaviour
             }
             else
             {
-                name.text = null;
-                desc.text = null;
+                name.text = "";
+                desc.text = "";
             }
             image.color = Color.clear;
         }
