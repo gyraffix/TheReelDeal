@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class FirstPersonMovement : MonoBehaviour
 {
@@ -49,4 +50,12 @@ public class FirstPersonMovement : MonoBehaviour
             rigidbody.linearVelocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.linearVelocity.y, targetVelocity.y);
         }
     }
+
+    [YarnCommand]
+    public static void EnableMovement()
+    {
+        instance.active = true;
+        FirstPersonLook.instance.active = true;
+    }
+
 }
