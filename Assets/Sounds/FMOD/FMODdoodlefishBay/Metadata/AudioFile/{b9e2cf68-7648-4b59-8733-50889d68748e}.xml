@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b9e2cf68-7648-4b59-8733-50889d68748e}">
+		<property name="assetPath">
+			<value>BookClosing__kodack.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>7.6858049886621318</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{24ac0441-5fcc-4bdf-a0d6-2b4969d039fe}</destination>
+		</relationship>
+	</object>
+</objects>

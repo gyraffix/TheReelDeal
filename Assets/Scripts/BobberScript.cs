@@ -1,12 +1,16 @@
+using FMODUnity;
 using UnityEngine;
 
 public class BobberScript : MonoBehaviour
 {
     [HideInInspector] public FishingMinigame fishingMinigame;
+    [SerializeField] private StudioEventEmitter FMODWaterSplash;
     public float maxSpeed;
+    [SerializeField] private float linearDamping = 5;
     void OnCollisionEnter(Collision collision)
     {
         GetComponent<Rigidbody>().maxLinearVelocity = maxSpeed;
+        GetComponent<Rigidbody>().linearDamping = linearDamping;
     }
 
     void OnTriggerStay(Collider other)
@@ -16,6 +20,8 @@ public class BobberScript : MonoBehaviour
             case "Fish":
                 Destroy(gameObject);
                 fishingMinigame.bobberInstance = null;
+                fishingMinigame.isReeling = false;
+                fishingMinigame.FMODReelingIn.Stop();
                 fishingMinigame.fishLocation = other.transform.position;
                 fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
                 break;
@@ -25,8 +31,13 @@ public class BobberScript : MonoBehaviour
                     Destroy(fishingMinigame.bobberInstance.gameObject);
                     fishingMinigame.bobberInstance = null;
                     fishingMinigame.checkBobberDistance = false;
+                    fishingMinigame.isReeling = false;
+                    fishingMinigame.FMODReelingIn.Stop();
                     fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Throwing);
                 }
+                break;
+            case "Water":
+                FMODWaterSplash.Play();
                 break;
         }
 

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 7966929242472173898}
   - component: {fileID: 5876610051885301095}
   - component: {fileID: 8614577542690536734}
+  - component: {fileID: 311525434828260225}
+  - component: {fileID: 8222654760401259237}
+  - component: {fileID: 8840876444270486164}
   m_Layer: 0
   m_Name: Minigame trigger
   m_TagString: Minigame
@@ -81,6 +84,9 @@ MonoBehaviour:
   bobberStartingPoint: {fileID: 5997192186057842248}
   bobberPrefab: {fileID: 3077397679609011471, guid: 440788c8ac7574f3abbc6235e4457f92,
     type: 3}
+  FMODThrowingBobber: {fileID: 311525434828260225}
+  FMODReelingIn: {fileID: 8222654760401259237}
+  FMODVictorySound: {fileID: 8840876444270486164}
   bobberInstance: {fileID: 0}
   minigameInput: 32
   exitMinigameInput: 27
@@ -121,6 +127,7 @@ MonoBehaviour:
   strengthIncreaseSpeed: 10
   reelingSpeed: 5
   maxReelingSpeed: 5
+  isReeling: 0
   minimumDistanceToPlayer: 2.5
   checkBobberDistance: 0
 --- !u!114 &8614577542690536734
@@ -136,6 +143,99 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bait: []
+--- !u!114 &311525434828260225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296091689474465446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 212474945
+      Data2: 1107051023
+      Data3: 2145913242
+      Data4: 1285618030
+    Path: event:/Fishing/Casting
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8222654760401259237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296091689474465446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 469652845
+      Data2: 1209082882
+      Data3: -1233140315
+      Data4: 655872926
+    Path: event:/Fishing/Reeling
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8840876444270486164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296091689474465446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1076413684
+      Data2: 1259243351
+      Data3: 2099014558
+      Data4: -1780749933
+    Path: event:/Fishing/VictorySound
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5368425889625143330
 GameObject:
   m_ObjectHideFlags: 0
