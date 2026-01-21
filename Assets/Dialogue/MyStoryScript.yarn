@@ -251,3 +251,25 @@ title: CMGaToFish
     <<playAnimation>>
 ===   
 
+
+
+
+
+//--------------------------------
+//      Test Dialogue
+//--------------------------------
+
+
+title: TestNPCIncomplete
+---
+    NPC: Whoa there, I can't let ya pass until you can prove you're a seasoned trawler...
+    NPC: Tell ya what, if you can show me 1 fish, I'll let ya through!
+    <<EnableMovement>>
+===
+
+title: TestNPCComplete
+---
+    NPC: Now that's what I'm talking about, I can tell you know about fishin'!
+    NPC: I'll let ya pass now, good luck!
+    <<EnableMovement>>
+===

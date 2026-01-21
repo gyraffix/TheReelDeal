@@ -133,7 +133,7 @@
                 {
                     "name": "",
                     "id": "28e0fa48-129e-4322-b1e2-2a907fb2dfc1",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "Press",
                     "processors": "",
                     "groups": ";KeyboardMouse",
@@ -155,7 +155,7 @@
                 {
                     "name": "",
                     "id": "3d046a1f-43c7-451c-92b3-3d97049f58bc",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "Press",
                     "processors": "",
                     "groups": ";KeyboardMouse",

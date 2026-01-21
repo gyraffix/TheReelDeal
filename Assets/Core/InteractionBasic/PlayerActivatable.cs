@@ -30,7 +30,17 @@ public abstract class PlayerActivatable : MonoBehaviour
         }
     }
 
-    public virtual void OnColliding()
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (shouldActivateOnCollision)
+        {
+            if (!isDebouncing)
+            {
+                Activate();
+            }
+        }
+    }
+    public void OnColliding()
     {
         if (shouldActivateOnCollision) {
             if (!isDebouncing)
