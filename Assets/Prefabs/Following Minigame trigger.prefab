@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 9967688893870530}
   - component: {fileID: 7966929242472173898}
-  - component: {fileID: 5876610051885301095}
+  - component: {fileID: 2706999452937087973}
   - component: {fileID: 8614577542690536734}
   - component: {fileID: 311525434828260225}
   - component: {fileID: 8222654760401259237}
   - component: {fileID: 8840876444270486164}
   m_Layer: 0
-  m_Name: Minigame trigger
+  m_Name: Following Minigame trigger
   m_TagString: Minigame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5876610051885301095
+--- !u!114 &2706999452937087973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1296091689474465446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49dbe262b232a4baab37f9803e6dcceb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8be730339eb93418c9b1dabe6bcbf01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canRepeat: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
     directionChangeSpeed: 10
     meterSpeed: 100
     targetHeight: 40
-    targetSpeed: 60
+    targetSpeed: 70
   - randomizeMovement: 1
     progressIncrease: 30
     progressDecrease: 10
@@ -114,22 +114,21 @@ MonoBehaviour:
     targetHeight: 34
     targetSpeed: 70
   possibleFishes:
-  - {fileID: 11400000, guid: 8eb723c3d2748d444a3efebe725265c9, type: 2}
-  minimumTravelDistance: 30
+  - {fileID: 11400000, guid: 87184fe25e421da41ac7c0cec4a369d3, type: 2}
   fishLocation: {x: 0, y: 0, z: 0}
-  fishHeight: -0.66
+  fishHeight: 0
   fishEndPos: {x: 0, y: 0, z: 0}
-  fishStartZ: 10
-  sineWaveAmplitude: 2
+  fishStartZ: 7
+  sineWaveAmplitude: 16
   sineWaveSpeed: 1
-  minThrowingStrength: 5
   maxThrowingStrength: 20
+  minThrowingStrength: 5
   strengthIncreaseSpeed: 10
   reelingSpeed: 5
   maxReelingSpeed: 5
   isReeling: 0
-  minimumDistanceToPlayer: 2.5
   checkBobberDistance: 0
+  minimumTravelDistance: 30
 --- !u!114 &8614577542690536734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e0fa5f4dfb2604aad5e00fbf890307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bait: []
+  bait:
+  - {fileID: 11400000, guid: 7e4fff7175cada542ba5a7eca138d28c, type: 2}
 --- !u!114 &311525434828260225
 MonoBehaviour:
   m_ObjectHideFlags: 0

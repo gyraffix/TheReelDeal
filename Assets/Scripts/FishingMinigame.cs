@@ -189,6 +189,7 @@ public abstract class FishingMinigame : PlayerActivatable
 
         caughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
 
+        FirstPersonMovement.instance.active = true;
         Jump.instance.active = true;
         Crouch.instance.active = true;
 
@@ -240,6 +241,7 @@ public abstract class FishingMinigame : PlayerActivatable
 
     public void EndMinigame()
     {
+        FirstPersonMovement.instance.active = true;
         Jump.instance.active = true;
         Crouch.instance.active = true;
         active = false;

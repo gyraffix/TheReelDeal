@@ -60,6 +60,8 @@ public class FolowingMinigame : FishingMinigame
     private new void Update()
     {
         base.Update();
+        if (!active)
+            return;
         if (minigameState == MinigameState.Playing)
         {
             MinigameSetActive(true);
