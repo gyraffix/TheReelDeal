@@ -54,7 +54,7 @@ public abstract class FishingMinigame : PlayerActivatable
     [HideInInspector] public bool isReeling = false;
     [HideInInspector] public bool checkBobberDistance;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         throwingSlider = minigameCanvas.transform.Find("ThrowingStrength").GetComponent<Slider>();
         fishCaughtText = minigameCanvas.transform.Find("FishCaught").gameObject;
@@ -70,7 +70,7 @@ public abstract class FishingMinigame : PlayerActivatable
         throwingSlider.maxValue = maxThrowingStrength;
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         if (!active)
             return;
@@ -130,6 +130,16 @@ public abstract class FishingMinigame : PlayerActivatable
                 break;
         }
     }
+
+    protected override void OnActivate()
+    {
+        //OnMinigameActivation();
+    }
+
+    //protected void OnMinigameActivation()
+    //{
+
+    //}
 
     protected void OnTriggerExit(Collider other)
     {
