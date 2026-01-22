@@ -42,7 +42,7 @@ public class Album : MonoBehaviour
         if (isOpen)
         {
             anim.SetTrigger("Close");
-            //FMODCloseAlbum.Play();
+            FMODCloseAlbum.Play();
             Cursor.lockState = CursorLockMode.Locked;
             FirstPersonMovement.instance.active = true;
             FirstPersonLook.instance.active = true;
@@ -52,7 +52,7 @@ public class Album : MonoBehaviour
         else
         {
             anim.SetTrigger("Open");
-            //FMODOpenAlbum.Play();
+            FMODOpenAlbum.Play();
             Cursor.lockState = CursorLockMode.None;
             FirstPersonLook.instance.active = false;
             FirstPersonMovement.instance.active = false;

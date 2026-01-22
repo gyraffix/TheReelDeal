@@ -54,6 +54,7 @@ MonoBehaviour:
   canBeActivated: 1
   inventory: {fileID: 0}
   item: {fileID: 11400000, guid: 7e4fff7175cada542ba5a7eca138d28c, type: 2}
+  baitCanvas: {fileID: 0}
 --- !u!114 &7499760723356077299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +71,7 @@ MonoBehaviour:
   shouldActivateOnCollision: 0
   shouldActivateOnTriggerEnter: 0
   canBeActivated: 1
+  connectedTriggers: []
 --- !u!114 &-6971055583522085530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +93,7 @@ MonoBehaviour:
       Data4: -391555203
     Path: event:/PickUp
   Event: 
-  EventPlayTrigger: 2
+  EventPlayTrigger: 12
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
