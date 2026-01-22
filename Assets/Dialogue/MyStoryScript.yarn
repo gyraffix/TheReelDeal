@@ -345,6 +345,12 @@ title: NPC4Dialogue
 //      Test Dialogue
 //--------------------------------
 
+title: TestNPCNormal
+---
+NPC: Hey there! To get started, simply walk up to any of the fishing spots and hold space to throw your bobber.
+NPC: Have fun!
+<<EnableMovement>>
+===
 
 title: TestNPCIncomplete
 ---
