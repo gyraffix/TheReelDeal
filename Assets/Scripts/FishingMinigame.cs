@@ -1,10 +1,9 @@
-using FMODUnity;
 using System;
 using System.Collections;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
-using static Unity.Burst.Intrinsics.X86.Avx;
 
 public abstract class FishingMinigame : PlayerActivatable
 {
@@ -71,7 +70,7 @@ public abstract class FishingMinigame : PlayerActivatable
         throwingSlider.maxValue = maxThrowingStrength;
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         if (!active)
             return;
@@ -136,8 +135,7 @@ public abstract class FishingMinigame : PlayerActivatable
 
     protected override void OnActivate()
     {
-        Jump.instance.active = false;
-        Crouch.instance.active = false;
+        //OnMinigameActivation();
     }
 
     //protected void OnMinigameActivation()

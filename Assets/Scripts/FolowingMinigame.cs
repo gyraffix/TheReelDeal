@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-using Yarn.Unity;
 
 public class FolowingMinigame : FishingMinigame
 {
@@ -205,3 +204,4 @@ public class FolowingMinigame : FishingMinigame
         }
     }
 }
+
