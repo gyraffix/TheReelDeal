@@ -6063,7 +6063,7 @@ GameObject:
   - component: {fileID: 898225027}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -6806,6 +6806,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933035121098221282, guid: 89409557119c741eba15cce9ea513572,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6467975653315443560, guid: 89409557119c741eba15cce9ea513572,
         type: 3}

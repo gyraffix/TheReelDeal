@@ -123,123 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CMGaTo_Fish
+      name: Pants
       rect:
         serializedVersion: 2
-        x: 39
-        y: 1203
-        width: 464
-        height: 254
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2243b6469c914657ab44219ab25e862
-      internalID: 2096096734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cookiecutter_Shark
-      rect:
-        serializedVersion: 2
-        x: 506
-        y: 1105
-        width: 500
-        height: 320
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6992e945a36424e139cda69cad245954
-      internalID: 1765385025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Douge_Fish
-      rect:
-        serializedVersion: 2
-        x: 1046
-        y: 1093
-        width: 490
-        height: 374
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d948d7a6455d045bf8e6ba328c408de9
-      internalID: 2032328006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Eraser_Clam
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 552
-        width: 473
-        height: 393
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c1418c9e3d534e39874aac6bd3640ca
-      internalID: -1992556909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GlassFish
-      rect:
-        serializedVersion: 2
-        x: 570
-        y: 571
-        width: 402
-        height: 390
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a22a063e592d545a59fedded34548b5c
-      internalID: 1095901573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 9_fish_5
-      rect:
-        serializedVersion: 2
-        x: 946
-        y: 675
-        width: 54
-        height: 37
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,13 +145,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 9_fish_6
+      name: Sanic
       rect:
         serializedVersion: 2
-        x: 956
-        y: 615
-        width: 34
-        height: 65
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,13 +167,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PantsFish
+      name: CMGaTo
       rect:
         serializedVersion: 2
-        x: 1042
-        y: 552
-        width: 468
-        height: 379
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee032d36f1a0f495cb2ca60bf6f504a8
-      internalID: 940263514
+      spriteID: 867d0f09d1d8e004f9732ef730a3b582
+      internalID: 395201013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sanic_Fish
+      name: CookieCutter
       rect:
         serializedVersion: 2
-        x: 31
-        y: 85
-        width: 445
-        height: 367
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c767ce9988f444eb9e38b6f5faa9097
-      internalID: -454859742
+      spriteID: 755e90ab65ada714abd5d7002d8f2db0
+      internalID: -128435435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SteamBunny_Fish
+      name: Doge
       rect:
         serializedVersion: 2
-        x: 548
-        y: 60
-        width: 476
-        height: 324
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30794659d938541c4a0fd6a7bcead589
-      internalID: 1732446357
+      spriteID: 0216bb1e44bad3848822d878ef2003ce
+      internalID: -765519470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_Fish
+      name: Eraser
       rect:
         serializedVersion: 2
-        x: 1042
-        y: 3
-        width: 490
-        height: 494
+        x: 0
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,8 +248,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51bb04bdc5bf44a968462d841b5951e2
-      internalID: 1369884818
+      spriteID: 708494d31d7a59c47aedc2fe1f59db8b
+      internalID: -981661040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glass
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63678bbd67097524cb5986c7a4ad0dfc
+      internalID: 1940904398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Steam
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8653579b672177c47a2686fc529525f3
+      internalID: -1626899672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d4a4a31a6b0a4449e7af8c8bc768a8
+      internalID: -879694424
       vertices: []
       indices: 
       edges: []
@@ -378,17 +334,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      9_fish_5: -226387441
-      9_fish_6: 446560183
-      CMGaTo_Fish: 2096096734
-      Cookiecutter_Shark: 1765385025
-      Douge_Fish: 2032328006
-      Eraser_Clam: -1992556909
-      GlassFish: 1095901573
-      PantsFish: 940263514
-      Sanic_Fish: -454859742
-      SteamBunny_Fish: 1732446357
-      Sword_Fish: 1369884818
+      CMGaTo: 395201013
+      CookieCutter: -128435435
+      Doge: -765519470
+      Eraser: -981661040
+      Glass: 1940904398
+      Pants: -226387441
+      Sanic: 446560183
+      Steam: -1626899672
+      Sword: -879694424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

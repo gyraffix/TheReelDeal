@@ -9,6 +9,7 @@ TagManager:
   - RespawnPlayers
   - Fish
   - Minigame
+  - Terrain
   layers:
   - Default
   - TransparentFX
