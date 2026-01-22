@@ -20,7 +20,7 @@ public class TimingMinigame : FishingMinigame
 
 
     [SerializeField] private List<RectTransform> targets;
-    [SerializeField] private List<RectTransform> spawnedTargets;
+    private List<RectTransform> spawnedTargets;
     private new void Awake()
     {
         BackgroundRectTransform = minigameCanvas.transform.Find("TimingMinigameBackground").GetComponent<RectTransform>();
