@@ -16,7 +16,7 @@ public class TimingMinigame : FishingMinigame
     private float meterSpeed = 50;
     private float meterPos = 0;
     private bool meterGoingUp = false;
-    private float failedProgressDecrease = 30;
+    private float defaultProgressDecrease = 8;
 
 
     [SerializeField] private List<RectTransform> targets;
@@ -27,6 +27,12 @@ public class TimingMinigame : FishingMinigame
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
         fishObject = transform.Find("Fish").gameObject;
+
+        targetsParent = BackgroundRectTransform.transform.Find("Targets").GetComponent<RectTransform>();
+        for (int i = 1;  i < targets.Count + 1; i++)
+        {
+            targets[i - 1] = targetsParent.transform.Find("Target" + i).GetComponent<RectTransform>();
+        }
 
         base.Awake();
     }
@@ -39,6 +45,8 @@ public class TimingMinigame : FishingMinigame
         maxY = BackgroundRectTransform.sizeDelta.y / 2;
 
         fishingProgress = 30;
+        progressIncrease = 30;
+        progressDecrease = 30;
 
         BackgroundRectTransform.gameObject.SetActive(false);
 
@@ -157,17 +165,19 @@ public class TimingMinigame : FishingMinigame
         {
             for (int i = 0; i < spawnedTargets.Count; i++)
             {
-                float targetPos = spawnedTargets[i].localPosition.y;
+                var target = spawnedTargets[i];
+                float targetPos = target.localPosition.y;
                 if (meterPos > targetPos - targetHeight / 2 && meterPos < targetPos + targetHeight / 2)
                 {
                     fishingProgress += progressIncrease;
                     pressSucces = true;
+                    SpawnTarget(target);
                 }
             }
             if (!pressSucces) 
-                fishingProgress -= failedProgressDecrease;
+                fishingProgress -= progressDecrease;
         }
-        fishingProgress -= progressDecrease * Time.deltaTime;
+        fishingProgress -= defaultProgressDecrease * Time.deltaTime;
 
         progressSlider.value = fishingProgress;
         Debug.Log(progressSlider.value);
@@ -197,7 +207,8 @@ public class TimingMinigame : FishingMinigame
     {
         fishingProgress = 30;
         meterPos = 0;
-        spawnedTargets.Clear();
+        if (spawnedTargets.Count > 0)         
+            spawnedTargets.Clear();
 
         checkBobberDistance = false;
 

@@ -34,7 +34,7 @@ public class BobberScript : MonoBehaviour
                 fishingMinigame.fishLocation = other.transform.position;
                 fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
                 break;
-            case "Minigame":
+            case "Minigame": // Doesn't work. This needs to be on trigger enter. Or collide with player
                 if (fishingMinigame.checkBobberDistance)
                 {
                     Destroy(fishingMinigame.bobberInstance.gameObject);
