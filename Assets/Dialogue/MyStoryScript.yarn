@@ -6,8 +6,8 @@ title: Start
 Narrator: This is doodlefish bay, your little slice of heaven. You spend your days drawing silly fishes amongst food and other doodles.
 Narrator: Your doodle album is alive with so many ideas and colors.
 Narrator: One night a storm hit your island all of a sudden. You placed your book under a tree where it would be safe from the rain!
-Narrator: As you looked from the window, a bolt came from the sky hitting the book. It's pages flung alive spinning and sending out colords
-Narrator: It's your doodles! They are alive and jumping into the nearby water bodies!
+Narrator: As you looked from the window, a bolt came from the sky hitting the book. It's pages flung alive spinning and sending out colors
+Narrator: It's your doodles! They are alive and jumping mostly into the nearby water!
 Narrator: The storm has calmed down. It's time to go collect those silly goobers and bring them back safely to their book.
 <<declare $itemsFound = 0>>
 <<declare $quest = "Catch your first doodle fish">>
@@ -163,12 +163,13 @@ title: EraserClam
 ===
 
 //--------------------------------
-//          Magnet Jellyfish ???
+//          Magnet Jellyfish
 //--------------------------------
 title: MagnetJellyfish
 ---
-    Magnet Jellyfish: PLACEHOLDER
-    Magnet Jellyfish: PLACEHOLDER
+    Magnet Jellyfish: Why hello there! I see I got attracted towards you | υoγ ƨbɿɒwoɈ bɘɈɔɒɿɈɈɒ Ɉoϱ I ɘɘƨ I !ɘɿɘʜɈ ollɘʜ γʜW
+    Magnet Jellyfish: Ignore the jumbled mess, that's me magnetizing the opposite words towards me | ɘm ƨbɿɒwoɈ ƨbɿow ɘɈiƨoqqo ɘʜɈ ϱniziɈɘnϱɒm ɘm ƨ'ɈɒʜɈ ,ƨƨɘm bɘldmυį ɘʜɈ ɘɿonϱI
+    <<playAnimation>>
 ===
 
 //--------------------------------
@@ -237,7 +238,7 @@ title: BongoCatFish
 title: AverageGamerShrimp
 ---
     Average Gamer Shrimp: Hello kitten. Let me take care of you after I win this League Of Heroes game. I have a aquatic dew to share with you kitten.
-    Average Gamer Shrimp: I'm a fishcord mod *Tips Fedora* I always respect M'lady's
+    Average Gamer Shrimp: I'm a fishcord mod *Tips Fedora* I always respect M'ladys
     <<playAnimation>>
 ===   
 
@@ -253,6 +254,85 @@ title: CMGaToFish
 
 
 
+
+//--------------------------------
+//      NPC 1 Quesline
+//--------------------------------
+title: NPC1Introduction
+---
+    PLACEHOLDER: Oh boy coming out of that book sure was scary, good thing I don't get spooked easy!
+    You: Hello?
+    PLACEHOLDER: AAAAAAAAAHHHHHHHH!  Oh.. Hi!... Dont sneak up on me like that!
+    You: Sorry!
+    Placeholder: Wait... I know you! You are our creator! Did you really have to draw me besides Doge Fish, he won't stop barking.
+    You: Sorry about that... I was actually wondering if you could help me out?
+    PLACEHOLDER: Oh so you need my help? Well I did bring this fishing rod with me out of the book, maybe it could be usefull to help you collect the rest of the doodles
+    You: Perfect! That will help me!
+    PLACEHOLDER: Wa wa wa wait! Not so fast. I need to make sure you even are our artist!
+    You: What?
+    PLACEHOLDER: I will give you the fishing rod if you show me you caught one doodle fish which will prove you DID draw us
+    You: That makes absolutely no sense but... ok...
+    Narrator: QUEST STARTED
+    <<EnableMovement>>
+===
+
+title: NPC1Incomplete
+---
+    PLACEHOLDER: I won't give you this fishing rod until you prove you drew us by showing me you caught one the doodle fishes!
+    You: How does me catching my doodles prove I drew them?
+    Narrator: PLACEHOLDER got distracted looking at the floor as you asked for explanations.
+    You: Ok nevermind i'll get the fish 
+    <<EnableMovement>>
+===
+
+
+title: NPC1Complete
+---
+    PLACEHOLDER: I knew you drew us! And this proves it
+    You: ...
+    PLACEHOLDER: I never had any doubts about you
+    You: Can I have my fishing rod?
+    PLACEHOLDER: The what now?
+    You:...
+    Narrator: You grab the fishing rod laying on the ground besides PLACEHOLDER and decide to move on.
+    <<EnableMovement>>
+===
+
+//--------------------------------
+//      NPC 2  Dialogue
+//--------------------------------
+
+
+title: NPC2Dialogue
+---
+    PLACEHOLDER: Did you know that some fishies only show up when you have bait? 
+    PLACEHOLDER: Why? I don't know... you are the one who drew them.
+    <<EnableMovement>>
+===
+
+//--------------------------------
+//      NPC 3  Dialogue
+//--------------------------------
+
+
+title: NPC3Dialogue
+---
+    PLACEHOLDER: Did you know some of the doodles seem to fight harder not to get caught by your doodle rod? Who told me? CMGaTO!
+    PLACEHOLDER: He said something about not wanting to be caught because he didnt do his projects.
+    <<EnableMovement>>
+===
+
+//--------------------------------
+//      NPC 4  Dialogue
+//--------------------------------
+
+
+title: NPC4Dialogue
+---
+    PLACEHOLDER: I think i just saw a sonic the hedgehog OC in the water.... Am I doodleucinating?
+    PLACEHOLDER: Maybe I had to much crayon soup.
+    <<EnableMovement>>
+===
 
 
 //--------------------------------
