@@ -24,12 +24,16 @@ public class NPC : PlayerActivatable
 
     protected override void OnActivate()
     {
-
         Debug.Log("activated NPC");
 
         FirstPersonLook.instance.active = false;
         FirstPersonMovement.instance.active = false;
-        player.transform.LookAt(transform.position);
+        player.transform.LookAt(new Vector3
+            (
+            transform.position.x,
+            FirstPersonMovement.instance.gameObject.transform.position.y, 
+            transform.position.z)
+            );
 
 
 

@@ -4,11 +4,17 @@
 title: Start
 ---
 Narrator: This is doodlefish bay, your little slice of heaven. You spend your days drawing silly fishes amongst food and other doodles.
+<<NextCamera CutSceneCameras>>
 Narrator: Your doodle album is alive with so many ideas and colors.
+<<NextCamera CutSceneCameras>>
 Narrator: One night a storm hit your island all of a sudden. You placed your book under a tree where it would be safe from the rain!
+<<NextCamera CutSceneCameras>>
 Narrator: As you looked from the window, a bolt came from the sky hitting the book. It's pages flung alive spinning and sending out colors
+<<NextCamera CutSceneCameras>>
 Narrator: It's your doodles! They are alive and jumping mostly into the nearby water!
+<<NextCamera CutSceneCameras>>
 Narrator: The storm has calmed down. It's time to go collect those silly goobers and bring them back safely to their book.
+<<NextCamera CutSceneCameras>>
 <<declare $itemsFound = 0>>
 <<declare $quest = "Catch your first doodle fish">>
 ===
