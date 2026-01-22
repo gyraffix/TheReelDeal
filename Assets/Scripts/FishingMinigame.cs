@@ -325,4 +325,7 @@ public class Difficulty
     [Header("Target settings")]
     public int targetHeight = 20;
     public float targetSpeed = 100;
+
+    [Header("Mashing Minigame settings")]
+    public float requiredClicksPerSecond;
 }

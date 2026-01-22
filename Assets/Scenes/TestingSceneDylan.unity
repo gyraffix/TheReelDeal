@@ -1050,6 +1050,74 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cab386cffab3d541ac1ef56e64b2e58, type: 3}
+--- !u!1001 &350887507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1779320906}
+    m_Modifications:
+    - target: {fileID: 8371298648736569978, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_Name
+      value: ProximityTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de99310b7dc304d4bbbb9e635a3542de, type: 3}
 --- !u!1001 &368683204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1272,6 +1340,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pond Minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: minigameInput
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: minigameCanvas
+      value: 
+      objectReference: {fileID: 1110075250}
     - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: fishEndZ
@@ -1357,7 +1440,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1296091689474465446, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1772234997}
   m_SourcePrefab: {fileID: 100100000, guid: b9e480cca64b0428c97675411ffd6575, type: 3}
 --- !u!4 &394717235 stripped
 Transform:
@@ -3827,6 +3914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: River Minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: minigameCanvas
+      value: 
+      objectReference: {fileID: 1110075250}
     - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: canRepeat
@@ -6396,6 +6488,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sea Minigame
       objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: minigameCanvas
+      value: 
+      objectReference: {fileID: 1110075250}
     - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: fishEndZ
@@ -6489,6 +6586,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5242054660535214258, guid: 1cab386cffab3d541ac1ef56e64b2e58,
     type: 3}
   m_PrefabInstance: {fileID: 1557360015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &991180189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8990621112163952469, guid: de99310b7dc304d4bbbb9e635a3542de,
+    type: 3}
+  m_PrefabInstance: {fileID: 350887507}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &995243273
 PrefabInstance:
@@ -6747,6 +6850,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6467975653315443560, guid: 89409557119c741eba15cce9ea513572,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6467975653315443560, guid: 89409557119c741eba15cce9ea513572,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6659400492402271562, guid: 89409557119c741eba15cce9ea513572,
         type: 3}
       propertyPath: m_Pivot.x
@@ -6920,7 +7033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddaf7983fe414f73941d1ba82cd8b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRepeat: 0
+  canRepeat: 1
   shouldActivateOnCollision: 1
   shouldActivateOnTriggerEnter: 0
   canBeActivated: 1
@@ -6959,6 +7072,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5242054660535214258, guid: 1cab386cffab3d541ac1ef56e64b2e58,
     type: 3}
   m_PrefabInstance: {fileID: 1028547911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1257332250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5997192186057842248, guid: b9e480cca64b0428c97675411ffd6575,
+    type: 3}
+  m_PrefabInstance: {fileID: 394717234}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1287743346
 PrefabInstance:
@@ -8021,6 +8140,104 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cab386cffab3d541ac1ef56e64b2e58, type: 3}
+--- !u!1 &1772234989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1296091689474465446, guid: b9e480cca64b0428c97675411ffd6575,
+    type: 3}
+  m_PrefabInstance: {fileID: 394717234}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1772234990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8840876444270486164, guid: b9e480cca64b0428c97675411ffd6575,
+    type: 3}
+  m_PrefabInstance: {fileID: 394717234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772234989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1772234991 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8222654760401259237, guid: b9e480cca64b0428c97675411ffd6575,
+    type: 3}
+  m_PrefabInstance: {fileID: 394717234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772234989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1772234992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 311525434828260225, guid: b9e480cca64b0428c97675411ffd6575,
+    type: 3}
+  m_PrefabInstance: {fileID: 394717234}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772234989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1772234997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772234989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b092e746decf4ff4eac25c69abc9bbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRepeat: 1
+  shouldActivateOnCollision: 0
+  shouldActivateOnTriggerEnter: 0
+  canBeActivated: 1
+  minigameCanvas: {fileID: 1110075250}
+  bobberStartingPoint: {fileID: 1257332250}
+  bobberPrefab: {fileID: 3077397679609011471, guid: 440788c8ac7574f3abbc6235e4457f92,
+    type: 3}
+  FMODThrowingBobber: {fileID: 1772234992}
+  FMODReelingIn: {fileID: 1772234991}
+  FMODVictorySound: {fileID: 1772234990}
+  bobberInstance: {fileID: 0}
+  minigameInput: 32
+  exitMinigameInput: 27
+  currentDifficultyIndex: 0
+  Difficulties:
+  - randomizeMovement: 0
+    progressIncrease: 0
+    progressDecrease: 0
+    directionChangeSpeed: 0
+    meterSpeed: 0
+    targetHeight: 0
+    targetSpeed: 0
+    requiredClicksPerSecond: 6
+  possibleFishes:
+  - {fileID: 11400000, guid: b910ec110c3bf3840be16c94e37f3b0f, type: 2}
+  - {fileID: 11400000, guid: 4f0e8f600e00bea4fb887c0f47a347fe, type: 2}
+  - {fileID: 11400000, guid: 783e113462df2d9448770eedf8a02df5, type: 2}
+  - {fileID: 11400000, guid: 6fca2c5d7532edb44a4a5c859af203b4, type: 2}
+  - {fileID: 11400000, guid: fed923f84d8c79740a687eb0766352b6, type: 2}
+  fishLocation: {x: 0, y: 0, z: 0}
+  fishHeight: 0
+  fishEndPos: {x: 0, y: 0, z: 0}
+  fishStartZ: 7
+  sineWaveAmplitude: 16
+  sineWaveSpeed: 1
+  maxThrowingStrength: 20
+  minThrowingStrength: 5
+  strengthIncreaseSpeed: 10
+  reelingSpeed: 5
+  maxReelingSpeed: 5
+  isReeling: 0
+  checkBobberDistance: 0
+  mashInput: 32
 --- !u!1 &1779320903
 GameObject:
   m_ObjectHideFlags: 0
@@ -8051,14 +8268,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d8b35652042ae48b98e75abfae9a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canRepeat: 0
+  canRepeat: 1
   shouldActivateOnCollision: 0
   shouldActivateOnTriggerEnter: 0
   canBeActivated: 1
   fishNeeded: 1
   barrier: {fileID: 1158160340}
-  completedDialogue: 
-  incompleteDialogue: 
+  completedDialogue: TestNPCComplete
+  incompleteDialogue: TestNPCIncomplete
 --- !u!212 &1779320905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8127,7 +8344,8 @@ Transform:
   m_LocalPosition: {x: -15.87, y: 5.12, z: 16.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 991180189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -66.353, z: 0}
 --- !u!1001 &1891478575

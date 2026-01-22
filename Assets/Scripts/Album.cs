@@ -118,7 +118,6 @@ public class Album : MonoBehaviour
                 if (p.NewFish(fish))
                 {
                     addedFish.Add(fish.name);
-                    Debug.Log("added " + fish.name + " to the added fish List");
                     break;
                 }
             }

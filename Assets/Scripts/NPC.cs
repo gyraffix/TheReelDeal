@@ -17,7 +17,10 @@ public class NPC : PlayerActivatable
         player = FindFirstObjectByType<FirstPersonMovement>().gameObject;
     }
 
-    
+    private void Update()
+    {
+        transform.LookAt(FirstPersonMovement.instance.gameObject.transform);
+    }
 
     protected override void OnActivate()
     {
