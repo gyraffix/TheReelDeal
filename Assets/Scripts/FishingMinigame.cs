@@ -80,6 +80,8 @@ public abstract class FishingMinigame : PlayerActivatable
 
         if (Input.GetKeyDown(exitMinigameInput))
         {
+            FirstPersonMovement.instance.active = true;
+            FirstPersonLook.instance.active = true;
             Jump.instance.active = true;
             Crouch.instance.active = true;
             active = false;
