@@ -212,6 +212,35 @@ PrefabInstance:
       propertyPath: FMODThrowingBobber
       value: 
       objectReference: {fileID: 1631305520}
+    - target: {fileID: 8986039198092057265, guid: 6d8d448f7d4d6364d99ad22ff6e9d5c3,
+        type: 3}
+      propertyPath: possibleFishes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986039198092057265, guid: 6d8d448f7d4d6364d99ad22ff6e9d5c3,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a315dd8b16f31f49995c7370d26dc9f,
+        type: 2}
+    - target: {fileID: 8986039198092057265, guid: 6d8d448f7d4d6364d99ad22ff6e9d5c3,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e04ce59b04511d48921e5a1441ebe90,
+        type: 2}
+    - target: {fileID: 8986039198092057265, guid: 6d8d448f7d4d6364d99ad22ff6e9d5c3,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e04ce59b04511d48921e5a1441ebe90,
+        type: 2}
+    - target: {fileID: 8986039198092057265, guid: 6d8d448f7d4d6364d99ad22ff6e9d5c3,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e04ce59b04511d48921e5a1441ebe90,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5257,6 +5286,23 @@ PrefabInstance:
       propertyPath: minigameCanvas
       value: 
       objectReference: {fileID: 1126939440}
+    - target: {fileID: 3306173050314768765, guid: c594b244850a24e4e85795b17edbce9c,
+        type: 3}
+      propertyPath: possibleFishes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306173050314768765, guid: c594b244850a24e4e85795b17edbce9c,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 783e113462df2d9448770eedf8a02df5,
+        type: 2}
+    - target: {fileID: 3306173050314768765, guid: c594b244850a24e4e85795b17edbce9c,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 783e113462df2d9448770eedf8a02df5,
+        type: 2}
     - target: {fileID: 5222304831120826189, guid: c594b244850a24e4e85795b17edbce9c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5386,6 +5432,41 @@ PrefabInstance:
       propertyPath: minigameCanvas
       value: 
       objectReference: {fileID: 1126939440}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: possibleFishes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 87184fe25e421da41ac7c0cec4a369d3,
+        type: 2}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ca8ef784dee90cc4ba8db9f9e37cd1fc,
+        type: 2}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 24b5082bf03fe1e48a330a4eff94c35a,
+        type: 2}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 24b5082bf03fe1e48a330a4eff94c35a,
+        type: 2}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: 'possibleFishes.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 24b5082bf03fe1e48a330a4eff94c35a,
+        type: 2}
     - target: {fileID: 5876610051885301095, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: canRepeat
