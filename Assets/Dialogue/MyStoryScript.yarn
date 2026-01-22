@@ -7,13 +7,13 @@ Narrator: This is doodlefish bay, your little slice of heaven. You spend your da
 <<NextCamera>>
 Narrator: Your doodle album is alive with so many ideas and colors.
 <<NextCamera>>
-Narrator: One night a storm hit your island all of a sudden. You placed your book under a tree where it would be safe from the rain!
+Narrator: One night a rainy cloud came over your island. You forgot your drawing album under the nearby tree as you ran for cover.
 <<NextCamera>>
-Narrator: As you looked from the window, a bolt came from the sky hitting the book. It's pages flung alive spinning and sending out colors
+Narrator: You look outside as it begins thundering, it seems one has hit your book as it suddenly radiates colors flying everywhere.
 <<NextCamera>>
 Narrator: It's your doodles! They are alive and jumping mostly into the nearby water!
 <<NextCamera>>
-Narrator: The storm has calmed down. It's time to go collect those silly goobers and bring them back safely to their book.
+Narrator: The storm seems to have calmed down. It's time to go collect those silly goobers and bring them back safely to their book.
 <<NextCamera>>
 <<StopSound LinePresenter>>
 <<declare $itemsFound = 0>>
@@ -50,9 +50,9 @@ title: AlbumFinished
 ---
 <<if $quest == "Finish the album">>
     You: I did it! All of my Doodle fish are back safe and sound in my drawing album!
-    Narrator: As you enjoy the view of your book you notice the water still splashing. These silly doodles created replicas of themselfs
+    Narrator: As you enjoy your complete album, you catch the sight of splashing water. These silly doodles created replicas of themselves
     Narrator: That goofy pencil fish and Eraser clam were busy.
-    Narrator: They seem to be adapted to the water and they enjoy playing fishing with you "of course always with no hooks"
+    Narrator: They seem to haveadapted to the water and they enjoy playing fishing with you "of course always with no hooks"
     Narrator: Time to go out, have fun and enjoy your life in Doodlefish Bay!
     <<set $quest to "Enjoy Doodlefish Bay">>   
 <<endif>>
@@ -103,8 +103,8 @@ title: Swordfish
 //--------------------------------
 title: Moonfish
 ---
-    Moonfish: Sometimes im a little bit full and sometimes I feel all brand new... that a cycle.
-    Moonfish: Sometimes I even am waxing and waning but that's neither here nor there.
+    Moonfish: Sometimes i'm a little bit full and sometimes I feel all brand new... that is my cycle.
+    Moonfish: Sometimes i'm even waxing and waning but that's neither here nor there.
     <<playAnimation>>
     <<StopSound LinePresenter>>
 ===
@@ -147,7 +147,7 @@ title: CookieCutterShark
 //--------------------------------
 title: GlassFish
 ---
-    Glass Fish: I am so gratefull for this glass shard. I can now shine in all colours and radiate troughout the sea!
+    Glass Fish: I'm so gratefull for this glass shard. I can now shine in all colours and radiate troughout the sea!
     Glass Fish: This shall be a lightshow like never before,  don't you agree friend?
     <<playAnimation>>
     <<StopSound LinePresenter>>
@@ -205,7 +205,7 @@ title: SteamboatBunny
 title: PantsMackrel
 ---
     Pants Mackrel: What do you think of my new apple bottom jeans? What? Why do I have legs? Why do you have legs?
-    Pants Mackrel: I'll just take a stroll around the album, show everyone how nice and silky my pants are "I also have nice shoes"!
+    Pants Mackrel: Huh? Tons of me walking around the island saying random stuff? Never heard of them.
     <<playAnimation>>
     <<StopSound LinePresenter>>
 ===
@@ -227,7 +227,7 @@ title: StrawFish
 title: SonicFish
 ---
     Sonic Fish: HALLO IT ME SANIC HEGEHOG, CUMON STEP IT UP! BUY MY NEW GAME SANIC SEE DEE!!!!
-    Sonic Fish: HAV U SEEN KNACLES HEGEHOG AND MY HI SIEDKIK TALES MIEL PRAWLAR?
+    Sonic Fish: HAV U SEEN KNACLES HEGEHOG AND MY SIEDKIK TALES MIEL PRAWLAR?
     <<playAnimation>>
     <<StopSound LinePresenter>>
 ===
@@ -360,6 +360,24 @@ title: NPC4Dialogue
 ---
     PLACEHOLDER: I think i just saw a sonic the hedgehog OC in the water.... Am I doodleucinating?
     PLACEHOLDER: Maybe I had to much crayon soup.
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
+//--------------------------------
+//      NPC 5  Dialogue
+//--------------------------------
+
+
+title: NPC5Dialogue
+---
+    PLACEHOLDER: I HAVE ARRIVED, I AM THE FAIRY DOODLE FISH!
+    You: ... you are just standing on a fairy ring?
+    PLACEHOLDER: EXACTLY, I AM A FAIRY
+    You: Are those my ornamental plastic mushrooms?
+    PLACEHOLDER: PLASTIC! WAit.... plastic?
+    You: ...
+    PLACEHOLDER: ...
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
