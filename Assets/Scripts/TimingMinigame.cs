@@ -48,6 +48,7 @@ public class TimingMinigame : FishingMinigame
         progressIncrease = 30;
         progressDecrease = 30;
 
+
         BackgroundRectTransform.gameObject.SetActive(false);
 
         fishObject.SetActive(false);
@@ -64,6 +65,8 @@ public class TimingMinigame : FishingMinigame
         {
             MinigameSetActive(true);
             throwingSlider.gameObject.SetActive(false);
+
+            fishingProgress = Mathf.Clamp(fishingProgress, 0, 100);
 
             MeterUpdate();
             UpdateProgress();
@@ -93,6 +96,9 @@ public class TimingMinigame : FishingMinigame
     protected override void OnActivate()
     {
         base.OnActivate();
+
+        Jump.instance.active = false;
+        Crouch.instance.active = false;
 
         ResetMinigame();
         SetMinigameState(MinigameState.Throwing);       
@@ -143,7 +149,6 @@ public class TimingMinigame : FishingMinigame
             if (targetOverlap)
             {
                 count--;
-                Debug.Log("overlap");
                 targetOverlap = false;
             }
             else
@@ -180,7 +185,6 @@ public class TimingMinigame : FishingMinigame
         fishingProgress -= defaultProgressDecrease * Time.deltaTime;
 
         progressSlider.value = fishingProgress;
-        Debug.Log(progressSlider.value);
         
         if (progressSlider.value > 99)
         {
