@@ -5439,6 +5439,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1991934749}
     m_Modifications:
+    - target: {fileID: 2958262985454349538, guid: 52571f68872914e24837210513edea1d,
+        type: 3}
+      propertyPath: m_Name
+      value: LinePresenter
+      objectReference: {fileID: 0}
     - target: {fileID: 2958262985454349539, guid: 52571f68872914e24837210513edea1d,
         type: 3}
       propertyPath: m_SizeDelta.y

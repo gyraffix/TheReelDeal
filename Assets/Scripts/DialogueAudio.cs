@@ -18,6 +18,12 @@ public class DialogueAudio : MonoBehaviour
         text = transform.Find("Text").GetComponent<TMP_Text>();
     }
 
+    [YarnCommand]
+    public void StopSound()
+    {
+        FMODDialogueSound.Stop();
+    }
+
     private void Update()
     {
         currentText = text.text;
