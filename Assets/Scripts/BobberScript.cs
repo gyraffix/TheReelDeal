@@ -20,6 +20,10 @@ public class BobberScript : MonoBehaviour
             fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Throwing);
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag.Equals("Water"))
+        {
+            FMODWaterSplash.Play();
+        }    
     }
 
     void OnTriggerStay(Collider other)
@@ -44,9 +48,6 @@ public class BobberScript : MonoBehaviour
                     fishingMinigame.FMODReelingIn.Stop();
                     fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Throwing);
                 }
-                break;
-            case "Water":
-                FMODWaterSplash.Play();
                 break;
         }
 
