@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class TimingMinigame : FishingMinigame
 {
     private RectTransform BackgroundRectTransform;
     private RectTransform targetsParent;
     private RectTransform meterRectTransform;
+    private Slider progressSlider;
 
     private float minY;
     private float maxY;
@@ -15,34 +16,50 @@ public class TimingMinigame : FishingMinigame
     private float meterSpeed = 50;
     private float meterPos = 0;
     private bool meterGoingUp = false;
+    private float failedProgressDecrease = 30;
+
 
     [SerializeField] private List<RectTransform> targets;
     [SerializeField] private List<RectTransform> spawnedTargets;
-    protected override void Awake()
+    private new void Awake()
     {
-        BackgroundRectTransform = minigameCanvas.transform.Find("MinigameBackground").GetComponent<RectTransform>();
+        BackgroundRectTransform = minigameCanvas.transform.Find("TimingMinigameBackground").GetComponent<RectTransform>();
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
-        
-        //base.Awake();
+        progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
+        fishObject = transform.Find("Fish").gameObject;
+
+        base.Awake();
     }
 
     private new void Start()
     {
+        base.Start();
+
         minY = -BackgroundRectTransform.sizeDelta.y / 2;
         maxY = BackgroundRectTransform.sizeDelta.y / 2;
 
-        base.Start();
+        fishingProgress = 30;
+
+        BackgroundRectTransform.gameObject.SetActive(false);
+
+        fishObject.SetActive(false);
     }
 
 
-    protected override void Update()
+    private new void Update()
     {
+        base.Update();
+
         if (!active)
             return;
-       
-        MeterUpdate();
+        if (minigameState == MinigameState.Playing)
+        {
+            MinigameSetActive(true);
+            throwingSlider.gameObject.SetActive(false);
 
-        //base.Update();
+            MeterUpdate();
+            UpdateProgress();
+        }
     }
 
     private void MeterUpdate()
@@ -64,13 +81,19 @@ public class TimingMinigame : FishingMinigame
             meterGoingUp = false;
     }
 
+
     protected override void OnActivate()
     {
-        active = true;
+        base.OnActivate();
+
+        ResetMinigame();
+        SetMinigameState(MinigameState.Throwing);       
+
+        BackgroundRectTransform.gameObject.SetActive(true);
         MinigameSetActive(true);
         TargetUpdate();
 
-        ResetMinigame();
+        active = true;
     }
 
     private void TargetUpdate()
@@ -121,18 +144,85 @@ public class TimingMinigame : FishingMinigame
                 spawnedTargets.Add(target);
             }
         }
-        spawnedTargets.Clear();
+        //spawnedTargets.Clear();
         
 
     }
 
+    void UpdateProgress()
+    {
+        bool pressSucces = false;
+
+        if (Input.GetKeyDown(minigameInput))
+        {
+            for (int i = 0; i < spawnedTargets.Count; i++)
+            {
+                float targetPos = spawnedTargets[i].localPosition.y;
+                if (meterPos > targetPos - targetHeight / 2 && meterPos < targetPos + targetHeight / 2)
+                {
+                    fishingProgress += progressIncrease;
+                    pressSucces = true;
+                }
+            }
+            if (!pressSucces) 
+                fishingProgress -= failedProgressDecrease;
+        }
+        fishingProgress -= progressDecrease * Time.deltaTime;
+
+        progressSlider.value = fishingProgress;
+        Debug.Log(progressSlider.value);
+        
+        if (progressSlider.value > 99)
+        {
+            Debug.Log("Victory");
+            FishingSuccessful();
+        }
+
+        //foreach (var target in spawnedTargets)
+        //{
+        //    float targetPos = target.localPosition.y;
+        //    if ((meterPos > targetPos - targetHeight / 2 && meterPos < targetPos + targetHeight / 2) && Input.GetKeyDown(minigameInput))
+        //    {
+        //        fishingProgress += progressIncrease * Time.deltaTime;
+        //    }
+        //    else
+        //        fishingProgress -= progressDecrease * Time.deltaTime;
+
+        //    progressSlider.value = fishingProgress;
+        //}
+        //Debug.Log(progressSlider.value);
+    }
+
     protected override void ResetMinigame()
     {
+        fishingProgress = 30;
+        meterPos = 0;
+        spawnedTargets.Clear();
 
+        checkBobberDistance = false;
+
+        throwingSlider.value = 0;
+        if (bobberInstance != null)
+        {
+            Destroy(bobberInstance.gameObject);
+            bobberInstance = null;            
+        }
+
+        FMODReelingIn.Stop();
+
+        BackgroundRectTransform.gameObject.SetActive(false);
+        throwingSlider.gameObject.SetActive(false);
     }
 
     protected override void MinigameSetActive(bool active)
     {
-
+        if (active)
+        {
+            BackgroundRectTransform.gameObject.SetActive(true);
+        }
+        else
+        {
+            BackgroundRectTransform.gameObject.SetActive(false);
+        }
     }
 }
