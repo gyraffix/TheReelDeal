@@ -11,6 +11,15 @@ public class BobberScript : MonoBehaviour
     {
         GetComponent<Rigidbody>().maxLinearVelocity = maxSpeed;
         GetComponent<Rigidbody>().linearDamping = linearDamping;
+        if (collision.gameObject.tag.Equals("Terrain"))
+        {
+            fishingMinigame.bobberInstance = null;
+            fishingMinigame.checkBobberDistance = false;
+            fishingMinigame.isReeling = false;
+            fishingMinigame.FMODReelingIn.Stop();
+            fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Throwing);
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerStay(Collider other)

@@ -77,13 +77,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FMODPageTurn: {fileID: 1607646921911568304}
-  FMODOpenBook: {fileID: 4954550429935695881}
-  FMODCloseBook: {fileID: 3554461488780219842}
+  FMODOpenAlbum: {fileID: 4954550429935695881}
+  FMODCloseAlbum: {fileID: 3554461488780219842}
   pages:
   - {fileID: 2223494839728696568}
   - {fileID: 2857623309497586025}
   fishes: []
   interactionCooldown: 0.5
+  addedFish: []
 --- !u!114 &1607646921911568304
 MonoBehaviour:
   m_ObjectHideFlags: 0
