@@ -101,7 +101,10 @@ public class Album : MonoBehaviour
         pages[currentPage].gameObject.SetActive(true);
 
     }
-
+    public void WriteLine()
+    {
+        Debug.Log("Line");
+    }
     private IEnumerator InteractionDelay()
     {
         canInteract = false;

@@ -1,25 +1,52 @@
 using FMODUnity;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using Yarn.Unity;
 
-public static class DialogueAudio
+public class DialogueAudio : MonoBehaviour
 {
-    public static StudioEventEmitter FMODDialogueSound;
-    [YarnCommand("FindEventEmitter")]
-    public static void FindEventEmitter(string objectName)
+    public StudioEventEmitter FMODDialogueSound;
+    private string lastText = "";
+    private string currentText = "";
+    private int charsPerSecond = 60;
+
+    private TMP_Text text;
+
+    private void Awake()
     {
-        FMODDialogueSound = GameObject.Find(objectName).GetComponent<StudioEventEmitter>();
+        text = transform.Find("Text").GetComponent<TMP_Text>();
     }
 
-    [YarnCommand("StartDialogueSound")]
-    public static void StartDialogueSound()
+    private void Update()
+    {
+        currentText = text.text;
+
+   
+
+        if ( (lastText != null && currentText != null) && !lastText.Equals(currentText))
+        {
+            StopAllCoroutines();
+            if (FMODDialogueSound.IsPlaying())
+            {
+                FMODDialogueSound.Stop();
+            }
+
+            float letterAmount = currentText.Length;
+
+            StartCoroutine(PlaySound((float) letterAmount/charsPerSecond));
+        }
+
+        lastText = currentText;
+    }
+
+    IEnumerator PlaySound(float time)
     {
         FMODDialogueSound.Play();
-    }
-
-    [YarnCommand("EndDialogueSound")]
-    public static void EndDialogueSound()
-    {
+        Debug.Log("Loop Sound here");
+        yield return new WaitForSeconds(time);
+        Debug.Log("Stop Sound here");
         FMODDialogueSound.Stop();
     }
+
 }
