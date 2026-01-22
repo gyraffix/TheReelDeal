@@ -3,11 +3,19 @@ using Yarn.Unity;
 
 public class NPC : PlayerActivatable
 {
+    [Header("Set this to true if the NPC has a quest")]
+    [SerializeField] private bool isQuestNPC;
+
+    [Header("Non-Quest Settings")]
+    [SerializeField] private string Dialogue;
+
+
+    [Header("Quest Settings")]  
     [SerializeField] private int fishNeeded;
     [SerializeField] private Collider barrier;
     [SerializeField] private string completedDialogue;
     [SerializeField] private string incompleteDialogue;
-
+    
     private GameObject player;
     private DialogueRunner dr;
 
@@ -19,7 +27,12 @@ public class NPC : PlayerActivatable
 
     private void Update()
     {
-        transform.LookAt(FirstPersonMovement.instance.gameObject.transform);
+        transform.LookAt(new Vector3
+            (
+            FirstPersonMovement.instance.gameObject.transform.position.x,
+            transform.position.y,
+            FirstPersonMovement.instance.gameObject.transform.position.z)
+            );
     }
 
     protected override void OnActivate()
@@ -35,17 +48,24 @@ public class NPC : PlayerActivatable
             transform.position.z)
             );
 
-
-
-        if (fishNeeded <= Album.instance.addedFish.Count)
+        if (isQuestNPC)
         {
-            RunDialogue(completedDialogue);
-            barrier.isTrigger = true;
+            if (fishNeeded <= Album.instance.addedFish.Count)
+            {
+                RunDialogue(completedDialogue);
+                barrier.isTrigger = true;
+            }
+            else
+            {
+                RunDialogue(incompleteDialogue);
+            }
         }
+
         else
         {
-            RunDialogue(incompleteDialogue);
+            RunDialogue(Dialogue);
         }
+        
     }
 
 
