@@ -34,7 +34,7 @@ public class WanderingFish : MonoBehaviour
                 Debug.LogWarning("Problem with sampling navmesh position / lookat...?");
             }
             agent.SetDestination(newTarget);
-            agent.gameObject.transform.LookAt(newTarget);
+            
             timer = 0;
             
         }

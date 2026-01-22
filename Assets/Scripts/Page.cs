@@ -28,7 +28,7 @@ public class Page : MonoBehaviour
                 name.text = "";
                 desc.text = "";
             }
-            Debug.Log(name.text);
+
             image.color = Color.clear;
         }
     }
@@ -40,12 +40,10 @@ public class Page : MonoBehaviour
         {
 
             TMP_Text name = spot.transform.GetChild(0).GetComponent<TMP_Text>();
-            Debug.Log(name.text + " / " + fish.name);
             if (name.text.Equals(fish.name))
             {
                 TMP_Text desc = spot.transform.GetChild(1).GetComponent<TMP_Text>();
                 Image image = spot.transform.GetChild(2).GetComponent<Image>();
-                Debug.Log("Added " + fish.name + " to album");
                 desc.text = fish.desc;
                 image.sprite = fish.fishPhoto;
                 image.color = Color.white;
