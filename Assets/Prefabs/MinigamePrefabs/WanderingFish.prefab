@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5242054660535214258}
   - component: {fileID: 617961857638619872}
   - component: {fileID: 2695057193377711187}
-  - component: {fileID: 1669682038975050664}
   - component: {fileID: 5125450587768002508}
   - component: {fileID: 1544416719659587492}
+  - component: {fileID: 5750061323824030691}
   m_Layer: 0
   m_Name: WanderingFish
   m_TagString: Fish
@@ -89,27 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1669682038975050664
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2959402236713656849}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &5125450587768002508
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -146,3 +125,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1.32
   wanderTimer: 1.88
+--- !u!136 &5750061323824030691
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959402236713656849}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.74
+  m_Height: 14.51
+  m_Direction: 1
+  m_Center: {x: 0, y: 2.5, z: 0}

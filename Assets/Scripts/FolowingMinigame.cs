@@ -37,7 +37,7 @@ public class FolowingMinigame : FishingMinigame
         targetRectTransform = BackgroundRectTransform.transform.Find("Target").GetComponent<RectTransform>();
         meterRectTransform = BackgroundRectTransform.transform.Find("Meter").GetComponent<RectTransform>();
         progressSlider = BackgroundRectTransform.transform.Find("Progress").GetComponent<Slider>();
-        fishObject = transform.Find("Fish").gameObject;
+        //fishObject = transform.Find("Fish").gameObject;
     }
 
     private new void Start()
@@ -53,7 +53,7 @@ public class FolowingMinigame : FishingMinigame
 
         targetRectTransform.sizeDelta = new Vector2(targetRectTransform.sizeDelta.x, targetHeight);
 
-        fishObject.SetActive(false);
+        ///fishObject.SetActive(false);
     }
 
     private new void Update()
