@@ -50,10 +50,9 @@ title: AlbumFinished
 ---
 <<if $quest == "Finish the album">>
     You: I did it! All of my Doodle fish are back safe and sound in my drawing album!
-    Narrator: As you enjoy your complete album, you catch the sight of splashing water. These silly doodles created replicas of themselves
-    Narrator: That goofy pencil fish and Eraser clam were busy.
-    Narrator: They seem to haveadapted to the water and they enjoy playing fishing with you "of course always with no hooks"
-    Narrator: Time to go out, have fun and enjoy your life in Doodlefish Bay!
+    Narrator: The doodles now can stay safe in your book.
+    Narrator: Seems like some have adapted to land life like those silly Pants Mackrels
+    Narrator: Now you can go back home and enjoy the rest of your days back in doodlefish bay
     <<set $quest to "Enjoy Doodlefish Bay">>   
 <<endif>>
 ===
@@ -284,17 +283,17 @@ title: CMGaToFish
 //--------------------------------
 title: NPC1Introduction
 ---
-    PLACEHOLDER: Oh boy coming out of that book sure was scary, good thing I don't get spooked easy!
+    Macklemor: Oh boy coming out of that book sure was scary, good thing I don't get spooked easy!
     You: Hello?
-    PLACEHOLDER: AAAAAAAAAHHHHHHHH!  Oh.. Hi!... Dont sneak up on me like that!
+    Macklemor: AAAAAAAAAHHHHHHHH!  Oh.. Hi!... Dont sneak up on me like that!
     You: Sorry!
-    Placeholder: Wait... I know you! You are our creator! Did you really have to draw me besides Doge Fish, he won't stop barking.
+    Macklemor: Wait... I know you! You are our creator! Did you really have to draw me besides Doge Fish, he won't stop barking.
     You: Sorry about that... I was actually wondering if you could help me out?
-    PLACEHOLDER: Oh so you need my help? Well I did bring this fishing rod with me out of the book, maybe it could be usefull to help you collect the rest of the doodles
+    Macklemor: Oh so you need my help? Well I did get this boat that could be used to travel, how I got it?.... Internet.
     You: Perfect! That will help me!
-    PLACEHOLDER: Wa wa wa wait! Not so fast. I need to make sure you even are our artist!
+    Macklemor: Wa wa wa wait! Not so fast. I need to make sure you even are our artist!
     You: What?
-    PLACEHOLDER: I will give you the fishing rod if you show me you caught one doodle fish which will prove you DID draw us
+    Macklemor: I will give you the keys to the boat if you show me you caught all 3 fish found here in Doodlefish Bay.
     You: That makes absolutely no sense but... ok...
     Narrator: QUEST STARTED
     <<EnableMovement>>
@@ -303,9 +302,9 @@ title: NPC1Introduction
 
 title: NPC1Incomplete
 ---
-    PLACEHOLDER: I won't give you this fishing rod until you prove you drew us by showing me you caught one the doodle fishes!
+    Macklemor: I won't give you the keys to the boat until you prove you drew us by showing me you caught all 3 fishes!
     You: How does me catching my doodles prove I drew them?
-    Narrator: PLACEHOLDER got distracted looking at the floor as you asked for explanations.
+    Narrator: Macklemor got distracted looking at the floor as you asked for explanations.
     You: Ok nevermind i'll get the fish 
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -314,13 +313,13 @@ title: NPC1Incomplete
 
 title: NPC1Complete
 ---
-    PLACEHOLDER: I knew you drew us! And this proves it
+    PLACEHOLDER: I knew you drew us! And this proves it!
     You: ...
     PLACEHOLDER: I never had any doubts about you
-    You: Can I have my fishing rod?
+    You: Can I the boat keys?
     PLACEHOLDER: The what now?
     You:...
-    Narrator: You grab the fishing rod laying on the ground besides PLACEHOLDER and decide to move on.
+    Narrator: You grab the keys laying on the ground besides Macklemor and decide to move on.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -345,7 +344,7 @@ title: NPC2Dialogue
 
 title: NPC3Dialogue
 ---
-    PLACEHOLDER: Did you know some of the doodles seem to fight harder not to get caught by your doodle rod? Who told me? CMGaTO!
+    PLACEHOLDER: Some of the doodles seem to fight harder not to get caught by your doodle rod? Who told me? CMGaTO!
     PLACEHOLDER: He said something about not wanting to be caught because he didnt do his projects.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -371,13 +370,13 @@ title: NPC4Dialogue
 
 title: NPC5Dialogue
 ---
-    PLACEHOLDER: I HAVE ARRIVED, I AM THE FAIRY DOODLE FISH!
-    You: ... you are just standing on a fairy ring?
-    PLACEHOLDER: EXACTLY, I AM A FAIRY
+    "Fairy" Jeansie: I HAVE ARRIVED, I'M JEANSIE THE FAIRY DOODLE FISH!
+    You: ... you're just standing on a fairy ring?
+    "Fairy" Jeansie: EXACTLY, I'M A FAIRY!
     You: Are those my ornamental plastic mushrooms?
-    PLACEHOLDER: PLASTIC! WAit.... plastic?
+    "Fairy"? Jeansie: PLASTIC! WAit.... plastic?
     You: ...
-    PLACEHOLDER: ...
+    Jeansie: ...
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -389,8 +388,14 @@ title: NPC5Dialogue
 
 title: TestNPCNormal
 ---
-NPC: Hey there! To get started, simply walk up to any of the fishing spots and hold space to throw your bobber.
-NPC: Have fun!
+Applebottom: That was a scary storm, good thing I have legs, OH! Hey there! I know you. You drew us!
+You: I remember you, i called you Pants Mackrel
+Applebottom: My friends call me Applebottom, for some reason many of us popped out and we like walking around
+You: I'm not sure it's safe for you outside the book...
+Applebottom: We can help you but in exchange let us walk around and be free to spread our fish legs!
+You: Ok deal. So what now?
+Applebottom: I can see a boat on the little makeshift dock nearby maybe try and talk to the Pants Mackrel there or go and collect some of my fellow doodle fish.
+You: Ok i'm on it! Thank Applebottom.
 <<EnableMovement>>
 <<StopSound LinePresenter>>
 ===
