@@ -183,7 +183,7 @@ public class TimingMinigame : FishingMinigame
                 fishingProgress -= progressDecrease;
         }
         fishingProgress -= defaultProgressDecrease * Time.deltaTime;
-
+        UpdateFish();
         progressSlider.value = fishingProgress;
         
         if (progressSlider.value > 99)
