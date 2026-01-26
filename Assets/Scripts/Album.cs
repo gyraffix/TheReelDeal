@@ -62,7 +62,6 @@ public class Album : MonoBehaviour
         }
         isOpen = !isOpen;
 
-        StartCoroutine(InteractionDelay());
     }
 
     public void PreviousPage()
@@ -76,7 +75,7 @@ public class Album : MonoBehaviour
             FMODPageTurn.Play();
         }
         UpdatePages();
-        StartCoroutine(InteractionDelay());
+
     }
 
     public void NextPage()
@@ -90,7 +89,6 @@ public class Album : MonoBehaviour
             FMODPageTurn.Play();
         }
         UpdatePages();
-        StartCoroutine(InteractionDelay());
     }
 
     private void UpdatePages()
@@ -105,12 +103,6 @@ public class Album : MonoBehaviour
     public void WriteLine()
     {
         Debug.Log("Line");
-    }
-    private IEnumerator InteractionDelay()
-    {
-        canInteract = false;
-        yield return new WaitForSeconds(interactionCooldown);
-        canInteract = true;
     }
 
     public void NewFish(FishItem fish)
