@@ -17,6 +17,11 @@ public class TimingMinigame : FishingMinigame
     private float meterPos = 0;
     private bool meterGoingUp = false;
     private float defaultProgressDecrease = 8;
+    private float steadyProgressChange = 80;
+    private float currentFishingProgressMax;
+    private float currentFishingProgressMin;
+    private bool pressSucces;
+    private bool pressed;
 
 
     [SerializeField] private List<RectTransform> targets;
@@ -164,25 +169,58 @@ public class TimingMinigame : FishingMinigame
 
     void UpdateProgress()
     {
-        bool pressSucces = false;
+        bool increasing = false;
 
         if (Input.GetKeyDown(minigameInput) || Input.GetKeyDown(minigameInputMouse))
         {
+            pressed = true;
+
             for (int i = 0; i < spawnedTargets.Count; i++)
             {
                 var target = spawnedTargets[i];
                 float targetPos = target.localPosition.y;
                 if (meterPos > targetPos - targetHeight / 2 && meterPos < targetPos + targetHeight / 2)
                 {
-                    fishingProgress += progressIncrease;
+                    if (currentFishingProgressMax < fishingProgress)
+                        currentFishingProgressMax = fishingProgress;                        
+                    currentFishingProgressMax = currentFishingProgressMax + progressIncrease;
+                    Debug.Log(currentFishingProgressMax);
                     pressSucces = true;
                     SpawnTarget(target);
                 }
             }
             if (!pressSucces) 
-                fishingProgress -= progressDecrease;
+                currentFishingProgressMin = fishingProgress - progressDecrease;
         }
-        fishingProgress -= defaultProgressDecrease * Time.deltaTime;
+        if (pressed && pressSucces)
+        {            
+            if (fishingProgress < currentFishingProgressMax)
+            {
+                increasing = true;
+                fishingProgress += steadyProgressChange * Time.deltaTime;           
+            }
+            else
+            {
+                pressed = false;
+                pressSucces = false;
+            }
+        }
+        else if (pressed && !pressSucces)
+        {
+            if (fishingProgress > currentFishingProgressMin)
+            {
+                increasing = true;
+                fishingProgress -= steadyProgressChange * Time.deltaTime;
+            }
+            else            
+                pressed = false;            
+        }
+        else if (!pressed && !increasing)
+        {
+            //Debug.Log("Decreasing");
+            fishingProgress -= defaultProgressDecrease * Time.deltaTime;
+        }
+
         UpdateFish();
         progressSlider.value = fishingProgress;
         

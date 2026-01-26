@@ -28,9 +28,9 @@ public class DialogueAudio : MonoBehaviour
     {
         currentText = text.text;
 
-   
 
-        if ( (lastText != null && currentText != null) && !lastText.Equals(currentText))
+
+        if ((lastText != null && currentText != null) && !lastText.Equals(currentText))
         {
             StopAllCoroutines();
             if (FMODDialogueSound.IsPlaying())
@@ -40,7 +40,7 @@ public class DialogueAudio : MonoBehaviour
 
             float letterAmount = currentText.Length;
 
-            StartCoroutine(PlaySound((float) letterAmount/charsPerSecond));
+            StartCoroutine(PlaySound((float)letterAmount / charsPerSecond));
         }
 
         lastText = currentText;
@@ -48,11 +48,12 @@ public class DialogueAudio : MonoBehaviour
 
     IEnumerator PlaySound(float time)
     {
+        FMODDialogueSound.SetParameter("LoopDialogue", 1);
         FMODDialogueSound.Play();
         Debug.Log("Loop Sound here");
         yield return new WaitForSeconds(time);
         Debug.Log("Stop Sound here");
-        FMODDialogueSound.Stop();
+        FMODDialogueSound.SetParameter("LoopDialogue", 0);
     }
 
 }
