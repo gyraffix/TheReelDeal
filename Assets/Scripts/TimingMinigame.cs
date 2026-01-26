@@ -166,7 +166,7 @@ public class TimingMinigame : FishingMinigame
     {
         bool pressSucces = false;
 
-        if (Input.GetKeyDown(minigameInput))
+        if (Input.GetKeyDown(minigameInput) || Input.GetKeyDown(minigameInputMouse))
         {
             for (int i = 0; i < spawnedTargets.Count; i++)
             {
@@ -222,9 +222,6 @@ public class TimingMinigame : FishingMinigame
             Destroy(bobberInstance.gameObject);
             bobberInstance = null;            
         }
-
-        if (wanderingFish != null)
-            Destroy(wanderingFish);
 
         FMODReelingIn.Stop();
 

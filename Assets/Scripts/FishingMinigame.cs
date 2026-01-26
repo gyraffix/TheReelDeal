@@ -28,6 +28,7 @@ public abstract class FishingMinigame : PlayerActivatable
 
     [Header("Minigame Settings")]
     [SerializeField] protected KeyCode minigameInput = KeyCode.Space;
+    [SerializeField] protected KeyCode minigameInputMouse = KeyCode.Mouse0;
     [SerializeField] protected KeyCode exitMinigameInput = KeyCode.Escape;
     [SerializeField] protected int currentDifficultyIndex;
     [SerializeField] protected Difficulty[] Difficulties;
@@ -94,7 +95,7 @@ public abstract class FishingMinigame : PlayerActivatable
                 MinigameSetActive(false);
                 throwingSlider.gameObject.SetActive(true);
 
-                if (Input.GetKey(minigameInput))
+                if (Input.GetKey(minigameInput) || Input.GetKey(minigameInputMouse))
                 {
                     startedThrowing = true;
                     UpdateStrength();
@@ -114,12 +115,12 @@ public abstract class FishingMinigame : PlayerActivatable
                     MinigameSetActive(false);
                     throwingSlider.gameObject.SetActive(false);
 
-                    if (Input.GetKeyDown(minigameInput))
+                    if (Input.GetKeyDown(minigameInput) || Input.GetKeyDown(minigameInputMouse))
                     {
                         isReeling = true;
                         FMODReelingIn.Play();
                     }
-                    else if (Input.GetKeyUp(minigameInput))
+                    else if (Input.GetKeyUp(minigameInput) || Input.GetKeyUp(minigameInputMouse))
                     {
                         isReeling = false;
                         FMODReelingIn.Stop();
@@ -217,6 +218,7 @@ public abstract class FishingMinigame : PlayerActivatable
         active = false;
     }
 
+
     [YarnCommand("playAnimation")]
     public static void PlayAnimation()
     {
@@ -295,6 +297,7 @@ public abstract class FishingMinigame : PlayerActivatable
 
             case MinigameState.Playing:
                 FirstPersonMovement.instance.active = false;
+                FirstPersonLook.instance.active = false;
                 wanderingFish = Instantiate(wanderingFishPrefab, fishLocation, wanderingFishPrefab.transform.rotation);
                 Debug.Log(wanderingFish.activeSelf);
                 fishDestination = new Vector3(

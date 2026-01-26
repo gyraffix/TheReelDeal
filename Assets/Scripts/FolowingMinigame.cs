@@ -66,7 +66,7 @@ public class FolowingMinigame : FishingMinigame
             MinigameSetActive(true);
             throwingSlider.gameObject.SetActive(false);
 
-            if (Input.GetKey(minigameInput))
+            if (Input.GetKey(minigameInput) || Input.GetKey(minigameInputMouse))
             {
                 if (direction < 1)
                     direction += Time.deltaTime * directionChangeSpeed;

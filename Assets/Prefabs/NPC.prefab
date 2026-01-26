@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2121453086718367250}
   - component: {fileID: 8162041012057978386}
   - component: {fileID: 5177676859802546884}
-  - component: {fileID: 8942355334851280755}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -112,19 +111,6 @@ MonoBehaviour:
   barrier: {fileID: 0}
   completedDialogue: 
   incompleteDialogue: 
---- !u!114 &8942355334851280755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777516169979254514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdedb6b4322f9ff44a2c4baf8481f885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  connectedTriggers: []
 --- !u!1001 &7055899771996148784
 PrefabInstance:
   m_ObjectHideFlags: 0
