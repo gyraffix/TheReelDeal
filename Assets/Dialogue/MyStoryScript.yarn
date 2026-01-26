@@ -5,13 +5,13 @@ title: Start
 ---
 Narrator: This is doodlefish bay, your little slice of heaven. You spend your days drawing silly fishes amongst food and other doodles.
 <<NextCamera>>
-Narrator: Your doodle album is alive with so many ideas and colors.
+Narrator: Your doodle album day by day comes alive with so many ideas and colors.
 <<NextCamera>>
-Narrator: One night a rainy cloud came over your island. You forgot your drawing album under the nearby tree as you ran for cover.
+Narrator: One day a rainy cloud arrived over your island. You forgot your drawing album under the nearby tree as you ran for cover.
 <<NextCamera>>
-Narrator: You look outside as it begins thundering, it seems one has hit your book as it suddenly radiates colors flying everywhere.
+Narrator: You look outside as it began thundering, it seems a bolt came down and has hit your book. Suddenly colors radiate, flying everywhere.
 <<NextCamera>>
-Narrator: It's your doodles! They are alive and jumping mostly into the nearby water!
+Narrator: It's your doodles! They are alive and jumping out of the book!
 <<NextCamera>>
 Narrator: The storm seems to have calmed down. It's time to go collect those silly goobers and bring them back safely to their book.
 <<NextCamera>>
@@ -276,12 +276,30 @@ title: CMGaToFish
 ===   
 
 
+//--------------------------------
+//      Starter NPC
+//--------------------------------
+
+title: StarterNPC
+---
+Applebottom: That was a scary storm, good thing I have legs, OH! Hey there! I know you. You drew us!
+You: I remember you, I called you Pants Mackrel
+Applebottom: My friends call me Applebottom, for some reason many of us popped out and we like walking around
+You: I'm not sure it's safe for you outside the book...
+Applebottom: We can help you but in exchange let us walk around and be free to spread our fish legs!
+You: Ok, so how can you help me?
+Applebottom: I saw some of the doodles fly far off to the neighbour islands, i know there is a boat in the little makeshift dock nearby
+Applebottom: You should go talk to the Pants Mackrel there and he might help you use the boat. Don't forget to collect some of my doodle brothers in this island!
+You: Ok i'm on it! Thank Applebottom.
+<<EnableMovement>>
+<<StopSound LinePresenter>>
+===
 
 
 //--------------------------------
-//      NPC 1 Quesline
+//      Questline 1
 //--------------------------------
-title: NPC1Introduction
+title: Quest1Intro
 ---
     Macklemor: Oh boy coming out of that book sure was scary, good thing I don't get spooked easy!
     You: Hello?
@@ -292,7 +310,8 @@ title: NPC1Introduction
     Macklemor: Oh so you need my help? Well I did get this boat that could be used to travel, how I got it?.... Internet.
     You: Perfect! That will help me!
     Macklemor: Wa wa wa wait! Not so fast. I need to make sure you even are our artist!
-    You: What?
+    You: What?... You just said you recognized me?
+    Macklemor: My fishy eyes could be tricking me!
     Macklemor: I will give you the keys to the boat if you show me you caught all 3 fish found here in Doodlefish Bay.
     You: That makes absolutely no sense but... ok...
     Narrator: QUEST STARTED
@@ -300,7 +319,7 @@ title: NPC1Introduction
     <<StopSound LinePresenter>>
 ===
 
-title: NPC1Incomplete
+title: Quest1Incomplete
 ---
     Macklemor: I won't give you the keys to the boat until you prove you drew us by showing me you caught all 3 fishes!
     You: How does me catching my doodles prove I drew them?
@@ -311,15 +330,79 @@ title: NPC1Incomplete
 ===
 
 
-title: NPC1Complete
+title: Quest1Complete
 ---
-    PLACEHOLDER: I knew you drew us! And this proves it!
+    Macklemor: I knew you drew us! And this proves it!
     You: ...
-    PLACEHOLDER: I never had any doubts about you
-    You: Can I the boat keys?
-    PLACEHOLDER: The what now?
+    Macklemor: I never had any doubts about you
+    You: Can I have the boat keys?
+    Macklemor: The what now?
     You:...
     Narrator: You grab the keys laying on the ground besides Macklemor and decide to move on.
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
+
+//--------------------------------
+//      Questline 2
+//--------------------------------
+title: Quest2Intro
+---
+    Omega The Third: I hate this island, I want some sand and I want the beach vibes
+    You: Hello?
+    Omega The Third: Oh look who arrived! Macklemor said you would be here soon.
+    You: How did you two communicate?
+    Omega The Third: Erm... Internet?
+    You: Right.. so, i'm trying to find the other fish doodles and I see you have a boat there.
+    Omega The Third: Indeed I do, and with this one you dont have to go around the island and risk hitting the rocky shores
+    You: But let me guess, you want me to do a que...
+    Omega The Third: QUESTLINE!
+    You:…st. I knew talking to a fish in pants would lead here.
+    Omega The Third: My brothers in the nearby river wanted to check the beach with me but I can't fish them out only with legs
+    Omega The Third: Please go get them so we can all go on this trip.
+    You: Should be easy! Ok see you in a bit
+
+    Narrator: QUEST STARTED
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
+title: Quest2Incomplete
+---
+    Omega The Third: I cant wait to go to the beach! I love the summer vibes.
+    You: You are so lucky you are a doodle
+    Omega The Third: Why? What's wrong with the beach?
+    You: You cant bring yourself to tell Omega the reality of fish under the sun so you go back to finishing your quest
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
+title: Quest2Complete
+---
+    Omega The Third: WOOO all of the doodles are here! I even got my sunscreen ready.
+    You: Is that laminated paper?
+    Omega The Third: Ya! Can't get too tanned! Let's go, here are the keys. The beach is WAITING!
+    You: Wait... Can't you just swim there? You are a doodle fish
+    Omega The Third: Omega The Third: I would, but I’m wearing pants. These are not swim-pants. These are beach pants.
+    You: They look like brown jeans but I can't argue I suppose.
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
+
+
+
+
+//--------------------------------
+//      NPC 1  Dialogue  UNUSED
+//--------------------------------
+
+
+title: NPC1Dialogue
+---
+    Bootsy: Did you know that some fishies only show up when you have bait? 
+    Bootsy: Why? I don't know... you are the one who drew them.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -331,8 +414,8 @@ title: NPC1Complete
 
 title: NPC2Dialogue
 ---
-    PLACEHOLDER: Did you know that some fishies only show up when you have bait? 
-    PLACEHOLDER: Why? I don't know... you are the one who drew them.
+    Felipe: Some of the doodles seem to fight harder not to get caught by your doodle rod? And they require bait. Who told me? CMGaTO!
+    Felipe: He said something about not wanting to be caught because he didnt do his projects.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -344,8 +427,8 @@ title: NPC2Dialogue
 
 title: NPC3Dialogue
 ---
-    PLACEHOLDER: Some of the doodles seem to fight harder not to get caught by your doodle rod? Who told me? CMGaTO!
-    PLACEHOLDER: He said something about not wanting to be caught because he didnt do his projects.
+    Houksie: I think i just saw a sonic the hedgehog OC in the water.... Am I doodleucinating?
+    Houksie: Maybe I had to much crayon soup.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -356,19 +439,6 @@ title: NPC3Dialogue
 
 
 title: NPC4Dialogue
----
-    PLACEHOLDER: I think i just saw a sonic the hedgehog OC in the water.... Am I doodleucinating?
-    PLACEHOLDER: Maybe I had to much crayon soup.
-    <<EnableMovement>>
-    <<StopSound LinePresenter>>
-===
-
-//--------------------------------
-//      NPC 5  Dialogue
-//--------------------------------
-
-
-title: NPC5Dialogue
 ---
     "Fairy" Jeansie: I HAVE ARRIVED, I'M JEANSIE THE FAIRY DOODLE FISH!
     You: ... you're just standing on a fairy ring?
@@ -383,35 +453,21 @@ title: NPC5Dialogue
 
 
 //--------------------------------
-//      Test Dialogue
+//      NPC 5 Dialogue
 //--------------------------------
-
-title: TestNPCNormal
+title: NPC5Dialogue
 ---
-Applebottom: That was a scary storm, good thing I have legs, OH! Hey there! I know you. You drew us!
-You: I remember you, i called you Pants Mackrel
-Applebottom: My friends call me Applebottom, for some reason many of us popped out and we like walking around
-You: I'm not sure it's safe for you outside the book...
-Applebottom: We can help you but in exchange let us walk around and be free to spread our fish legs!
-You: Ok deal. So what now?
-Applebottom: I can see a boat on the little makeshift dock nearby maybe try and talk to the Pants Mackrel there or go and collect some of my fellow doodle fish.
-You: Ok i'm on it! Thank Applebottom.
-<<EnableMovement>>
-<<StopSound LinePresenter>>
-===
-
-title: TestNPCIncomplete
----
-    NPC: Whoa there, I can't let ya pass until you can prove you're a seasoned trawler...
-    NPC: Tell ya what, if you can show me 1 fish, I'll let ya through!
+    Fishlemor: Welcome to Citron Hill Island. How did you even get here?
+    You: ... How did you get here?
+    Fishlemor: I'm not even sure, i remember flying off that book and being taken by the wind, some of my brothers and me fell here!
+    You: I had some "help" from your pants mackerel brothers back home, I'm trying to collect the other doodles to keep them safe.
+    Fishlemor: You should check that bridge nearby. I remember seeing some doodles fall on the water there!
+    You: Thank you, do you know of any more doodles?
+    Fishlemor: Uhm... I don't remember anymore but try my brother on the other side of the island, just follow the path past the bridge!
+    You: Thanks!
+    Fishlemor: Before you go, you got any of them tasty doodle worms? I love sour peach.
+    Narrator: You ran off before you could hear what Fishlemor had just said.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
 
-title: TestNPCComplete
----
-    NPC: Now that's what I'm talking about, I can tell you know about fishin'!
-    NPC: I'll let ya pass now, good luck!
-    <<EnableMovement>>
-    <<StopSound LinePresenter>>
-===
