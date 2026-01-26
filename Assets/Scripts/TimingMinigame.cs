@@ -223,6 +223,9 @@ public class TimingMinigame : FishingMinigame
             bobberInstance = null;            
         }
 
+        if (wanderingFish != null)
+            Destroy(wanderingFish);
+
         FMODReelingIn.Stop();
 
         BackgroundRectTransform.gameObject.SetActive(false);

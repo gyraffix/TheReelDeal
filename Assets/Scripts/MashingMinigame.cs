@@ -54,6 +54,8 @@ public class MashingMinigame : FishingMinigame
 
     protected override void OnActivate()
     {
+        base.OnActivate();
+
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
@@ -76,6 +78,9 @@ public class MashingMinigame : FishingMinigame
             Destroy(bobberInstance.gameObject);
             bobberInstance = null;
         }
+
+        if (wanderingFish != null)
+            Destroy(wanderingFish);
 
         FMODReelingIn.Stop();
 

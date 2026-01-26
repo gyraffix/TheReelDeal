@@ -219,7 +219,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4323647536448451148, guid: 5a123b3d181bcaa429ec5a6cea37d353, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1673,6 +1674,16 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1039313338304056949, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099615936129949761, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1378890055957868783, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2010,6 +2021,16 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5861934762841755575, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6156375384643939498, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286003671428900808, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
         type: 3}
       propertyPath: m_UiScaleMode
@@ -2194,6 +2215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.g
       value: 0.8117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662214747960192356, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8997795659791388167, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
         type: 3}
@@ -3829,7 +3855,7 @@ Transform:
   m_GameObject: {fileID: 1290258643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 223.88358, y: -12.618347, z: 15.5215645}
+  m_LocalPosition: {x: 224.68, y: -12.618347, z: 15.5215645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4832,7 +4858,7 @@ Transform:
   m_GameObject: {fileID: 1460529489}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 230.01535, y: -11.41835, z: 31.099125}
+  m_LocalPosition: {x: 228.47, y: -11.41835, z: 31.099125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5042,6 +5068,12 @@ PrefabInstance:
       propertyPath: minigameCanvas
       value: 
       objectReference: {fileID: 1251249054}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: wanderingFishPrefab
+      value: 
+      objectReference: {fileID: 2959402236713656849, guid: 1cab386cffab3d541ac1ef56e64b2e58,
+        type: 3}
     - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: possibleFishes.Array.size
