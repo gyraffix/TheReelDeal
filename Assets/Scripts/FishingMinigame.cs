@@ -187,7 +187,7 @@ public abstract class FishingMinigame : PlayerActivatable
     {
          wanderingFish.transform.position = fishLocation + 
             new Vector3((fishDestination.x - fishLocation.x) * (fishingProgress/100), 0, (fishDestination.z - fishLocation.z) * (fishingProgress / 100));
-        Debug.Log(fishLocation + " / " + fishDestination);
+        //Debug.Log(fishLocation + " / " + fishDestination);
     }
 
     protected void FishingSuccessful()
