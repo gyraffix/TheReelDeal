@@ -53,6 +53,7 @@ public class Album : MonoBehaviour
         {
             anim.SetTrigger("Open");
             FMODOpenAlbum.Play();
+            UpdatePages();
             Cursor.lockState = CursorLockMode.None;
             FirstPersonLook.instance.active = false;
             FirstPersonMovement.instance.active = false;

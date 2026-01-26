@@ -13,7 +13,7 @@ public class Page : MonoBehaviour
     
     private void Start()
     {
-        for (int i = 0; i < 4; i++) 
+        for (int i = 0; i < 2; i++) 
         {
             TMP_Text name = spots[i].transform.GetChild(0).GetComponent<TMP_Text>();
             TMP_Text desc = spots[i].transform.GetChild(1).GetComponent<TMP_Text>();
