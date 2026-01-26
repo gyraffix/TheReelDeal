@@ -6,8 +6,8 @@ public class MashingMinigame : FishingMinigame
     private float requiredClicksPS;
     private Slider progressSlider;
     private float progressValue = 50;
-    [Header("Mashing Minigame")]
-    [SerializeField] private KeyCode mashInput = KeyCode.Space;
+    //[Header("Mashing Minigame")]
+    //[SerializeField] private KeyCode mashInput = KeyCode.Space;
 
     private new void Awake()
     {
@@ -29,7 +29,7 @@ public class MashingMinigame : FishingMinigame
             throwingSlider.gameObject.SetActive(false);
             progressSlider.value = progressValue;
 
-            if (Input.GetKeyDown(mashInput))
+            if (Input.GetKeyDown(minigameInput) || Input.GetKeyDown(minigameInputMouse))
             {
                 progressValue += (1 / requiredClicksPS) * 5;
             }
@@ -54,6 +54,8 @@ public class MashingMinigame : FishingMinigame
 
     protected override void OnActivate()
     {
+        base.OnActivate();
+
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
@@ -76,6 +78,9 @@ public class MashingMinigame : FishingMinigame
             Destroy(bobberInstance.gameObject);
             bobberInstance = null;
         }
+
+        if (wanderingFish != null)
+            Destroy(wanderingFish);
 
         FMODReelingIn.Stop();
 

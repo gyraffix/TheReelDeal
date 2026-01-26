@@ -7,6 +7,9 @@ public class BobberScript : MonoBehaviour
     [SerializeField] private StudioEventEmitter FMODWaterSplash;
     public float maxSpeed;
     [SerializeField] private float linearDamping = 5;
+    private bool toBeDestroyed = false;
+    private bool inWater = false;
+    private GameObject fishCollision;
     void OnCollisionEnter(Collision collision)
     {
         GetComponent<Rigidbody>().maxLinearVelocity = maxSpeed;
@@ -22,7 +25,19 @@ public class BobberScript : MonoBehaviour
         }
         if (collision.gameObject.tag.Equals("Water"))
         {
+            Debug.Log("hit water");
+            inWater = true;
             FMODWaterSplash.Play();
+            if (toBeDestroyed)
+            {
+                Destroy(gameObject);
+                fishingMinigame.bobberInstance = null;
+                Destroy(fishCollision);
+                fishingMinigame.isReeling = false;
+                fishingMinigame.FMODReelingIn.Stop();
+                fishingMinigame.fishLocation = fishCollision.transform.position;
+                fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
+            }
         }    
     }
 
@@ -31,12 +46,22 @@ public class BobberScript : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Fish":
-                Destroy(gameObject);
-                fishingMinigame.bobberInstance = null;
-                fishingMinigame.isReeling = false;
-                fishingMinigame.FMODReelingIn.Stop();
-                fishingMinigame.fishLocation = other.transform.position;
-                fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
+                if (!inWater)
+                {
+
+                    toBeDestroyed = true;
+                    fishCollision = other.gameObject;
+                }
+                else
+                {
+                    Destroy(gameObject);
+                    fishingMinigame.bobberInstance = null;
+                    Destroy(other);
+                    fishingMinigame.isReeling = false;
+                    fishingMinigame.FMODReelingIn.Stop();
+                    fishingMinigame.fishLocation = other.transform.position;
+                    fishingMinigame.SetMinigameState(FishingMinigame.MinigameState.Playing);
+                }
                 break;
             case "Minigame": // Doesn't work. This needs to be on trigger enter. Or collide with player
                 if (fishingMinigame.checkBobberDistance)

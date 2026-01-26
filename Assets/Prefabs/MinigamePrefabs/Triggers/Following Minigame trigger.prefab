@@ -88,6 +88,8 @@ MonoBehaviour:
   FMODReelingIn: {fileID: 8222654760401259237}
   FMODVictorySound: {fileID: 8840876444270486164}
   bobberInstance: {fileID: 0}
+  wanderingFishPrefab: {fileID: 2959402236713656849, guid: fa7f1b60cf6a02e40aa66817ab03633c,
+    type: 3}
   minigameInput: 32
   exitMinigameInput: 27
   currentDifficultyIndex: 0
@@ -124,11 +126,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca8ef784dee90cc4ba8db9f9e37cd1fc, type: 2}
   - {fileID: 11400000, guid: 24b5082bf03fe1e48a330a4eff94c35a, type: 2}
   fishLocation: {x: 0, y: 0, z: 0}
-  fishHeight: 0
-  fishEndPos: {x: 0, y: 0, z: 0}
-  fishStartZ: 7
-  sineWaveAmplitude: 16
-  sineWaveSpeed: 1
   maxThrowingStrength: 20
   minThrowingStrength: 5
   strengthIncreaseSpeed: 10

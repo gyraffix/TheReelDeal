@@ -166,7 +166,7 @@ public class TimingMinigame : FishingMinigame
     {
         bool pressSucces = false;
 
-        if (Input.GetKeyDown(minigameInput))
+        if (Input.GetKeyDown(minigameInput) || Input.GetKeyDown(minigameInputMouse))
         {
             for (int i = 0; i < spawnedTargets.Count; i++)
             {
@@ -183,7 +183,7 @@ public class TimingMinigame : FishingMinigame
                 fishingProgress -= progressDecrease;
         }
         fishingProgress -= defaultProgressDecrease * Time.deltaTime;
-
+        UpdateFish();
         progressSlider.value = fishingProgress;
         
         if (progressSlider.value > 99)

@@ -66,7 +66,7 @@ public class FolowingMinigame : FishingMinigame
             MinigameSetActive(true);
             throwingSlider.gameObject.SetActive(false);
 
-            if (Input.GetKey(minigameInput))
+            if (Input.GetKey(minigameInput) || Input.GetKey(minigameInputMouse))
             {
                 if (direction < 1)
                     direction += Time.deltaTime * directionChangeSpeed;
@@ -90,6 +90,8 @@ public class FolowingMinigame : FishingMinigame
 
     protected override void OnActivate()
     {
+        base.OnActivate();
+
         if (hasUsableItem.CheckForItem())
         {
             Debug.Log("2");
@@ -180,6 +182,9 @@ public class FolowingMinigame : FishingMinigame
             Destroy(bobberInstance.gameObject);
             bobberInstance = null;
         }
+        
+        if (wanderingFish != null)
+        Destroy(wanderingFish);
 
         FMODReelingIn.Stop();
 
