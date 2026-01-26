@@ -90,6 +90,8 @@ public class FolowingMinigame : FishingMinigame
 
     protected override void OnActivate()
     {
+        base.OnActivate();
+
         if (hasUsableItem.CheckForItem())
         {
             Debug.Log("2");

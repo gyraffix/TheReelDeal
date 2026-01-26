@@ -54,6 +54,8 @@ public class MashingMinigame : FishingMinigame
 
     protected override void OnActivate()
     {
+        base.OnActivate();
+
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
