@@ -15,6 +15,7 @@ public abstract class FishingMinigame : PlayerActivatable
     public StudioEventEmitter FMODReelingIn;
     [SerializeField] protected StudioEventEmitter FMODVictorySound;
     [HideInInspector] public Rigidbody bobberInstance;
+    [SerializeField] private GameObject wanderingFishPrefab;
     protected GameObject fishObject;
     protected Slider throwingSlider;
     protected GameObject fishCaughtText;
@@ -22,9 +23,12 @@ public abstract class FishingMinigame : PlayerActivatable
     protected Transform player;
     protected HasUsableItem hasUsableItem;
     protected DialogueRunner dialogueRunner;
+    protected GameObject wanderingFish;
+    
 
     [Header("Minigame Settings")]
     [SerializeField] protected KeyCode minigameInput = KeyCode.Space;
+    [SerializeField] protected KeyCode minigameInputMouse = KeyCode.Mouse0;
     [SerializeField] protected KeyCode exitMinigameInput = KeyCode.Escape;
     [SerializeField] protected int currentDifficultyIndex;
     [SerializeField] protected Difficulty[] Difficulties;
@@ -36,12 +40,8 @@ public abstract class FishingMinigame : PlayerActivatable
 
     [Header("Progress Settings")]
     [HideInInspector] public Vector3 fishLocation;
-    [SerializeField] private float fishHeight;
-    [SerializeField] private Vector3 fishEndPos;
-    [SerializeField] private float fishStartZ = 7f;
-    [SerializeField] private float sineWaveAmplitude = 16;
-    [SerializeField] private float sineWaveSpeed = 1;
     protected float fishingProgress;
+    protected Vector3 fishDestination;
 
     [Header("Bobber Settings")]
     [SerializeField] private float maxThrowingStrength = 30;
@@ -85,6 +85,7 @@ public abstract class FishingMinigame : PlayerActivatable
             Crouch.instance.active = true;
             active = false;
             ResetMinigame();
+            ProximityTriggerRoot.instance.Enabled(true);
             return;
         }
 
@@ -94,7 +95,7 @@ public abstract class FishingMinigame : PlayerActivatable
                 MinigameSetActive(false);
                 throwingSlider.gameObject.SetActive(true);
 
-                if (Input.GetKey(minigameInput))
+                if (Input.GetKey(minigameInput) || Input.GetKey(minigameInputMouse))
                 {
                     startedThrowing = true;
                     UpdateStrength();
@@ -114,12 +115,12 @@ public abstract class FishingMinigame : PlayerActivatable
                     MinigameSetActive(false);
                     throwingSlider.gameObject.SetActive(false);
 
-                    if (Input.GetKeyDown(minigameInput))
+                    if (Input.GetKeyDown(minigameInput) || Input.GetKeyDown(minigameInputMouse))
                     {
                         isReeling = true;
                         FMODReelingIn.Play();
                     }
-                    else if (Input.GetKeyUp(minigameInput))
+                    else if (Input.GetKeyUp(minigameInput) || Input.GetKeyUp(minigameInputMouse))
                     {
                         isReeling = false;
                         FMODReelingIn.Stop();
@@ -135,13 +136,8 @@ public abstract class FishingMinigame : PlayerActivatable
 
     protected override void OnActivate()
     {
-        //OnMinigameActivation();
+        ProximityTriggerRoot.instance.Enabled(false);
     }
-
-    //protected void OnMinigameActivation()
-    //{
-
-    //}
 
     protected void OnTriggerExit(Collider other)
     {
@@ -189,10 +185,9 @@ public abstract class FishingMinigame : PlayerActivatable
 
     protected void UpdateFish()
     {
-        // fishObject.transform.localPosition = new Vector3(
-        //    (sineWaveAmplitude - sineWaveAmplitude * (fishingProgress / 100)) * Mathf.Sin(Time.time * sineWaveSpeed),
-        //    fishHeight,
-        //   fishStartZ - ((fishStartZ - fishEndZ) * fishingProgress / 100));
+         wanderingFish.transform.position = fishLocation + 
+            new Vector3((fishDestination.x - fishLocation.x) * (fishingProgress/100), 0, (fishDestination.z - fishLocation.z) * (fishingProgress / 100));
+        Debug.Log(fishLocation + " / " + fishDestination);
     }
 
     protected void FishingSuccessful()
@@ -210,6 +205,7 @@ public abstract class FishingMinigame : PlayerActivatable
         FMODVictorySound.Play();
 
         ResetMinigame();
+        ProximityTriggerRoot.instance.Enabled(true);
 
         if (!Album.instance.addedFish.Contains(currentFish.name))
         {
@@ -221,6 +217,7 @@ public abstract class FishingMinigame : PlayerActivatable
 
         active = false;
     }
+
 
     [YarnCommand("playAnimation")]
     public static void PlayAnimation()
@@ -258,6 +255,7 @@ public abstract class FishingMinigame : PlayerActivatable
         Crouch.instance.active = true;
         active = false;
         ResetMinigame();
+        ProximityTriggerRoot.instance.Enabled(true);
     }
     private IEnumerator LateBobberDistance()
     {
@@ -299,6 +297,13 @@ public abstract class FishingMinigame : PlayerActivatable
 
             case MinigameState.Playing:
                 FirstPersonMovement.instance.active = false;
+                FirstPersonLook.instance.active = false;
+                wanderingFish = Instantiate(wanderingFishPrefab, fishLocation, wanderingFishPrefab.transform.rotation);
+                Debug.Log(wanderingFish.activeSelf);
+                fishDestination = new Vector3(
+                    player.transform.position.x + ((fishLocation.x - player.transform.position.x) * 0.2f),
+                    fishLocation.y,
+                    player.transform.position.z + ((fishLocation.z - player.transform.position.z) * 0.2f));
                 minigameState = MinigameState.Playing;
                 break;
         }

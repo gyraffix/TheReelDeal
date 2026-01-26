@@ -38,10 +38,12 @@ public class Page : MonoBehaviour
         
         foreach (GameObject spot in spots)
         {
-
+            
             TMP_Text name = spot.transform.GetChild(0).GetComponent<TMP_Text>();
+            Debug.Log(name.text + " / " + fish.name);
             if (name.text.Equals(fish.name))
             {
+                Debug.Log("Found!");
                 TMP_Text desc = spot.transform.GetChild(1).GetComponent<TMP_Text>();
                 Image image = spot.transform.GetChild(2).GetComponent<Image>();
                 desc.text = fish.desc;
