@@ -15,6 +15,7 @@ public abstract class FishingMinigame : PlayerActivatable
     public StudioEventEmitter FMODReelingIn;
     [SerializeField] protected StudioEventEmitter FMODVictorySound;
     [HideInInspector] public Rigidbody bobberInstance;
+    [SerializeField] private GameObject wanderingFishPrefab;
     protected GameObject fishObject;
     protected Slider throwingSlider;
     protected GameObject fishCaughtText;
@@ -22,6 +23,8 @@ public abstract class FishingMinigame : PlayerActivatable
     protected Transform player;
     protected HasUsableItem hasUsableItem;
     protected DialogueRunner dialogueRunner;
+    protected GameObject wanderingFish;
+    
 
     [Header("Minigame Settings")]
     [SerializeField] protected KeyCode minigameInput = KeyCode.Space;
