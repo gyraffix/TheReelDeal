@@ -119,7 +119,8 @@ MonoBehaviour:
   FMODReelingIn: {fileID: 0}
   FMODVictorySound: {fileID: 0}
   bobberInstance: {fileID: 0}
-  wanderingFishPrefab: {fileID: 5824600119209941433}
+  wanderingFishPrefab: {fileID: 2959402236713656849, guid: fa7f1b60cf6a02e40aa66817ab03633c,
+    type: 3}
   minigameInput: 32
   exitMinigameInput: 27
   currentDifficultyIndex: 0
