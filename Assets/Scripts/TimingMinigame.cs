@@ -102,6 +102,12 @@ public class TimingMinigame : FishingMinigame
     {
         base.OnActivate();
 
+        progressIncrease = Difficulties[currentDifficultyIndex].progressIncrease;
+        progressDecrease = Difficulties[currentDifficultyIndex].progressDecrease;
+        meterSpeed = Difficulties[currentDifficultyIndex].meterSpeed;
+        targetHeight = Difficulties[currentDifficultyIndex].targetHeight;
+        defaultProgressDecrease = Difficulties[currentDifficultyIndex].defaultProgressDecrease;
+
         Jump.instance.active = false;
         Crouch.instance.active = false;
 
@@ -249,6 +255,8 @@ public class TimingMinigame : FishingMinigame
     {
         fishingProgress = 30;
         meterPos = 0;
+        currentFishingProgressMax = 0;
+        currentFishingProgressMin = 0;
         if (spawnedTargets.Count > 0)         
             spawnedTargets.Clear();
 

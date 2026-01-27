@@ -137,6 +137,14 @@ public abstract class FishingMinigame : PlayerActivatable
     protected override void OnActivate()
     {
         ProximityTriggerRoot.instance.Enabled(false);
+
+        if (hasUsableItem.CheckForItem())
+        {
+            Debug.Log("2");
+            currentDifficultyIndex = 2;
+        }
+        else
+            currentDifficultyIndex = 0;
     }
 
     protected void OnTriggerExit(Collider other)
@@ -336,4 +344,8 @@ public class Difficulty
 
     [Header("Mashing Minigame settings")]
     public float requiredClicksPerSecond;
+
+    [Header("Timing Minigame Settings")]
+    public float defaultProgressDecrease;
+    public float fishingPregress;
 }
