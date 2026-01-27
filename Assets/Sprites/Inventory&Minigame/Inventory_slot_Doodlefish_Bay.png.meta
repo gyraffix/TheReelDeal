@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e5d6944592f496c4fb79e0b012be4770
+guid: edb0868d7f623c64eb7c87b5a78a34f7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,23 +110,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventory_background_Doodlefish_Bay_0
+      name: Inventory_slot_Doodlefish_Bay_0
       rect:
         serializedVersion: 2
-        x: 111
-        y: 363
-        width: 1698
-        height: 354
+        x: 813
+        y: 393
+        width: 294
+        height: 294
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 51, y: 57, z: 54, w: 43}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c24bc481861b9cc498ee440d92bab6e7
-      internalID: -1288816192
+      spriteID: b0003e1dd006e9143873eb7ff63e4a22
+      internalID: 199203626
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: c9b99e968c7048e439ab28cf2f00293a
     internalID: 0
     vertices: []
     indices: 
@@ -145,7 +145,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      inventory_background_Doodlefish_Bay_0: -1288816192
+      Inventory_slot_Doodlefish_Bay_0: 199203626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
