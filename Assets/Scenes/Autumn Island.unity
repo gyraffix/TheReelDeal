@@ -4262,13 +4262,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
+      propertyPath: introDialogue
+      value: AutumnQuest2Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
       propertyPath: completedDialogue
-      value: TestNPCComplete
+      value: AutumnQuest2Complete
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: incompleteDialogue
-      value: TestNPCIncomplete
+      value: AutumnQuest2Incomplete
       objectReference: {fileID: 0}
     - target: {fileID: 9018087298022346479, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}

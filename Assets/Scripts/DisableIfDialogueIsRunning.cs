@@ -15,7 +15,6 @@ public class DisableIfDialogueIsRunning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(dr.IsDialogueRunning);
         if (dr.IsDialogueRunning)
         {
             foreach (GameObject go in objectsToDeactivate)
