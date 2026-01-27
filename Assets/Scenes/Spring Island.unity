@@ -12739,17 +12739,17 @@ PrefabInstance:
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
@@ -12759,7 +12759,7 @@ PrefabInstance:
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.334
+      value: 43.65
       objectReference: {fileID: 0}
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
@@ -12804,7 +12804,7 @@ PrefabInstance:
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: Dialogue
-      value: Quest1Intro
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
