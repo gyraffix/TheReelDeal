@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using FMODUnity;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
@@ -209,7 +210,7 @@ public abstract class FishingMinigame : PlayerActivatable
         Jump.instance.active = true;
         Crouch.instance.active = true;
 
-        fishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
+        
 
         FMODVictorySound.Play();
 
@@ -220,9 +221,16 @@ public abstract class FishingMinigame : PlayerActivatable
         {
             caughtFishSprite.GetComponent<Animator>().SetTrigger("FishCaught");
             RunDialogue(currentFish);
+            fishCaughtText.GetComponent<TMP_Text>().text = "Caught " + currentFish.name;
+            Album.instance.NewFish(currentFish);
         }
+        else
+        {
+            fishCaughtText.GetComponent<TMP_Text>().text = "Already caught " + currentFish.name;
+        }
+        
 
-        Album.instance.NewFish(currentFish);
+        fishCaughtText.GetComponent<Animator>().SetTrigger("FishCaught");
 
         active = false;
     }

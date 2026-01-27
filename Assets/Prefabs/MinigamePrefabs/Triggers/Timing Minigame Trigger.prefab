@@ -122,6 +122,7 @@ MonoBehaviour:
   wanderingFishPrefab: {fileID: 2959402236713656849, guid: fa7f1b60cf6a02e40aa66817ab03633c,
     type: 3}
   minigameInput: 32
+  minigameInputMouse: 323
   exitMinigameInput: 27
   currentDifficultyIndex: 0
   Difficulties: []
@@ -329,7 +330,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
-  m_Color: {r: 0.24348582, g: 0.9496855, b: 0.044796366, a: 1}
+  m_Color: {r: 0.24348582, g: 0.9496855, b: 0.044796366, a: 0.15686275}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

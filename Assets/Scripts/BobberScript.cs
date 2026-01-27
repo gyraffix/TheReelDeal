@@ -33,7 +33,6 @@ public class BobberScript : MonoBehaviour
                 Debug.Log("Case 1");
                 Destroy(gameObject);
                 fishingMinigame.bobberInstance = null;
-                Destroy(fishCollision);
                 fishingMinigame.isReeling = false;
                 fishingMinigame.FMODReelingIn.Stop();
                 fishingMinigame.fishLocation = fishCollision.transform.position;
@@ -58,7 +57,6 @@ public class BobberScript : MonoBehaviour
                     Debug.Log("Case 2");
                     Destroy(gameObject);
                     fishingMinigame.bobberInstance = null;
-                    Destroy(other);
                     fishingMinigame.isReeling = false;
                     fishingMinigame.FMODReelingIn.Stop();
                     fishingMinigame.fishLocation = other.transform.position;
