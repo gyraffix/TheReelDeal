@@ -569,6 +569,18 @@ title: AutumnQuest2Incomplete
     <<StopSound LinePresenter>>
 ===
 
+title: AutumnQuest2Complete
+---
+    Omega The Third: WOOO all of the doodles are here! I even got my sunscreen ready. 
+    You: Is that laminated paper? 
+    Omega The Third: Ya! Can't get too tanned! Let's go, here are the keys. The beach is WAITING! 
+    You: Wait... Can't you just swim there? You are a doodle fish 
+    Omega The Third: I already unfolded the towel and placed sunscreen. We're too far in now.
+    You: Can't argue with that. Let's go
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
 //--------------------------------
 //      Questline Placeholder
 //--------------------------------
@@ -731,14 +743,9 @@ Placeholder: Lorem Ipsum Blablabla
 //--------------------------------
 title: SummerNPC1Dialogue
 ---
-    : Sometimes I wish I could swim
-    You: Well, you can, you're a fish!
-    Gilly: But I have legs. I'm not a fish.
-    You: Ok. Fair, carry on!
-    Gilly:I could wear a fish costume. That should fool the water.
-    Narrator: You look at Gilly with this confused look but go along with his logic to make him happy.
-    You: You know what, it should work.
-    Gilly: Exactly! I'm gonna order one right now off the internet.
+Placeholder: Lorem Ipsum Blablabla
+Placeholder: Lorem Ipsum Blablabla
+Placeholder: Lorem Ipsum Blablabla 
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
