@@ -209,6 +209,22 @@ MonoBehaviour:
     targetHeight: 0
     targetSpeed: 0
     requiredClicksPerSecond: 1
+  - randomizeMovement: 0
+    progressIncrease: 0
+    progressDecrease: 0
+    directionChangeSpeed: 0
+    meterSpeed: 0
+    targetHeight: 0
+    targetSpeed: 0
+    requiredClicksPerSecond: 2
+  - randomizeMovement: 0
+    progressIncrease: 0
+    progressDecrease: 0
+    directionChangeSpeed: 0
+    meterSpeed: 0
+    targetHeight: 0
+    targetSpeed: 0
+    requiredClicksPerSecond: 3
   possibleFishes:
   - {fileID: 11400000, guid: fed923f84d8c79740a687eb0766352b6, type: 2}
   - {fileID: 11400000, guid: 6fca2c5d7532edb44a4a5c859af203b4, type: 2}

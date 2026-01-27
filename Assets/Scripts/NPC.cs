@@ -44,7 +44,7 @@ public class NPC : PlayerActivatable
         player.transform.LookAt(new Vector3
             (
             transform.position.x,
-            FirstPersonMovement.instance.gameObject.transform.position.y, 
+            transform.position.y- 0.7f, 
             transform.position.z)
             );
 

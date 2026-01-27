@@ -33,8 +33,9 @@ public class MashingMinigame : FishingMinigame
             {
                 progressValue += (1 / requiredClicksPS) * 5;
             }
-
+            
             progressValue -= requiredClicksPS * Time.deltaTime * 5;
+            UpdateFish();
         }
 
         if (progressSlider.value > 99)
@@ -66,6 +67,12 @@ public class MashingMinigame : FishingMinigame
         active = true;
     }
 
+    private new void UpdateFish()
+    {
+        wanderingFish.transform.position = fishLocation +
+            new Vector3((fishDestination.x - fishLocation.x) * (progressValue / 50), 0, (fishDestination.z - fishLocation.z) * (progressValue / 50));
+        Debug.Log(fishLocation + " / " + fishDestination);
+    }
     protected override void ResetMinigame()
     {
         progressValue = 50;
