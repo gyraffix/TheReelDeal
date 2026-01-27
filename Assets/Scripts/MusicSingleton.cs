@@ -6,7 +6,7 @@ public class MusicSingleton : MonoBehaviour
     public static MusicSingleton MusicInstance;
     [SerializeField] private StudioEventEmitter FMODMusic;
 
-    void Awake()
+    private void Start()
     {
         if (MusicInstance != null && MusicInstance != this)
         {
@@ -16,10 +16,7 @@ public class MusicSingleton : MonoBehaviour
 
         MusicInstance = this;
         DontDestroyOnLoad(gameObject);
-    }
 
-    void Start()
-    {
         FMODMusic.Play();
     }
 }
