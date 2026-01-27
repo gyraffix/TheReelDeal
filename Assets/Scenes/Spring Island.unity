@@ -150,6 +150,7 @@ Transform:
   m_Children:
   - {fileID: 1287838490}
   - {fileID: 1168802435}
+  - {fileID: 952116392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123934527
@@ -817,6 +818,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 235281388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &273335545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 170830386375451940, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+    type: 3}
+  m_PrefabInstance: {fileID: 816518100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &306941714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1086,7 +1093,7 @@ PrefabInstance:
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: Dialogue
-      value: NPC4Dialogue
+      value: SpringNPC4Dialogue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2095,6 +2102,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1378890055957868783, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378890055957868783, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1378890055957868783, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1860323826882857095, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
         type: 3}
       propertyPath: m_Name
@@ -2181,6 +2203,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3059111464382323669, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043833052855284889, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043833052855284889, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043833052855284889, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4043833052855284889, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -2696,6 +2738,91 @@ Transform:
   - {fileID: 1783295348}
   m_Father: {fileID: 1810201451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &952116391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952116392}
+  - component: {fileID: 952116394}
+  - component: {fileID: 952116393}
+  m_Layer: 0
+  m_Name: Dock Barrier
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &952116392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952116391}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.21742955, z: -0, w: 0.97607607}
+  m_LocalPosition: {x: -49.0256, y: 45.21, z: -68.433495}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 109552585}
+  m_LocalEulerAnglesHint: {x: 0, y: -25.116, z: 0}
+--- !u!114 &952116393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952116391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddaf7983fe414f73941d1ba82cd8b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canRepeat: 1
+  shouldActivateOnCollision: 1
+  shouldActivateOnTriggerEnter: 0
+  canBeActivated: 1
+  targetEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2123990362}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &952116394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952116391}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 5.508417, z: 3.5755446}
+  m_Center: {x: -0.00000006231413, y: 2.2542086, z: -0.11969889}
 --- !u!1001 &1019493087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3064,7 +3191,7 @@ PrefabInstance:
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: Dialogue
-      value: NPC3Dialogue
+      value: SpringNPC2Dialogue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11195,9 +11322,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3306173050314768765, guid: c594b244850a24e4e85795b17edbce9c,
         type: 3}
+      propertyPath: reelingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3306173050314768765, guid: c594b244850a24e4e85795b17edbce9c,
+        type: 3}
       propertyPath: minigameCanvas
       value: 
       objectReference: {fileID: 456111357}
+    - target: {fileID: 3306173050314768765, guid: c594b244850a24e4e85795b17edbce9c,
+        type: 3}
+      propertyPath: maxReelingSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3306173050314768765, guid: c594b244850a24e4e85795b17edbce9c,
         type: 3}
       propertyPath: possibleFishes.Array.size
@@ -11794,7 +11931,7 @@ PrefabInstance:
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: Dialogue
-      value: NPC2Dialogue
+      value: SpringNPC3Dialogue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12458,6 +12595,7 @@ Transform:
   - {fileID: 500509823}
   - {fileID: 1989757482}
   - {fileID: 2064011926}
+  - {fileID: 2069642400}
   - {fileID: 1676979019}
   - {fileID: 452703681}
   m_Father: {fileID: 1810201451}
@@ -12585,6 +12723,135 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1472054264}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1931938347
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1840215170}
+    m_Modifications:
+    - target: {fileID: 777516169979254514, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -25.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 44.334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.448
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92544943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.37887123
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -44.528
+      objectReference: {fileID: 0}
+    - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: Dialogue
+      value: Quest1Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1950646969}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: fishNeeded
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: isQuestNPC
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: baitReceived
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a710678b376047478e9d4d2776cf765,
+        type: 2}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: introDialogue
+      value: SpringBaitNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: baitCollectedText
+      value: 
+      objectReference: {fileID: 273335545}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: completedDialogue
+      value: SpringBaitNPCComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: incompleteDialogue
+      value: SpringBaitNPCIncomplete
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b21194690adb5764692a2efdadd7f3b4, type: 3}
 --- !u!1001 &1935486341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13222,8 +13489,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
+      propertyPath: barrier
+      value: 
+      objectReference: {fileID: 952116394}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
       propertyPath: Dialogue
       value: Quest1Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: fishNeeded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: isQuestNPC
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: introDialogue
+      value: SpringQuest1Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: completedDialogue
+      value: SpringQuest1Complete
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: incompleteDialogue
+      value: SpringQuest1Incomplete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13268,6 +13565,12 @@ Transform:
   - {fileID: 1916917997}
   m_Father: {fileID: 1810201451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2069642400 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1931938347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073080251
 GameObject:
   m_ObjectHideFlags: 0
@@ -13311,6 +13614,18 @@ Transform:
   - {fileID: 1454991794}
   m_Father: {fileID: 2141257149}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123990362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2064011925}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d8b35652042ae48b98e75abfae9a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2141257148
 GameObject:
   m_ObjectHideFlags: 0
@@ -13428,7 +13743,7 @@ PrefabInstance:
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: Dialogue
-      value: StarterNPC
+      value: SpringStarterNPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
