@@ -16,3 +16,4 @@ MonoBehaviour:
   name: Moonfish
   desc: Moon fish looks like the full moon, elegant and pretty as they should be!
   hint: Found In Sea Water
+  location: Sea

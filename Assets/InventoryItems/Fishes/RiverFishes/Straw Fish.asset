@@ -16,3 +16,4 @@ MonoBehaviour:
   name: StrawFish
   desc: He is a very nice berry farmer. You should show him one of your strawberries
   hint: Found In the River
+  location: River

@@ -16,3 +16,4 @@ MonoBehaviour:
   name: DogeFish
   desc: Very Fish. Much Water. So wow!
   hint: Found In the pond
+  location: Pond

@@ -16,3 +16,4 @@ MonoBehaviour:
   name: Starfish
   desc: What if you wanted to be a shooting star? This fish achieved it!
   hint: Found In Sea Water
+  location: Sea

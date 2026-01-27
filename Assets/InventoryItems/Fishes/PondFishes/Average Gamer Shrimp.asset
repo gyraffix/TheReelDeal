@@ -16,3 +16,4 @@ MonoBehaviour:
   name: AverageGamerShrimp
   desc: His posture displays what years of peak gaming looks like.
   hint: Found In the pond
+  location: Pond

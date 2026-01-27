@@ -16,3 +16,4 @@ MonoBehaviour:
   name: BongoCatFish
   desc: '* Loud Bongo Sfx * Meow! * Loud Bongo Sfx *'
   hint: Found In the pond
+  location: Pond

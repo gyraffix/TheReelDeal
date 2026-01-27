@@ -16,3 +16,4 @@ MonoBehaviour:
   name: Swordfish
   desc: A fish ready for a fight. Careful, his sword is pointy!
   hint: Found In Sea Water
+  location: Sea

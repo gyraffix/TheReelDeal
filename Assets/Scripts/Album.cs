@@ -20,11 +20,15 @@ public class Album : MonoBehaviour
     [SerializeField] private List<Page> pages;
     [SerializeField] private List<GameObject> fishes;
     [SerializeField] private float interactionCooldown;
+
+    
     private bool canInteract = true;
 
     [HideInInspector]
     public List<string> addedFish;
-
+    public int pondFishes;
+    public int riverFishes;
+    public int seaFishes;
 
     private void Start()
     {
@@ -114,6 +118,22 @@ public class Album : MonoBehaviour
                 if (p.NewFish(fish))
                 {
                     addedFish.Add(fish.name);
+
+                    switch (fish.location)
+                    {
+                        case "Pond":
+                            pondFishes++;
+                            break;
+                        case "River":
+                            riverFishes++;
+                            break;
+                        case "Sea":
+                            seaFishes++;
+                            break;
+                        case null: break;
+                    }
+
+
                     break;
                 }
             }

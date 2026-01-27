@@ -16,3 +16,4 @@ MonoBehaviour:
   name: CookieCutterShark
   desc: ' His cut is meaner than his bite and his outside is harder than his inside'
   hint: Found In Sea Water
+  location: Sea

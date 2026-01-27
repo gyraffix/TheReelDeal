@@ -16,3 +16,4 @@ MonoBehaviour:
   name: Sunfish
   desc: Dont look directly into it. It wont blind you, he is just camera shy!
   hint: Found In Sea Water
+  location: Sea

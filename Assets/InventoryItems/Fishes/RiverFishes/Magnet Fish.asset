@@ -16,3 +16,4 @@ MonoBehaviour:
   name: MagnetJellyfish
   desc: PLACEHOLDER
   hint: Found In the River
+  location: River

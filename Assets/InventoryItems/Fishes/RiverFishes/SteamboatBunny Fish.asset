@@ -16,3 +16,4 @@ MonoBehaviour:
   name: SteamboatBunny
   desc: All aboard this bubble powered transport ready to hop to your destination!
   hint: Found In the River
+  location: River

@@ -8,4 +8,5 @@ public class FishItem : ScriptableObject
     public string name = string.Empty; 
     public string desc = string.Empty;
     public string hint = string.Empty;
+    public string location = string.Empty;
 }

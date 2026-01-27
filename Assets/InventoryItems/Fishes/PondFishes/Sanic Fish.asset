@@ -16,3 +16,4 @@ MonoBehaviour:
   name: SonicFish
   desc: He keeps yelling "Cmon! Step it up"  ... How does a fish yell
   hint: Found In the pond
+  location: Pond

@@ -16,3 +16,4 @@ MonoBehaviour:
   name: EraserClam
   desc: 'He takes care of other fish his own way. '
   hint: Found In the River
+  location: River

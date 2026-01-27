@@ -1,23 +1,31 @@
+
+using System.Collections;
 using UnityEngine;
 using Yarn.Unity;
 
 public class NPC : PlayerActivatable
 {
+    private enum FishLocation { Pond, River, Sea };
+
     [Header("Set this to true if the NPC has a quest")]
     [SerializeField] private bool isQuestNPC;
 
     [Header("Non-Quest Settings")]
     [SerializeField] private string Dialogue;
 
-
     [Header("Quest Settings")]  
     [SerializeField] private int fishNeeded;
+    [SerializeField] private FishLocation fishFromWhere;
     [SerializeField] private Collider barrier;
+    [SerializeField] private string introDialogue;
     [SerializeField] private string completedDialogue;
     [SerializeField] private string incompleteDialogue;
-    
+
+    private bool firstTimeTalking = true;
+
     private GameObject player;
     private DialogueRunner dr;
+
 
     private void Awake()
     {
@@ -50,15 +58,48 @@ public class NPC : PlayerActivatable
 
         if (isQuestNPC)
         {
-            if (fishNeeded <= Album.instance.addedFish.Count)
+            if (firstTimeTalking)
             {
-                RunDialogue(completedDialogue);
-                barrier.isTrigger = true;
+                RunDialogue(introDialogue);
+                firstTimeTalking = false;
             }
-            else
+
+            switch (fishFromWhere)
             {
-                RunDialogue(incompleteDialogue);
-            }
+                case FishLocation.Pond:
+                    if (Album.instance.pondFishes <= fishNeeded)
+                    {
+                        RunDialogue(completedDialogue);
+                        barrier.isTrigger = true;
+                    }
+                    else
+                    {
+                        RunDialogue(incompleteDialogue);
+                    }
+                    break;
+                case FishLocation.River:
+                    if (Album.instance.riverFishes <= fishNeeded)
+                    {
+                        RunDialogue(completedDialogue);
+                        barrier.isTrigger = true;
+                    }
+                    else
+                    {
+                        RunDialogue(incompleteDialogue);
+                    }
+                    break;
+                case FishLocation.Sea:
+                    if (Album.instance.seaFishes <= fishNeeded)
+                    {
+                        RunDialogue(completedDialogue);
+                        barrier.isTrigger = true;
+                    }
+                    else
+                    {
+                        RunDialogue(incompleteDialogue);
+                    }
+                    break;
+            }        
         }
 
         else
