@@ -17,10 +17,12 @@ public class NPC : PlayerActivatable
     [SerializeField] private int fishNeeded;
     [SerializeField] private FishLocation fishFromWhere;
     [SerializeField] private Collider barrier;
+    [SerializeField] private InventoryItemDefinition baitReceived;
     [SerializeField] private string introDialogue;
     [SerializeField] private string completedDialogue;
     [SerializeField] private string incompleteDialogue;
-
+    [SerializeField] private Inventory inventory;
+    [SerializeField] private GameObject baitCollectedText;
     private bool firstTimeTalking = true;
 
     private GameObject player;
@@ -58,48 +60,50 @@ public class NPC : PlayerActivatable
 
         if (isQuestNPC)
         {
-            if (firstTimeTalking)
+            if (!firstTimeTalking)
+            {
+                switch (fishFromWhere)
+                {
+                    case FishLocation.Pond:
+                        if (Album.instance.pondFishes >= fishNeeded)
+                        {
+                            RunDialogue(completedDialogue);
+                            GiveReward();
+                        }
+                        else
+                        {
+                            RunDialogue(incompleteDialogue);
+                        }
+                        break;
+                    case FishLocation.River:
+                        if (Album.instance.riverFishes >= fishNeeded)
+                        {
+                            RunDialogue(completedDialogue);
+                            GiveReward();
+                        }
+                        else
+                        {
+                            RunDialogue(incompleteDialogue);
+                        }
+                        break;
+                    case FishLocation.Sea:
+                        if (Album.instance.seaFishes >= fishNeeded)
+                        {
+                            RunDialogue(completedDialogue);
+                            GiveReward();
+                        }
+                        else
+                        {
+                            RunDialogue(incompleteDialogue);
+                        }
+                        break;
+                }
+            }
+            else
             {
                 RunDialogue(introDialogue);
                 firstTimeTalking = false;
             }
-
-            switch (fishFromWhere)
-            {
-                case FishLocation.Pond:
-                    if (Album.instance.pondFishes <= fishNeeded)
-                    {
-                        RunDialogue(completedDialogue);
-                        barrier.isTrigger = true;
-                    }
-                    else
-                    {
-                        RunDialogue(incompleteDialogue);
-                    }
-                    break;
-                case FishLocation.River:
-                    if (Album.instance.riverFishes <= fishNeeded)
-                    {
-                        RunDialogue(completedDialogue);
-                        barrier.isTrigger = true;
-                    }
-                    else
-                    {
-                        RunDialogue(incompleteDialogue);
-                    }
-                    break;
-                case FishLocation.Sea:
-                    if (Album.instance.seaFishes <= fishNeeded)
-                    {
-                        RunDialogue(completedDialogue);
-                        barrier.isTrigger = true;
-                    }
-                    else
-                    {
-                        RunDialogue(incompleteDialogue);
-                    }
-                    break;
-            }        
         }
 
         else
@@ -109,7 +113,20 @@ public class NPC : PlayerActivatable
         
     }
 
+    private void GiveReward()
+    {
+        if (barrier != null)
+        barrier.isTrigger = true;
+        if (baitReceived != null)
+        {
+            if (inventory != null)
+            {
+                inventory.AddItem(baitReceived.name);
+                baitCollectedText.GetComponent<Animator>().SetTrigger("BaitCollected");
+            }
+        }
 
+    }
 
     private void RunDialogue(string tag)
     {
