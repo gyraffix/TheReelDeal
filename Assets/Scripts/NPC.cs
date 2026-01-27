@@ -27,12 +27,18 @@ public class NPC : PlayerActivatable
 
     private GameObject player;
     private DialogueRunner dr;
+    private GameObject exclamationMark;
 
 
     private void Awake()
     {
         dr = FindFirstObjectByType<DialogueRunner>();
         player = FindFirstObjectByType<FirstPersonMovement>().gameObject;
+        exclamationMark = transform.Find("Mark").gameObject;
+        if (!isQuestNPC)
+        {
+            exclamationMark.SetActive(false);
+        }
     }
 
     private void Update()
@@ -103,6 +109,7 @@ public class NPC : PlayerActivatable
             {
                 RunDialogue(introDialogue);
                 firstTimeTalking = false;
+                exclamationMark.SetActive(false);
             }
         }
 
