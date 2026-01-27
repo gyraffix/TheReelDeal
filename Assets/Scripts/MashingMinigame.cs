@@ -5,7 +5,7 @@ public class MashingMinigame : FishingMinigame
 {
     private float requiredClicksPS;
     private Slider progressSlider;
-    private float progressValue = 50;
+    private float progressValue;
     //[Header("Mashing Minigame")]
     //[SerializeField] private KeyCode mashInput = KeyCode.Space;
 
@@ -70,14 +70,14 @@ public class MashingMinigame : FishingMinigame
     private new void UpdateFish()
     {
         wanderingFish.transform.position = fishLocation +
-            new Vector3((fishDestination.x - fishLocation.x) * (progressValue / 50), 0, (fishDestination.z - fishLocation.z) * (progressValue / 50));
+            new Vector3((fishDestination.x - fishLocation.x) * (progressValue / 100), 0, (fishDestination.z - fishLocation.z) * (progressValue / 100));
         Debug.Log(fishLocation + " / " + fishDestination);
     }
     protected override void ResetMinigame()
     {
-        progressValue = 50;
+        progressValue = 0;
         
-        progressSlider.value = 50;
+        progressSlider.value = 0;
 
         Debug.Log(progressSlider.value);
         if (bobberInstance != null)

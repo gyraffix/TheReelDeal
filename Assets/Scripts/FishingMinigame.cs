@@ -197,6 +197,7 @@ public abstract class FishingMinigame : PlayerActivatable
         caughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
 
         FirstPersonMovement.instance.active = true;
+        FirstPersonLook.instance.active = true;
         Jump.instance.active = true;
         Crouch.instance.active = true;
 

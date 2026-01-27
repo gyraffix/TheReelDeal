@@ -30,6 +30,7 @@ public class BobberScript : MonoBehaviour
             FMODWaterSplash.Play();
             if (toBeDestroyed)
             {
+                Debug.Log("Case 1");
                 Destroy(gameObject);
                 fishingMinigame.bobberInstance = null;
                 Destroy(fishCollision);
@@ -54,6 +55,7 @@ public class BobberScript : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("Case 2");
                     Destroy(gameObject);
                     fishingMinigame.bobberInstance = null;
                     Destroy(other);
