@@ -197,6 +197,7 @@ MonoBehaviour:
   bobberInstance: {fileID: 0}
   wanderingFishPrefab: {fileID: 2959402236713656849, guid: fa7f1b60cf6a02e40aa66817ab03633c,
     type: 3}
+  hasPlayedBefore: 0
   minigameInput: 32
   minigameInputMouse: 323
   exitMinigameInput: 27
@@ -229,7 +230,7 @@ MonoBehaviour:
     meterSpeed: 0
     targetHeight: 0
     targetSpeed: 0
-    requiredClicksPerSecond: 3
+    requiredClicksPerSecond: 2.5
     defaultProgressDecrease: 0
     fishingPregress: 0
   possibleFishes:
