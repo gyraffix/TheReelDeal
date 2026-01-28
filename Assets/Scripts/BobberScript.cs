@@ -46,6 +46,7 @@ public class BobberScript : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Fish":
+                Debug.Log("Hitting fish");
                 if (!inWater)
                 {
 

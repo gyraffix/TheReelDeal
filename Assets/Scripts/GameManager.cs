@@ -18,15 +18,14 @@ public class GameManager : MonoBehaviour
 
     //------SpringIslandVars---------
     private bool firstSpringIsland = false;
-    public int springDifficulty;
 
     //------AutumnIslandVars---------
     private bool firstAutumnIsland = false;
 
-
     //------BeachIslandVars----------
     private bool firstBeachIsland = false;
     public bool baitNPCBeach = false;
+
 
     //---------------
     public string lastScene = "";
@@ -85,7 +84,10 @@ public class GameManager : MonoBehaviour
                     npc.completed = true;
                     npc.exclamationMark.SetActive(false);
                 }
-
+                if (!firstSpringIsland)
+                {
+                    GameObject.Find("Mashing Minigame").GetComponent<MashingMinigame>().hasPlayedBefore = true;
+                }
                 break;
             case "Autumn Island":
                 StartCoroutine(LateBoolChange("firstAutumnIsland", false));
@@ -115,6 +117,10 @@ public class GameManager : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Player").transform.rotation = GameObject.Find("ArriveFromSpring").transform.rotation;
                     
                 }
+                if (!firstAutumnIsland)
+                {
+                    GameObject.Find("Following Minigame trigger").GetComponent<FolowingMinigame>().hasPlayedBefore = true;
+                }
                 break;
             case "Beach Island":
                 StartCoroutine(LateBoolChange("firstBeachIsland", false));
@@ -123,6 +129,10 @@ public class GameManager : MonoBehaviour
                     NPC npc = GameObject.Find("BaitNPC").GetComponent<NPC>();
                     npc.completed = true;
                     npc.exclamationMark.SetActive(false);
+                }
+                if (!firstBeachIsland)
+                {
+                    GameObject.Find("Timing Minigame Trigger").GetComponent<TimingMinigame>().hasPlayedBefore = true;
                 }
                 break;
         }

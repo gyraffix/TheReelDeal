@@ -25,7 +25,7 @@ public abstract class FishingMinigame : PlayerActivatable
     protected HasUsableItem hasUsableItem;
     protected DialogueRunner dialogueRunner;
     protected GameObject wanderingFish;
-    
+    [HideInInspector] public bool hasPlayedBefore = false;
 
     [Header("Minigame Settings")]
     [SerializeField] protected KeyCode minigameInput = KeyCode.Space;
@@ -144,8 +144,13 @@ public abstract class FishingMinigame : PlayerActivatable
             Debug.Log("2");
             currentDifficultyIndex = 2;
         }
-        else
+        else if (!hasPlayedBefore)
+        {
             currentDifficultyIndex = 0;
+        }
+
+        else
+            currentDifficultyIndex = 1;
     }
 
     protected void OnTriggerExit(Collider other)
