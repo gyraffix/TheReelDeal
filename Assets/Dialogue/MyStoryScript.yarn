@@ -303,6 +303,7 @@ Applebottom: You should go talk to the Pants Mackrel there and he might help you
 You: Ok i'm on it! Thanks Applebottom.
 <<EnableMovement>>
 <<StopSound LinePresenter>>
+<<enable_triggers>>
 ===
 
 //--------------------------------
@@ -322,6 +323,7 @@ title: AutumnStarterNPC
     Narrator: You ran off before you could respond to what Fishlemor had just said.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -343,6 +345,7 @@ title: SummerStarterNPC
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -359,6 +362,7 @@ title: SpringBaitNPC
     Doodlas: If you find out you have already caught them somehow, just talk to me again and show me the album!
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: SpringBaitNPCIncomplete
@@ -367,6 +371,7 @@ title: SpringBaitNPCIncomplete
     Doodlas: Try the nearby lake, there should be 2 doodles in the water. Once you caught them, I'll give you the bait.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: SpringBaitNPCComplete
@@ -377,6 +382,7 @@ title: SpringBaitNPCComplete
     You: Thank you, Doodlas! I'll get right on it.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -398,6 +404,7 @@ title: AutumnBaitNPC
     Narrator: You don't understand how a farm can exist underwater, but you accept the task and move on.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: AutumnBaitNPCIncomplete
@@ -406,6 +413,7 @@ title: AutumnBaitNPCIncomplete
         Bellbottom: As you can see in the certificate of ownership, the bush is mine, and I won't give you a berry until you show me 2 doodle fish from the river.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: AutumnBaitNPCComplete
@@ -420,6 +428,7 @@ title: AutumnBaitNPCComplete
     Narrator: You leave before he goes back on his word and takes your strawberry back.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -438,6 +447,7 @@ title: SummerBaitNPC
     Narrator: Bubbles goes back to slowly walking while looking down at the sand, all while doing "Beep Beep" sounds.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: SummerBaitNPCIncomplete
@@ -447,6 +457,7 @@ title: SummerBaitNPCIncomplete
     Bubbles: I would suggest you keep fishing for the two doodles, to give me some more time.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: SummerBaitNPCComplete
@@ -462,6 +473,7 @@ title: SummerBaitNPCComplete
     You:...they sure will... 
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -475,6 +487,7 @@ title: PlaceholderBaitNPC
     PLACEHOLDER: Lorem ipsum bla bla bla
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: PlaceholderBaitNPCIncomplete
@@ -485,6 +498,7 @@ title: PlaceholderBaitNPCIncomplete
     PLACEHOLDER: Lorem ipsum bla bla bla
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: PlaceholderBaitNPCComplete
@@ -495,6 +509,7 @@ title: PlaceholderBaitNPCComplete
     PLACEHOLDER: Lorem ipsum bla bla bla
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -518,6 +533,7 @@ title: SpringQuest1Intro
     Narrator: QUEST STARTED
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: SpringQuest1Incomplete
@@ -528,6 +544,7 @@ title: SpringQuest1Incomplete
     You: OK never mind I'll get the fish.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 
@@ -542,6 +559,7 @@ title: SpringQuest1Complete
     Narrator: You grab the keys lying on the ground beside Macklemor and decide to move on.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 
@@ -567,6 +585,7 @@ title: AutumnQuest2Intro
     Narrator: QUEST STARTED
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: AutumnQuest2Incomplete
@@ -577,6 +596,7 @@ title: AutumnQuest2Incomplete
     You: You can't bring yourself to tell Omega the reality of what happens to fish exposed to the hot sun, so you go back to finishing your quest.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: AutumnQuest2Complete
@@ -589,6 +609,7 @@ title: AutumnQuest2Complete
     You: Can't argue with that. Let's go.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -602,6 +623,7 @@ title: PLACEHOLDERQuest3Intro
     PLACEHOLDER: Lorem ipsum bla bla bla
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 title: PLACEHOLDERQuest3Incomplete
@@ -612,6 +634,7 @@ title: PLACEHOLDERQuest3Incomplete
     PLACEHOLDER: Lorem ipsum bla bla bla
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 title: PLACEHOLDERQuest3Complete
 ---
@@ -621,6 +644,7 @@ title: PLACEHOLDERQuest3Complete
     PLACEHOLDER: Lorem ipsum bla bla bla
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 
@@ -638,6 +662,7 @@ title: SpringNPC1Dialogue
     Bootsy: Why? I don't know... you are the one who drew them.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -651,6 +676,7 @@ title: SpringNPC2Dialogue
     Felipe: He said something about not wanting to be caught because he didn't do his projects.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -664,6 +690,7 @@ title: SpringNPC3Dialogue
     Houksie: Maybe I had too much crayon soup.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -682,6 +709,7 @@ title: SpringNPC4Dialogue
     Jeansie: ...
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 
@@ -701,6 +729,7 @@ title: AutumnNPC1Dialogue
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -722,6 +751,7 @@ Dori: Exactly. That's the problem.
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -734,6 +764,7 @@ Placeholder: Lorem Ipsum Blablabla
 Placeholder: Lorem Ipsum Blablabla     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -746,6 +777,7 @@ Placeholder: Lorem Ipsum Blablabla
 Placeholder: Lorem Ipsum Blablabla     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -758,6 +790,7 @@ Emma: OH NO, her hair got full of sand, it's gonna take years to fix.
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -769,6 +802,7 @@ Deshret: I love the beach but why is the price of food so expensive?
 Deshret:...what do doodles even eat?    
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 
@@ -783,6 +817,7 @@ Saintastrea:I don't know why I even came to the beach... I should have stayed at
 Saintastrea:What if I just teleported myself home right now somehow?  
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 
@@ -796,6 +831,7 @@ title: TutorialPond
 Signboard: Get ready to mash the "Spacebar" or "M1" and catch that doodle!  Signed: Doodlas
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -808,6 +844,7 @@ title: TutorialRiver
 Signboard: Hold that "Spacebar" or "M1" and keep the bobber inside the target area!  Signed: Bellbottom
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
 //--------------------------------
@@ -820,5 +857,6 @@ title: TutorialSea
 Signboard: Time that "Spacebar" or "M1" so that the bobber hits the skill check! Signed: Bubbles
     <<EnableMovement>>
     <<StopSound LinePresenter>>
+    <<enable_triggers>>
 ===
 
