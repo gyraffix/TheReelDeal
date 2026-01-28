@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     //------GlobalVars---------------
     public List<FishItem> fishList = new List<FishItem>();
+    public List<InventoryItemDefinition> inventoryList = new List<InventoryItemDefinition>();
 
     //------SpringIslandVars---------
     private bool firstSpringIsland = false;
@@ -126,6 +127,12 @@ public class GameManager : MonoBehaviour
                 break;
         }
         dr = FindFirstObjectByType<DialogueRunner>();
+
+        Inventory inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        foreach (InventoryItemDefinition item in inventoryList)
+        {
+            inventory.AddInventoryItem(item);
+        }
     }
 
     public void AddFish()

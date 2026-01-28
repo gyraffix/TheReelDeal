@@ -343,6 +343,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1699802850586456904, guid: 5a123b3d181bcaa429ec5a6cea37d353,
+        type: 3}
+      propertyPath: OnInventoryButton.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1404356748}
+    - target: {fileID: 1699802850586456904, guid: 5a123b3d181bcaa429ec5a6cea37d353,
+        type: 3}
+      propertyPath: OnInventoryButton.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnInventoryButtonInteraction
+      objectReference: {fileID: 0}
     - target: {fileID: 1796260966547505450, guid: 5a123b3d181bcaa429ec5a6cea37d353,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4656,6 +4666,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.69553375, y: 8.115158, z: 3.979992}
   m_Center: {x: -1.1989326, y: 0.17058563, z: -1.489996}
+--- !u!114 &1404356748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4980307892330507855, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+    type: 3}
+  m_PrefabInstance: {fileID: 869095943}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2bbd3d5f9049d1bbca89cb468bb7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1460529489
 GameObject:
   m_ObjectHideFlags: 0
@@ -6118,6 +6140,12 @@ Transform:
   - {fileID: 44949741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1671977483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 170830386375451940, guid: 5f49a7446a993524b98c5aa2b1bb1f41,
+    type: 3}
+  m_PrefabInstance: {fileID: 869095943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1675808399
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,6 +7036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 566448608}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
       propertyPath: fishNeeded
       value: 2
       objectReference: {fileID: 0}
@@ -7032,6 +7065,11 @@ PrefabInstance:
       propertyPath: introDialogue
       value: AutumnBaitNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: baitCollectedText
+      value: 
+      objectReference: {fileID: 1671977483}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: completedDialogue

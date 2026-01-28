@@ -140,6 +140,7 @@ public class NPC : PlayerActivatable
             {
                 inventory.AddItem(baitReceived.name);
                 baitCollectedText.GetComponent<Animator>().SetTrigger("BaitCollected");
+                GameManager.gmInstance.inventoryList.Add(baitReceived);
             }
         }
         completed = true;
