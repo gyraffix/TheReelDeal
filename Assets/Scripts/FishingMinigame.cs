@@ -86,7 +86,7 @@ public abstract class FishingMinigame : PlayerActivatable
             Crouch.instance.active = true;
             active = false;
             ResetMinigame();
-            ProximityTriggerRoot.instance.Enabled(true);
+            ProximityTriggerRoot.Enabled(true);
             return;
         }
 
@@ -137,7 +137,7 @@ public abstract class FishingMinigame : PlayerActivatable
 
     protected override void OnActivate()
     {
-        ProximityTriggerRoot.instance.Enabled(false);
+        ProximityTriggerRoot.Enabled(false);
 
         if (hasUsableItem.CheckForItem())
         {
@@ -225,7 +225,7 @@ public abstract class FishingMinigame : PlayerActivatable
         FMODVictorySound.Play();
 
         ResetMinigame();
-        ProximityTriggerRoot.instance.Enabled(true);
+        ProximityTriggerRoot.Enabled(true);
 
         if (!Album.instance.addedFish.Contains(currentFish.name))
         {
@@ -282,7 +282,7 @@ public abstract class FishingMinigame : PlayerActivatable
         Crouch.instance.active = true;
         active = false;
         ResetMinigame();
-        ProximityTriggerRoot.instance.Enabled(true);
+        ProximityTriggerRoot.Enabled(true);
     }
     private IEnumerator LateBobberDistance()
     {

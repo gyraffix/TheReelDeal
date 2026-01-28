@@ -58,6 +58,8 @@ public class NPC : PlayerActivatable
     {
         Debug.Log("activated NPC");
 
+        ProximityTriggerRoot.Enabled(false);
+
         FirstPersonLook.instance.active = false;
         FirstPersonMovement.instance.active = false;
         player.transform.LookAt(new Vector3
@@ -153,7 +155,7 @@ public class NPC : PlayerActivatable
         {
             if (dr.IsDialogueRunning)
             {
-                dr.Stop();
+                dr.Stop();                
             }
 
             dr.StartDialogue(tag);

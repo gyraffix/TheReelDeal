@@ -50,7 +50,7 @@ public class TimingMinigame : FishingMinigame
         minY = -BackgroundRectTransform.sizeDelta.y / 2;
         maxY = BackgroundRectTransform.sizeDelta.y / 2;
 
-        fishingProgress = 30;
+        fishingProgress = 10;
         progressIncrease = 30;
         progressDecrease = 30;
 
@@ -215,7 +215,7 @@ public class TimingMinigame : FishingMinigame
         }
         else if (pressed && !pressSucces)
         {
-            if (firstPressSucces)
+            if (!firstPressSucces)
             {
                 pressed = false;
             }
@@ -263,7 +263,7 @@ public class TimingMinigame : FishingMinigame
     protected override void ResetMinigame()
     {
         firstPressSucces = false;
-        fishingProgress = 30;
+        fishingProgress = 10;
         meterPos = 0;
         currentFishingProgressMax = 0;
         currentFishingProgressMin = 0;
