@@ -787,3 +787,40 @@ Saintastrea:What if I just teleported myself home right now somehow?
     <<StopSound LinePresenter>>
 ===
 
+
+//--------------------------------
+//    Tutorial Pond
+//--------------------------------
+
+
+title: TutorialPond
+---
+Signboard: Get ready to mash the "Spacebar" or "M1" and catch that doodle!  Signed: Doodlas
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
+//--------------------------------
+//    Tutorial River
+//--------------------------------
+
+
+title: TutorialRiver
+---
+Signboard: Hold that "Spacebar" or "M1" and keep the bobber inside the target area!  Signed: Bellbottom
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
+//--------------------------------
+//    Tutorial Sea
+//--------------------------------
+
+
+title: TutorialSea
+---
+Signboard: Time that "Spacebar" or "M1" so that the bobber hits the skill check! Signed: Bubbles
+    <<EnableMovement>>
+    <<StopSound LinePresenter>>
+===
+
