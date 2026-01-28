@@ -115,9 +115,9 @@ MonoBehaviour:
   bobberStartingPoint: {fileID: 8766887811475089869}
   bobberPrefab: {fileID: 3077397679609011471, guid: 440788c8ac7574f3abbc6235e4457f92,
     type: 3}
-  FMODThrowingBobber: {fileID: 0}
-  FMODReelingIn: {fileID: 0}
-  FMODVictorySound: {fileID: 0}
+  FMODThrowingBobber: {fileID: 3202242991160702699}
+  FMODReelingIn: {fileID: 3202242991160702699}
+  FMODVictorySound: {fileID: 3202242991160702699}
   bobberInstance: {fileID: 0}
   wanderingFishPrefab: {fileID: 2959402236713656849, guid: fa7f1b60cf6a02e40aa66817ab03633c,
     type: 3}
@@ -125,12 +125,39 @@ MonoBehaviour:
   minigameInputMouse: 323
   exitMinigameInput: 27
   currentDifficultyIndex: 0
-  Difficulties: []
+  Difficulties:
+  - randomizeMovement: 0
+    progressIncrease: 40
+    progressDecrease: 20
+    directionChangeSpeed: 0
+    meterSpeed: 40
+    targetHeight: 30
+    targetSpeed: 0
+    requiredClicksPerSecond: 0
+    defaultProgressDecrease: 6
+    fishingPregress: 30
+  - randomizeMovement: 0
+    progressIncrease: 30
+    progressDecrease: 30
+    directionChangeSpeed: 0
+    meterSpeed: 60
+    targetHeight: 20
+    targetSpeed: 0
+    requiredClicksPerSecond: 0
+    defaultProgressDecrease: 8
+    fishingPregress: 30
+  - randomizeMovement: 0
+    progressIncrease: 20
+    progressDecrease: 30
+    directionChangeSpeed: 0
+    meterSpeed: 100
+    targetHeight: 20
+    targetSpeed: 0
+    requiredClicksPerSecond: 0
+    defaultProgressDecrease: 9
+    fishingPregress: 40
   possibleFishes:
   - {fileID: 11400000, guid: f337579db6f772d4c953ae7c81b9f144, type: 2}
-  - {fileID: 11400000, guid: 5f8d777857e765f44aaaa055a73aba7a, type: 2}
-  - {fileID: 11400000, guid: 5890a611ffab74e4ab5c8b81b4814b59, type: 2}
-  - {fileID: 11400000, guid: 8eb723c3d2748d444a3efebe725265c9, type: 2}
   - {fileID: 11400000, guid: 1a315dd8b16f31f49995c7370d26dc9f, type: 2}
   - {fileID: 11400000, guid: 2e04ce59b04511d48921e5a1441ebe90, type: 2}
   fishLocation: {x: 0, y: 0, z: 0}
