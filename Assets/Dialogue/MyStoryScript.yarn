@@ -4,6 +4,7 @@
 //--------------------------------
 title: Start
 ---
+Narrator: Hello World
 ===
 
 
@@ -293,15 +294,15 @@ title: CMGaToFish
 
 title: SpringStarterNPC
 ---
-Applebottom: That was a scary storm, good thing I have legs, OH! Hey there! I know you. You drew us!
-You: I remember you, I called you Pants Mackrel
+Applebottom: That was a scary storm. Good thing I have legs, OH! Hey there! I know you. You drew us!
+You: I remember you, I called you Pants Mackrel.
 Applebottom: My friends call me Applebottom, for some reason many of us popped out and we like walking around
 You: I'm not sure it's safe for you outside the book...
-Applebottom: We can help you but in exchange let us walk around and be free to spread our fish legs!
-You: Ok, so how can you help me?
-Applebottom: I saw some of the doodles fly far off to the neighbour islands, i know there is a boat in the little makeshift dock nearby
-Applebottom: You should go talk to the Pants Mackrel there and he might help you use the boat. Don't forget to collect some of my doodle brothers in this island!
-You: Ok i'm on it! Thank Applebottom.
+Applebottom: We can help you, but in exchange, let us walk around and be free to spread our fish legs!
+You: OK, so how can you help me?
+Applebottom: I saw some of the doodles fly far off to the neighbor islands, I know there is a boat in the little makeshift dock nearby
+Applebottom: You should go talk to the Pants Mackrel there and he might help you use the boat. Don't forget to collect some of my doodle brothers on this island!
+You: Ok i'm on it! Thanks Applebottom.
 <<EnableMovement>>
 <<StopSound LinePresenter>>
 ===
@@ -313,13 +314,13 @@ title: AutumnStarterNPC
 ---
     Fishlemor: Welcome to Citron Hill Island. How did you even get here?
     You: ... How did you get here?
-    Fishlemor: I'm not even sure, i remember flying off that book and being taken by the wind, some of my brothers and me fell here!
-    You: I had some "help" from your pants mackerel brothers back home, I'm trying to collect the other doodles to keep them safe.
-    Fishlemor: You should check that bridge nearby. I remember seeing some doodles fall on the river water there!
+    Fishlemor: I'm not even sure, I remember flying off that book and being taken by the wind. Some of my brothers and I fell here!
+    You: I had some "help" from your Pants Mackerel brothers back home. I'm trying to collect the other doodles to keep them safe.
+    Fishlemor: You should check that bridge nearby. I remember seeing some doodles fall into the river water there!
     You: Thank you, do you know of any more doodles?
-    Fishlemor: Uhm... I don't remember anymore but try my brother on the other side of the island, just follow the path past the bridge!
+    Fishlemor: Uhm... I don't remember anymore, but try my brother on the other side of the island. Just follow the path past the bridge!
     You: Thanks!
-    Fishlemor: Before you go, you got any of them tasty doodle worms? I love sour peach.
+    Fishlemor: Before you go, you got any of those tasty doodle worms? I love sour peach.
     Narrator: You ran off before you could respond to what Fishlemor had just said.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -330,17 +331,17 @@ title: AutumnStarterNPC
 //--------------------------------
 title: SummerStarterNPC
 ---
-    Scorch: Hey buddy, I'm Scorch and welcome to Sunshine Dunes. Where all the doodles come to relax.
+    Scorch: Hey buddy, I'm Scorch and welcome to Sunshine Dunes, where all the doodles come to relax.
     You: Isn't the sun too harsh for doodles? Much less fish?
-    Scorch: Every doodle gets a complementary laminated paper sleeve to protect themselfs.
-    You: How did you even get the paper? .... Wait, let me guess…
+    Scorch: Every doodle gets a complimentary laminated paper sleeve to protect themselves.
+    You: How did you even get the paper? ... Wait, let me guess…
     You: Internet?
     Scorch: Erm… internet.
-    You: Well... I can't say im surprised
+    You: Well... I can't say I'm surprised.
     Scorch: Regardless, is there anything I can help you with in this little paradise?
     You: Have you seen any doodle fishes?
-    Scorch: I think I saw some splashing over at the sea so you should go fish at the shoreline.
-    You: Ok, that's perfect! Thanks
+    Scorch: I think I saw some splashing over at the sea, so you should go fish at the shoreline.
+    You: OK, that's perfect! Thanks
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -351,12 +352,12 @@ title: SummerStarterNPC
 //--------------------------------
 title: SpringBaitNPC
 ---
-    Doodlas: I have never seen a tree have so many chocolate birds but i'm not complaining. They are so tasty!
+    Doodlas: I have never seen a tree have so many chocolate birds, but I'm not complaining. They are so tasty!
     Doodlas: Oh! Hi! I saw you walking around the island and talking to my brothers.
-    You: Ya, i'm trying to get the doodle fishes back into the album but I can't seem to find CMGaTO
+    You: Yeah, I'm trying to get the doodle fishes back into the album but I can't seem to find CMGaTO.
     Doodlas: That little rascal is being lazy on his project and is hiding... You should try to use a chocolate bird as bait.
     Doodlas: He loves them! But he will be hard to catch so I need to make sure you are ready!
-    Doodlas: Catch both the doodle fishes present in the lake, once done come back and I will give you a chocolate fish!
+    Doodlas: Catch both the doodle fishes present in the lake. Once done, come back and I will give you a chocolate fish!
     Doodlas: If you find out you have already caught them somehow, just talk to me again and show me the album!
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -364,8 +365,8 @@ title: SpringBaitNPC
 
 title: SpringBaitNPCIncomplete
 ---
-    You: I havn't caught the doodles yet...
-    Doodlas: Try the nearby lake, there should be 2 doodles in the water. Once u caught them I will give you the bait
+    You: I haven't caught the doodles yet...
+    Doodlas: Try the nearby lake, there should be 2 doodles in the water. Once you caught them, I'll give you the bait.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -373,9 +374,9 @@ title: SpringBaitNPCIncomplete
 title: SpringBaitNPCComplete
 ---
     You: I have both doodles in my album now!
-    Doodlas: Perfect! Here have this chocolate bird. CMGaTO is for sure playing Silkmusic but he can't resist that tasty bird.
+    Doodlas: Perfect! Here, have this chocolate bird. CMGaTO is for sure playing Silkmusic, but he can't resist that tasty bird.
     Doodlas: And they are not alive, so no one gets hurt!
-    You: Thank you Doodlas! I'll get right on it
+    You: Thank you, Doodlas! I'll get right on it.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -385,26 +386,26 @@ title: SpringBaitNPCComplete
 //--------------------------------
 title: AutumnBaitNPC
 ---
-    Bellbottom: This bush is FULL of strawberrys. Now how does a doodle fish eat... I'm 2D...
+    Bellbottom: This bush is full of strawberries, now how does a doodle fish eat... I'm 2D...
     You: Hey! Could I have a strawberry?
-    Bellbottom: So you want a strawberry from Bellbottoms marvelous berry bush.
+    Bellbottom: So you want a strawberry from Bellbottom's Marvelous berry bush.
     You: It's not yours... it's a wild bush....
     Bellbottom: Exactly, it has no owner so it's mine now!
     Narrator: Bellbottom shows you a certificate of ownership, it looks incredibly fake.
     You: How did you even get that paper?
     Bellbottom: Erm... Internet?
-    You: Look I need to catch all the doodle fishes, can I just have one?
-    Bellbottom: I am feeling generous so let's make a deal, show me you caught two of the fish in the river and I will give you one.
-    Bellbottom: I know strawberry fish loves them and he doesn't leave his farm for anything but good berries
-    Narrator: You don't understand how a farm can exist underwater but you accept the task and move on
+    You: Look, I need to catch all the doodle fishes, can I just have one?
+    Bellbottom: I am feeling generous, so let's make a deal. Show me you caught two of the fish in the river and I will give you one.
+    Bellbottom: I know strawberry fish loves them, and he doesn't leave his farm for anything but good berries.
+    Narrator: You don't understand how a farm can exist underwater, but you accept the task and move on.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
 
 title: AutumnBaitNPCIncomplete
 ---
-    You: Can I just have the strawberry?
-    Bellbottom: As you can see in the certificate of ownership, the bush is mine and I won't give you a berry until you show me 2 doodle fish from the river
+        You: Can I just have the strawberry?
+        Bellbottom: As you can see in the certificate of ownership, the bush is mine, and I won't give you a berry until you show me 2 doodle fish from the river.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -412,12 +413,12 @@ title: AutumnBaitNPCIncomplete
 title: AutumnBaitNPCComplete
 ---
     You: I have both doodles in my album now!
-    Bellbottom: Well, you did it so I guess i have to follow the rules in the certificate!
+    Bellbottom: Well, you did it so I guess I have to follow the rules in the certificate!
     You: I still don't understand where did you manage to get that certificate
     Bellbottom: Erm... Amazon?
-    Bellbottom: Anyways, here is your strawberry! This will for sure catch the attention of grandpa straw fish!
-    You: Ok, thank you Bellbottom.
-    Bellbottom: WAIT THIS DIPLOMA ISN'T STAMPED, ITS NOT LEGAL
+    Bellbottom: Anyway, here is your strawberry! This will for sure catch the attention of Grandpa Straw Fish!
+    You: Perfect! Thank you, Bellbottom.
+    Bellbottom: WAIT THIS DIPLOMA ISN'T STAMPED, IT'S NOT LEGAL
     Narrator: You leave before he goes back on his word and takes your strawberry back.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -428,12 +429,12 @@ title: AutumnBaitNPCComplete
 //--------------------------------
 title: SummerBaitNPC
 ---
-    Bubbles: I know I can find some cool stuff in this sand. Everyone will know the name Bubbles the treasure hunter
+    Bubbles: I know I can find some cool stuff in this sand. Everyone will know the name, Bubbles, the treasure hunter
     You: You're looking for treasure? Have you found anything?
-    Bubbles: All I found so far has been shells and conches. I do know I can find something cool
+    Bubbles: All I found so far has been shells and conches. I do know I can find something cool.
     You: Want me to help you? I might find some bait for one of the doodles
     Bubbles: I have this rainbow glass but I want one to show off so I can look for another one.
-    Bubbles: Why don't you spend some time caching the 2 fish at the sea shore and come back when you catch them.
+    Bubbles: Why don't you spend some time catching the 2 fish at the seashore and come back when you catch them.
     Bubbles: By that time I am sure to have found another rainbow glass.
     You: That seems perfect. Good luck finding treasure.
     Narrator: Bubbles goes back to slowly walking while looking down at the sand, all while doing "Beep Beep" sounds.
@@ -444,8 +445,8 @@ title: SummerBaitNPC
 title: SummerBaitNPCIncomplete
 ---
     You: Any luck so far?
-    Bubbles: Nothing yet besides some gold and dinosaur bone but why would a doodle care for those, 
-    Bubbles: I would suggest you keep fishing for the two doodles to give me some more time.
+    Bubbles: Nothing yet besides some gold and a dinosaur bone, but why would a doodle care for those?
+    Bubbles: I would suggest you keep fishing for the two doodles, to give me some more time.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -454,13 +455,13 @@ title: SummerBaitNPCComplete
 ---
     You: I'm back! Any luck?
     Bubbles: YES! I found you another rainbow glass.
-    You: That's great, i'll take it. You seem very happy, you found something else?
+    You: That's great, I'll take it. You seem very happy. You found something else?
     Bubbles: You won't believe what I found.
     Bubbles: A coin, but it's chocolate and it's a little bit melted.
     Bellbottom: Please don't eat that...
-    Bellbottom: Why would I eat my prized possesion? I am going to show it to every single doodle!
+    Bellbottom: Why would I eat my prized possession? I am going to show it to every single doodle!
     Bubbles: They are all gonna envy me.
-    You:...they sure will...
+    You:...they sure will... 
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -503,18 +504,18 @@ title: PlaceholderBaitNPCComplete
 //--------------------------------
 title: SpringQuest1Intro
 ---
-    Macklemor: Oh boy coming out of that book sure was scary, good thing I don't get spooked easy!
+    Macklemor: Oh boy, coming out of that book sure was scary, good thing I don't get spooked easily!
     You: Hello?
-    Macklemor: AAAAAAAAAHHHHHHHH!  Oh.. Hi!... Dont sneak up on me like that!
+    Macklemor: AAAAAAAAAHHHHHHHH! Oh.. Hi!... Don't sneak up on me like that!
     You: Sorry!
-    Macklemor: Wait... I know you! You are our creator! Did you really have to draw me besides Doge Fish, he won't stop barking.
+    Macklemor: Wait... I know you! You are our creator! Did you really have to draw me besides Doge Fish. He won't stop barking.
     You: Sorry about that... I was actually wondering if you could help me out?
-    Macklemor: Oh so you need my help? Well I did get this boat that could be used to travel, how I got it?.... Internet.
+    Macklemor: Oh? So you need my help? Well I did get this boat that could be used to travel, how I got it?... Internet.
     You: Perfect! That will help me!
     Macklemor: Wa wa wa wait! Not so fast. I need to make sure you even are our artist!
     You: What?... You just said you recognized me?
     Macklemor: My fishy eyes could be tricking me!
-    Macklemor: I will give you the keys to the boat if you show me you caught one of the doodle fish found here in Doodlefish Bay.
+    Macklemor: I will give you the keys to the boat, if you show me you caught one of the doodle fish found here in Doodlefish Bay.
     You: That makes absolutely no sense but... ok...
     Narrator: QUEST STARTED
     <<EnableMovement>>
@@ -526,7 +527,7 @@ title: SpringQuest1Incomplete
     Macklemor: I won't give you the keys to the boat until you prove you drew us by showing me you caught one of my friends!
     You: How does me catching my doodles prove I drew them?
     Narrator: Macklemor got distracted looking at the floor as you asked for explanations.
-    You: Ok nevermind i'll get the fish 
+    You: OK never mind I'll get the fish.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -536,11 +537,11 @@ title: SpringQuest1Complete
 ---
     Macklemor: I knew you drew us! And this proves it!
     You: ...
-    Macklemor: I never had any doubts about you
+    Macklemor: I never had any doubts about you.
     You: Can I have the boat keys?
     Macklemor: The what now?
     You:...
-    Narrator: You grab the keys laying on the ground besides Macklemor and decide to move on.
+    Narrator: You grab the keys lying on the ground beside Macklemor and decide to move on.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -551,19 +552,19 @@ title: SpringQuest1Complete
 //--------------------------------
 title: AutumnQuest2Intro
 ---
-    Omega The Third: I hate this island, I want some sand and I want the beach vibes
+    Omega The Third: I hate this island, I want some sand and I want the beach vibes.
     You: Hello?
     Omega The Third: Oh look who arrived! Macklemor said you would be here soon.
     You: How did you two communicate?
     Omega The Third: Erm... Internet?
-    You: Right.. so, i'm trying to find the other fish doodles and I see you have a boat there.
+    You: Right... so, I'm trying to find the other fish doodles and I see you have a boat there.
     Omega The Third: Indeed I do, and with this one you dont have to go around the island and risk hitting the rocky shores
     You: But let me guess, you want me to do a que...
     Omega The Third: QUESTLINE!
     You:…st. I knew talking to a fish in pants would lead here.
-    Omega The Third: My brothers in the nearby river wanted to check the beach with me but I can't fish them out only with legs
+    Omega The Third: My brothers in the nearby river wanted to check the beach with me, but I can't fish them out only with legs.
     Omega The Third: Please go get them so we can all go on this trip.
-    You: Should be easy! Ok see you in a bit
+    You: Should be easy! OK see you in a bit.
 
     Narrator: QUEST STARTED
     <<EnableMovement>>
@@ -572,22 +573,22 @@ title: AutumnQuest2Intro
 
 title: AutumnQuest2Incomplete
 ---
-    Omega The Third: I cant wait to go to the beach! I love the summer vibes.
-    You: You are so lucky you are a doodle
+    Omega The Third: I can't wait to go to the beach! I love the summer vibes.
+    You: You are so lucky you are a doodle.
     Omega The Third: Why? What's wrong with the beach?
-    You: You cant bring yourself to tell Omega the reality of fish under the sun so you go back to finishing your quest
+    You: You can't bring yourself to tell Omega the reality of what happens to fish exposed to the hot sun, so you go back to finishing your quest.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
 
 title: AutumnQuest2Complete
 ---
-    Omega The Third: WOOO all of the doodles are here! I even got my sunscreen ready. 
+    Omega The Third: WOOO, all of the doodles are here! I even got my sunscreen ready. 
     You: Is that laminated paper? 
-    Omega The Third: Ya! Can't get too tanned! Let's go, here are the keys. The beach is WAITING! 
-    You: Wait... Can't you just swim there? You are a doodle fish 
+    Omega The Third: Yeah! Can't get too tanned! Let's go, here are the keys. The beach is WAITING! 
+    You: Wait... Can't you just swim there? You are a doodle fish!
     Omega The Third: I already unfolded the towel and placed sunscreen. We're too far in now.
-    You: Can't argue with that. Let's go
+    You: Can't argue with that. Let's go.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -649,7 +650,7 @@ title: SpringNPC1Dialogue
 title: SpringNPC2Dialogue
 ---
     Felipe: Some of the doodles seem to fight harder not to get caught by your doodle rod? And they require bait. Who told me? CMGaTO!
-    Felipe: He said something about not wanting to be caught because he didnt do his projects.
+    Felipe: He said something about not wanting to be caught because he didn't do his projects.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -661,8 +662,8 @@ title: SpringNPC2Dialogue
 
 title: SpringNPC3Dialogue
 ---
-    Houksie: I think i just saw a sonic the hedgehog OC in the water.... Am I doodleucinating?
-    Houksie: Maybe I had to much crayon soup.
+    Houksie: I think I just saw a Sonic The Hedgehog OC in the water... Am I doodleucinating?
+    Houksie: Maybe I had too much crayon soup.
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -675,10 +676,10 @@ title: SpringNPC3Dialogue
 title: SpringNPC4Dialogue
 ---
     "Fairy" Jeansie: I HAVE ARRIVED, I'M JEANSIE THE FAIRY DOODLE FISH!
-    You: ... you're just standing on a fairy ring?
+    You: ... You're just standing on a fairy ring?
     "Fairy" Jeansie: EXACTLY, I'M A FAIRY!
     You: Are those my ornamental plastic mushrooms?
-    "Fairy"? Jeansie: PLASTIC! WAit.... plastic?
+    "Fairy"? Jeansie: PLASTIC! WAit...   plastic?
     You: ...
     Jeansie: ...
     <<EnableMovement>>
@@ -695,7 +696,7 @@ title: AutumnNPC1Dialogue
     You: Well, you can, you're a fish!
     Gilly: But I have legs. I'm not a fish.
     You: Ok. Fair, carry on!
-    Gilly:I could wear a fish costume. That should fool the water.
+    Gilly: I could wear a fish costume. That should fool the water.
     Narrator: You look at Gilly with this confused look but go along with his logic to make him happy.
     You: You know what, it should work.
     Gilly: Exactly! I'm gonna order one right now off the internet.
@@ -713,8 +714,8 @@ Dori: Hum.... Oh! Hi.
 You: Hi! Are you ok?
 Dori: Sorry, give me a second… I was in the middle of a thought.
 You: Want help finding it?
-Dori: No, I think it will come back. It alway.....
-Dori: …
+Dori: No, I think it will come back. It always...
+Dori: ...
 Dori: Okay maybe not.
 You: What was it about?
 Dori: Definitely something important. Or lunch.
@@ -754,8 +755,8 @@ Placeholder: Lorem Ipsum Blablabla
 //--------------------------------
 title: SummerNPC1Dialogue
 ---
-Emma:I collect fishian dolls, I even brought my favorite one with me for a sun tan.
-Emma: OH NO, her hair got full of sand, it's gonna take years to fix
+Emma: I collect fishian dolls, I even brought my favorite one with me for a sun tan.
+Emma: OH NO, her hair got full of sand, it's gonna take years to fix.
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -767,7 +768,7 @@ Emma: OH NO, her hair got full of sand, it's gonna take years to fix
 title: SummerNPC2Dialogue
 ---
 Deshret: I love the beach but why is the price of food so expensive?
-Deshret:... what do doodles even eat?    
+Deshret:...what do doodles even eat?    
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -781,10 +782,8 @@ Deshret:... what do doodles even eat?
 title: SummerNPC3Dialogue
 ---
 Saintastrea:I don't know why I even came to the beach... I should have stayed at home listening to Napping Token
-Saintastrea:What if i just teleported myself home right now somehow?  
+Saintastrea:What if I just teleported myself home right now somehow?  
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
-
-
 
