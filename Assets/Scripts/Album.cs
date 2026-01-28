@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Yarn.Unity;
 
 public class Album : MonoBehaviour
 {
@@ -63,6 +64,12 @@ public class Album : MonoBehaviour
             FirstPersonMovement.instance.active = false;
             Crouch.instance.active = false;
             Jump.instance.active = false;
+
+            if (addedFish.Count >= 9 && !GameManager.gmInstance.playedEnding)
+            {
+                FindFirstObjectByType<DialogueRunner>().StartDialogue("AlbumFinished");
+                GameManager.gmInstance.playedEnding = true;
+            }
         }
         isOpen = !isOpen;
 

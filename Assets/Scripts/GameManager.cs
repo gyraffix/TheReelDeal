@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     //------GlobalVars---------------
     public List<FishItem> fishList = new List<FishItem>();
     public List<InventoryItemDefinition> inventoryList = new List<InventoryItemDefinition>();
+    public bool playedEnding = false;
 
     //------SpringIslandVars---------
     private bool firstSpringIsland = false;
@@ -149,8 +150,10 @@ public class GameManager : MonoBehaviour
     {
         foreach (FishItem fish in fishList)
         {
+            Debug.Log("Added Fish from gamemanager");   
             Album.instance.NewFish(fish);
         }
+        
     }
 
     private void OnDestroy()

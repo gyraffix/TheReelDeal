@@ -60,13 +60,11 @@ title: FirstFish
 //--------------------------------
 title: AlbumFinished
 ---
-<<if $quest == "Finish the album">>
     You: I did it! All of my Doodle fish are back safe and sound in my drawing album!
     Narrator: The doodles now can stay safe in your book.
     Narrator: Seems like some have adapted to land life like those silly Pants Mackrels
     Narrator: Now you can go back home and enjoy the rest of your days back in doodlefish bay
-    <<set $quest to "Enjoy Doodlefish Bay">>   
-<<endif>>
+
 ===
 
 //--------------------------------

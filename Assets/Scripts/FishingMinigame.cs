@@ -208,6 +208,11 @@ public abstract class FishingMinigame : PlayerActivatable
     {
         FishItem currentFish = possibleFishes[UnityEngine.Random.Range(0, possibleFishes.Length - 1)];
 
+        if (currentDifficultyIndex == 2)
+        {
+            currentFish = possibleFishes[possibleFishes.Length - 1];
+        }
+
         caughtFishSprite.GetComponent<Image>().sprite = currentFish.fishPhoto;
 
         FirstPersonMovement.instance.active = true;
