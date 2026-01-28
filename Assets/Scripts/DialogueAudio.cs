@@ -50,9 +50,9 @@ public class DialogueAudio : MonoBehaviour
     {
         FMODDialogueSound.SetParameter("LoopDialogue", 1);
         FMODDialogueSound.Play();
-        Debug.Log("Loop Sound here");
+
         yield return new WaitForSeconds(time);
-        Debug.Log("Stop Sound here");
+
         FMODDialogueSound.SetParameter("LoopDialogue", 0);
     }
 

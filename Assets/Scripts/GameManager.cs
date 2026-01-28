@@ -10,13 +10,14 @@ using Yarn.Unity;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gmInstance;
+    public Dictionary<string, bool> completeNPCList;
 
     //------GlobalVars---------------
     public List<FishItem> fishList = new List<FishItem>();
 
     //------SpringIslandVars---------
     private bool firstSpringIsland = false;
-
+    
 
     //------AutumnIslandVars---------
     private bool firstAutumnIsland = false;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     //------BeachIslandVars----------
     private bool firstBeachIsland = false;
+    public bool baitNPCBeach = false;
 
     //---------------
     public string lastScene = "";
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        
         if (gmInstance != null && gmInstance != this)
         {
             Destroy(gameObject);
@@ -42,10 +44,16 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-
+        completeNPCList = new Dictionary<string, bool>();
         dr = FindFirstObjectByType<DialogueRunner>();
 
         dr.StartDialogue("IntroNarration");
+
+        completeNPCList.Add("questNPCSpring", false);
+        completeNPCList.Add("baitNPCSpring", false);
+        completeNPCList.Add("questNPCAutumn", false);
+        completeNPCList.Add("baitNPCAutumn", false);
+        completeNPCList.Add("baitNPCBeach", false);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -61,22 +69,60 @@ public class GameManager : MonoBehaviour
                         cam.gameObject.SetActive(false);
                     }
                 }
+                GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.Find("ArriveFromAutumn").transform.position;
+                GameObject.FindGameObjectWithTag("Player").transform.rotation = GameObject.Find("ArriveFromAutumn").transform.rotation;
+                GameObject.Find("Dock Barrier").SetActive(false);
+                if (completeNPCList["questNPCSpring"])
+                {
+                    NPC npc = GameObject.Find("QuestNPC").GetComponent<NPC>();
+                    npc.completed = true;
+                    npc.exclamationMark.SetActive(false);
+                }
+                if (completeNPCList["baitNPCSpring"])
+                {
+                    NPC npc = GameObject.Find("BaitNPC").GetComponent<NPC>();
+                    npc.completed = true;
+                    npc.exclamationMark.SetActive(false);
+                }
+
                 break;
             case "Autumn Island":
                 StartCoroutine(LateBoolChange("firstAutumnIsland", false));
+                if (completeNPCList["questNPCAutumn"])
+                {
+                    NPC npc = GameObject.Find("QuestNPC").GetComponent<NPC>();
+                    npc.completed = true;
+                    npc.exclamationMark.SetActive(false);
+
+                }
+                if (completeNPCList["baitNPCAutumn"])
+                {
+                    NPC npc = GameObject.Find("BaitNPC").GetComponent<NPC>();
+                    npc.completed = true;
+                    npc.exclamationMark.SetActive(false);
+                }
                 if (lastScene == "Beach Island")
                 {
                     GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.Find("ArriveFromBeach").transform.position;
                     GameObject.FindGameObjectWithTag("Player").transform.rotation = GameObject.Find("ArriveFromBeach").transform.rotation;
+                    GameObject.Find("Dock Barrier").SetActive(false);
+                    
                 }
                 else
                 {
                     GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.Find("ArriveFromSpring").transform.position;
                     GameObject.FindGameObjectWithTag("Player").transform.rotation = GameObject.Find("ArriveFromSpring").transform.rotation;
+                    
                 }
                 break;
             case "Beach Island":
                 StartCoroutine(LateBoolChange("firstBeachIsland", false));
+                if (completeNPCList["baitNPCBeach"])
+                {
+                    NPC npc = GameObject.Find("BaitNPC").GetComponent<NPC>();
+                    npc.completed = true;
+                    npc.exclamationMark.SetActive(false);
+                }
                 break;
         }
         dr = FindFirstObjectByType<DialogueRunner>();

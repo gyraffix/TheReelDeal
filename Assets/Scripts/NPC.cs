@@ -23,11 +23,14 @@ public class NPC : PlayerActivatable
     [SerializeField] private string incompleteDialogue;
     [SerializeField] private Inventory inventory;
     [SerializeField] private GameObject baitCollectedText;
+
+    [SerializeField] string name;
+    [HideInInspector] public bool completed = false;
     private bool firstTimeTalking = true;
 
     private GameObject player;
     private DialogueRunner dr;
-    private GameObject exclamationMark;
+    [HideInInspector] public GameObject exclamationMark;
 
 
     private void Awake()
@@ -66,43 +69,50 @@ public class NPC : PlayerActivatable
 
         if (isQuestNPC)
         {
-            if (!firstTimeTalking)
+            if (!firstTimeTalking || completed)
             {
-                switch (fishFromWhere)
+                if (!completed)
                 {
-                    case FishLocation.Pond:
-                        if (Album.instance.pondFishes >= fishNeeded)
-                        {
-                            RunDialogue(completedDialogue);
-                            GiveReward();
-                        }
-                        else
-                        {
-                            RunDialogue(incompleteDialogue);
-                        }
-                        break;
-                    case FishLocation.River:
-                        if (Album.instance.riverFishes >= fishNeeded)
-                        {
-                            RunDialogue(completedDialogue);
-                            GiveReward();
-                        }
-                        else
-                        {
-                            RunDialogue(incompleteDialogue);
-                        }
-                        break;
-                    case FishLocation.Sea:
-                        if (Album.instance.seaFishes >= fishNeeded)
-                        {
-                            RunDialogue(completedDialogue);
-                            GiveReward();
-                        }
-                        else
-                        {
-                            RunDialogue(incompleteDialogue);
-                        }
-                        break;
+                    switch (fishFromWhere)
+                    {
+                        case FishLocation.Pond:
+                            if (Album.instance.pondFishes >= fishNeeded)
+                            {
+                                RunDialogue(completedDialogue);
+                                GiveReward();
+                            }
+                            else
+                            {
+                                RunDialogue(incompleteDialogue);
+                            }
+                            break;
+                        case FishLocation.River:
+                            if (Album.instance.riverFishes >= fishNeeded)
+                            {
+                                RunDialogue(completedDialogue);
+                                GiveReward();
+                            }
+                            else
+                            {
+                                RunDialogue(incompleteDialogue);
+                            }
+                            break;
+                        case FishLocation.Sea:
+                            if (Album.instance.seaFishes >= fishNeeded)
+                            {
+                                RunDialogue(completedDialogue);
+                                GiveReward();
+                            }
+                            else
+                            {
+                                RunDialogue(incompleteDialogue);
+                            }
+                            break;
+                    }
+                }
+                else
+                {
+                    RunDialogue(completedDialogue);
                 }
             }
             else
@@ -132,7 +142,8 @@ public class NPC : PlayerActivatable
                 baitCollectedText.GetComponent<Animator>().SetTrigger("BaitCollected");
             }
         }
-
+        completed = true;
+        GameManager.gmInstance.completeNPCList[name] = true;
     }
 
     private void RunDialogue(string tag)
