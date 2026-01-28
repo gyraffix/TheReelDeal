@@ -267,6 +267,74 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &59656797
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3013004616511859326, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.448195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.144636
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 34.783344
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375269123321044437, guid: b0a986a18448d4e198e3adfb5ff021df,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0a986a18448d4e198e3adfb5ff021df, type: 3}
 --- !u!1001 &87259208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4194,7 +4262,7 @@ PrefabInstance:
     - target: {fileID: 777516169979254514, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: m_Name
-      value: NPC (1)
+      value: QuestNPC
       objectReference: {fileID: 0}
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
@@ -4260,6 +4328,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: name
+      value: questNPCAutumn
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
@@ -6856,7 +6929,7 @@ PrefabInstance:
     - target: {fileID: 777516169979254514, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
       propertyPath: m_Name
-      value: NPC (4)
+      value: BaitNPC
       objectReference: {fileID: 0}
     - target: {fileID: 2121453086718367250, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
@@ -6922,6 +6995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
+      propertyPath: name
+      value: baitNPCAutumn
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
@@ -7380,3 +7458,4 @@ SceneRoots:
   - {fileID: 18488968}
   - {fileID: 1717171965}
   - {fileID: 6899481541529116636}
+  - {fileID: 59656797}
