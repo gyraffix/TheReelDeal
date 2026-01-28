@@ -20,6 +20,7 @@ public class TimingMinigame : FishingMinigame
     private float steadyProgressChange = 80;
     private float currentFishingProgressMax;
     private float currentFishingProgressMin;
+    private bool firstPressSucces;
     private bool pressSucces;
     private bool pressed;
 
@@ -191,11 +192,12 @@ public class TimingMinigame : FishingMinigame
                         currentFishingProgressMax = fishingProgress;                        
                     currentFishingProgressMax = currentFishingProgressMax + progressIncrease;
                     Debug.Log(currentFishingProgressMax);
+                    firstPressSucces = true;
                     pressSucces = true;
                     SpawnTarget(target);
                 }
             }
-            if (!pressSucces) 
+            if (!pressSucces && firstPressSucces) 
                 currentFishingProgressMin = fishingProgress - progressDecrease;
         }
         if (pressed && pressSucces)
@@ -213,15 +215,22 @@ public class TimingMinigame : FishingMinigame
         }
         else if (pressed && !pressSucces)
         {
-            if (fishingProgress > currentFishingProgressMin)
+            if (firstPressSucces)
             {
-                increasing = true;
-                fishingProgress -= steadyProgressChange * Time.deltaTime;
+                pressed = false;
             }
-            else            
-                pressed = false;            
-        }
-        else if (!pressed && !increasing)
+            else
+            {
+                if (fishingProgress > currentFishingProgressMin)
+                {
+                    increasing = true;
+                    fishingProgress -= steadyProgressChange * Time.deltaTime;
+                }
+                else
+                    pressed = false;            
+            }
+        }       
+        else if (!pressed && !increasing && firstPressSucces)
         {
             //Debug.Log("Decreasing");
             fishingProgress -= defaultProgressDecrease * Time.deltaTime;
@@ -253,6 +262,7 @@ public class TimingMinigame : FishingMinigame
 
     protected override void ResetMinigame()
     {
+        firstPressSucces = false;
         fishingProgress = 30;
         meterPos = 0;
         currentFishingProgressMax = 0;

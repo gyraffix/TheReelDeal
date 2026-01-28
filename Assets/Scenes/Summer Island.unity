@@ -318,6 +318,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
+      propertyPath: fishNeeded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
       propertyPath: fishFromWhere
       value: 2
       objectReference: {fileID: 0}
