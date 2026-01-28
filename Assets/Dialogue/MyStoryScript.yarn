@@ -192,8 +192,8 @@ title: MagnetJellyfish
 //--------------------------------
 title: SteamboatBunny
 ---
-    Steamboat Bunny: H-hi t-there UwU we're getting on the stwamboat trip to the aalbum, w-won't you c-come w-with us? <・`ω´・>
-    Steamboat Bunny: Eeven if no wan joins the twip i will chu-wu chu-wu awon to my des-tinashion <・`ω´・>
+    Steamboat Bunny: H-hi t-there UwU we're getting on the stwamboat trip to the aalbum, w-won't you c-come w-with us?
+    Steamboat Bunny: Eeven if no wan joins the twip i will chu-wu chu-wu awon to my des-tinashion 
     <<playAnimation>>
     <<StopSound LinePresenter>>
 ===
