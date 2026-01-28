@@ -1,7 +1,7 @@
 //--------------------------------
-//          Start 
+//          IntroNarration  
 //--------------------------------
-title: Start
+title: IntroNarration
 ---
 Narrator: This is doodlefish bay, your little slice of heaven. You spend your days drawing silly fishes amongst food and other doodles.
 <<NextCamera>>
@@ -192,8 +192,8 @@ title: MagnetJellyfish
 //--------------------------------
 title: SteamboatBunny
 ---
-    Steamboat Bunny: H-hi t-there UwU we're getting on the stwamboat trip to the aalbum, w-won't you c-come w-with us? <・`ω´・>
-    Steamboat Bunny: Eeven if no wan joins the twip i will chu-wu chu-wu awon to my des-tinashion <・`ω´・>
+    Steamboat Bunny: H-hi t-there UwU we're getting on the stwamboat trip to the aalbum, w-won't you c-come w-with us?
+    Steamboat Bunny: Eeven if no wan joins the twip i will chu-wu chu-wu awon to my des-tinashion 
     <<playAnimation>>
     <<StopSound LinePresenter>>
 ===
@@ -743,9 +743,8 @@ Placeholder: Lorem Ipsum Blablabla
 //--------------------------------
 title: SummerNPC1Dialogue
 ---
-Placeholder: Lorem Ipsum Blablabla
-Placeholder: Lorem Ipsum Blablabla
-Placeholder: Lorem Ipsum Blablabla 
+Emma:I collect fishian dolls, I even brought my favorite one with me for a sun tan.
+Emma: OH NO, her hair got full of sand, it's gonna take years to fix
     
     <<EnableMovement>>
     <<StopSound LinePresenter>>
@@ -756,9 +755,8 @@ Placeholder: Lorem Ipsum Blablabla
 //--------------------------------
 title: SummerNPC2Dialogue
 ---
-Placeholder: Lorem Ipsum Blablabla
-Placeholder: Lorem Ipsum Blablabla
-Placeholder: Lorem Ipsum Blablabla     
+Deshret: I love the beach but why is the price of food so expensive?
+Deshret:... what do doodles even eat?    
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
@@ -771,9 +769,8 @@ Placeholder: Lorem Ipsum Blablabla
 
 title: SummerNPC3Dialogue
 ---
-Placeholder: Lorem Ipsum Blablabla
-Placeholder: Lorem Ipsum Blablabla
-Placeholder: Lorem Ipsum Blablabla     
+Saintastrea:I don't know why I even came to the beach... I should have stayed at home listening to Napping Token
+Saintastrea:What if i just teleported myself home right now somehow?  
     <<EnableMovement>>
     <<StopSound LinePresenter>>
 ===
