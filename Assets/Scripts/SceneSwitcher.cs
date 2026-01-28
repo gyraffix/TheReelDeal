@@ -5,10 +5,7 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void SwitchToScene(int index)
     {
-        if (SceneManager.GetSceneByBuildIndex(index) != null)
-        {
-            SceneManager.LoadScene(index);
-        }
+        GameManager.gmInstance.SwitchToScene(index);
     }
 
     public void ExitGame()

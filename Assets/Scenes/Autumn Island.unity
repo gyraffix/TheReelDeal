@@ -1298,7 +1298,6 @@ Transform:
   - {fileID: 1052667567}
   - {fileID: 1240347792}
   - {fileID: 522836236}
-  - {fileID: 1368327797}
   - {fileID: 1632665874}
   - {fileID: 1375015383}
   m_Father: {fileID: 0}
@@ -4279,6 +4278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
         type: 3}
+      propertyPath: fishFromWhere
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177676859802546884, guid: b21194690adb5764692a2efdadd7f3b4,
+        type: 3}
       propertyPath: introDialogue
       value: AutumnQuest2Intro
       objectReference: {fileID: 0}
@@ -4338,14 +4342,14 @@ Transform:
   m_GameObject: {fileID: 1368327796}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.9737091, y: 507.7517, z: 796.8298}
+  m_LocalPosition: {x: -26.66371, y: 1.0717163, z: 440.26978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 918344975}
   - {fileID: 489593041}
   - {fileID: 439362831}
-  m_Father: {fileID: 502617617}
+  m_Father: {fileID: 1632665874}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1375015382
 GameObject:
@@ -5851,6 +5855,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 405340159}
+  - {fileID: 1368327797}
   m_Father: {fileID: 502617617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1632665875

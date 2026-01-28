@@ -21,7 +21,7 @@ public class Album : MonoBehaviour
     [SerializeField] private List<GameObject> fishes;
     [SerializeField] private float interactionCooldown;
 
-    
+    private bool albumLoaded = false;
     private bool canInteract = true;
 
     [HideInInspector]
@@ -97,6 +97,11 @@ public class Album : MonoBehaviour
 
     private void UpdatePages()
     {
+        if (!albumLoaded)
+        {
+            GameManager.gmInstance.AddFish();
+            albumLoaded = true;
+        }
         foreach (Page page in pages)
         {
             page.gameObject.SetActive(false);
@@ -118,6 +123,12 @@ public class Album : MonoBehaviour
                 if (p.NewFish(fish))
                 {
                     addedFish.Add(fish.name);
+
+                    if (!GameManager.gmInstance.fishList.Contains(fish))
+                    {
+                        Debug.Log("added fish to save");
+                        GameManager.gmInstance.fishList.Add(fish);
+                    }
 
                     switch (fish.location)
                     {

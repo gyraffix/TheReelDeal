@@ -11,7 +11,7 @@ public class Page : MonoBehaviour
 
     [SerializeField] private FishItem[] PlaceholderFish = new FishItem[4];
     
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < 2; i++) 
         {
