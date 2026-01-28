@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     //------SpringIslandVars---------
     private bool firstSpringIsland = false;
-    
+    public int springDifficulty;
 
     //------AutumnIslandVars---------
     private bool firstAutumnIsland = false;
@@ -101,11 +101,11 @@ public class GameManager : MonoBehaviour
                     npc.completed = true;
                     npc.exclamationMark.SetActive(false);
                 }
-                if (lastScene == "Beach Island")
+                if (lastScene == "Summer Island")
                 {
                     GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.Find("ArriveFromBeach").transform.position;
                     GameObject.FindGameObjectWithTag("Player").transform.rotation = GameObject.Find("ArriveFromBeach").transform.rotation;
-                    GameObject.Find("Dock Barrier").SetActive(false);
+                    GameObject.Find("Barrier").SetActive(false);
                     
                 }
                 else
