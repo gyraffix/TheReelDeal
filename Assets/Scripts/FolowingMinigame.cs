@@ -90,7 +90,7 @@ public class FolowingMinigame : FishingMinigame
 
     protected override void OnActivate()
     {
-        base.OnActivate();       
+        base.OnActivate();
 
         Jump.instance.active = false;
         Crouch.instance.active = false;
@@ -125,6 +125,12 @@ public class FolowingMinigame : FishingMinigame
             {
                 currentMinY = UnityEngine.Random.Range(minY, targetLocation - minimumTravelDistance);
             }
+        }
+
+        if (currentMinY >= currentMaxY)
+        {
+            currentMaxY = maxY;
+            currentMinY = minY;
         }
 
         targetLocation = targetGoingUp ? targetLocation + Time.deltaTime * targetSpeed : targetLocation - Time.deltaTime * targetSpeed;
@@ -174,9 +180,9 @@ public class FolowingMinigame : FishingMinigame
             Destroy(bobberInstance.gameObject);
             bobberInstance = null;
         }
-        
+
         if (wanderingFish != null)
-        Destroy(wanderingFish);
+            Destroy(wanderingFish);
 
         FMODReelingIn.Stop();
 
