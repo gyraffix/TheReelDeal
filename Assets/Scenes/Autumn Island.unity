@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 12ccb828343c3405fb94289774b51aad, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -5786,15 +5786,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
+      propertyPath: reelingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
       propertyPath: minigameCanvas
       value: 
       objectReference: {fileID: 1251249054}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: maxReelingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: maxThrowingStrength
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: wanderingFishPrefab
       value: 
       objectReference: {fileID: 2959402236713656849, guid: fa7f1b60cf6a02e40aa66817ab03633c,
         type: 3}
+    - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
+        type: 3}
+      propertyPath: strengthIncreaseSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2706999452937087973, guid: b9e480cca64b0428c97675411ffd6575,
         type: 3}
       propertyPath: possibleFishes.Array.size
