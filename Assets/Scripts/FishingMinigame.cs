@@ -220,7 +220,7 @@ public abstract class FishingMinigame : PlayerActivatable
         Jump.instance.active = true;
         Crouch.instance.active = true;
 
-        
+        Destroy(wanderingFish);
 
         FMODVictorySound.Play();
 

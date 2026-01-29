@@ -34,7 +34,7 @@ public class MashingMinigame : FishingMinigame
                 progressValue += (1 / requiredClicksPS) * 5;
             }
             
-            progressValue -= requiredClicksPS * Time.deltaTime * 5;
+            progressValue -= requiredClicksPS * Time.deltaTime;
             UpdateFish();
         }
 

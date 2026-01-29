@@ -830,7 +830,8 @@ Saintastrea:What if I just teleported myself home right now somehow?
 
 title: TutorialPond
 ---
-Signboard: Get ready to mash the "Spacebar" or "M1" and catch that doodle!  Signed: Doodlas
+Signboard: You wil begin by reeling, hold "Spacebar" to charge up power and throw the rod, "Spacebar" reels it in and "Esc" end the minigame
+Signboard: When the bobber hits a fish the minigame begins. Get ready to mash the "Spacebar" or "M1" and catch that doodle!  Signed: Doodlas
     <<EnableMovement>>
     <<StopSound LinePresenter>>
     <<enable_triggers>>
@@ -843,7 +844,8 @@ Signboard: Get ready to mash the "Spacebar" or "M1" and catch that doodle!  Sign
 
 title: TutorialRiver
 ---
-Signboard: Hold that "Spacebar" or "M1" and keep the bobber inside the target area!  Signed: Bellbottom
+Signboard: You wil begin by reeling, hold "Spacebar" to charge up power and throw the rod, "Spacebar" reels it in and "Esc" end the minigame
+Signboard: When the bobber hits a fish the minigame begins. Hold that "Spacebar" or "M1" and keep the bobber inside the target area!  Signed: Bellbottom
     <<EnableMovement>>
     <<StopSound LinePresenter>>
     <<enable_triggers>>
@@ -856,7 +858,8 @@ Signboard: Hold that "Spacebar" or "M1" and keep the bobber inside the target ar
 
 title: TutorialSea
 ---
-Signboard: Time that "Spacebar" or "M1" so that the bobber hits the skill check! Signed: Bubbles
+Signboard: You wil begin by reeling, hold "Spacebar" to charge up power and throw the rod, "Spacebar" reels it in and "Esc" end the minigame
+Signboard: When the bobber hits a fish the minigame begins.  Time that "Spacebar" or "M1" so that the bobber hits the skill check! Signed: Bubbles
     <<EnableMovement>>
     <<StopSound LinePresenter>>
     <<enable_triggers>>

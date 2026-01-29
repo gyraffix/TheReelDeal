@@ -230,7 +230,7 @@ MonoBehaviour:
     meterSpeed: 0
     targetHeight: 0
     targetSpeed: 0
-    requiredClicksPerSecond: 2.5
+    requiredClicksPerSecond: 1.75
     defaultProgressDecrease: 0
     fishingPregress: 0
   possibleFishes:
