@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPhoto: {fileID: 1940904398, guid: 5aae1d27be8794b438160d5c0737d91e, type: 3}
   name: GlassFish
-  desc: ' The sun shines on this fish in a way that the entire sea lights up in radiance.
-    They love rainbow glass'
+  desc: The sun shines on this fish in a way that the entire sea lights up in radiance.
+    They love rainbow glass
   hint: Found In Sea Water
   location: Sea
