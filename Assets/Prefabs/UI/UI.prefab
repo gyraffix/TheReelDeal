@@ -114,7 +114,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1974131813285254559}
     - target: {fileID: 2958262986393358535, guid: 52571f68872914e24837210513edea1d,
         type: 3}
       propertyPath: m_Colors.m_FadeDuration
@@ -2087,6 +2087,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4817299373607951676, guid: e0c6ad1acf383c344adefd445eb10cf4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6681
+      objectReference: {fileID: 0}
     - target: {fileID: 7294232996626548354, guid: e0c6ad1acf383c344adefd445eb10cf4,
         type: 3}
       propertyPath: m_Name
@@ -2262,6 +2267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Minigame Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779188322776210184, guid: 89409557119c741eba15cce9ea513572,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8819
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
