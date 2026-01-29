@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
                 }
                 if (!firstAutumnIsland)
                 {
-                    GameObject.Find("Following Minigame trigger").GetComponent<FolowingMinigame>().hasPlayedBefore = true;
+                    //GameObject.Find("Following Minigame trigger").GetComponent<FolowingMinigame>().hasPlayedBefore = true;
                 }
                 break;
             case "Beach Island":
